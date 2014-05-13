@@ -1,0 +1,27 @@
+<h1>Listing clerks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Person</th>
+      <th>Start date</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @clerks.each do |clerk| %>
+      <tr>
+        <td><%= clerk.person_id %></td>
+        <td><%= clerk.start_date %></td>
+        <td><%= link_to 'Show', clerk %></td>
+        <td><%= link_to 'Edit', edit_clerk_path(clerk) %></td>
+        <td><%= link_to 'Destroy', clerk, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Clerk', new_clerk_path %>

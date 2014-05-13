@@ -1,0 +1,25 @@
+<%= form_for(@matriculation) do |f| %>
+  <% if @matriculation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@matriculation.errors.count, "error") %> prohibited this matriculation from being saved:</h2>
+
+      <ul>
+      <% @matriculation.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :pre_matriculation_id %><br>
+    <%= f.number_field :pre_matriculation_id %>
+  </div>
+  <div class="field">
+    <%= f.label :acceptance_day %><br>
+    <%= f.date_select :acceptance_day %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

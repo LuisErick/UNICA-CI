@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Pre matriculation:</strong>
+  <%= @matriculation.pre_matriculation_id %>
+</p>
+
+<p>
+  <strong>Acceptance day:</strong>
+  <%= @matriculation.acceptance_day %>
+</p>
+
+<%= link_to 'Edit', edit_matriculation_path(@matriculation) %> |
+<%= link_to 'Back', matriculations_path %>

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Matriculation course:</strong>
+  <%= @student_attendance.matriculation_course_id %>
+</p>
+
+<p>
+  <strong>Attendance date:</strong>
+  <%= @student_attendance.attendance_date %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @student_attendance.state %>
+</p>
+
+<%= link_to 'Edit', edit_student_attendance_path(@student_attendance) %> |
+<%= link_to 'Back', student_attendances_path %>

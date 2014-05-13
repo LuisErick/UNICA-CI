@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  teacher_id: 1
+  schedule_id: 1
+  room_id: 1
+
+two:
+  teacher_id: 1
+  schedule_id: 1
+  room_id: 1

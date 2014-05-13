@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  package_id: 1
+  state: false
+  arrival_time: 2014-05-12 11:26:50
+  dismissal_time: 2014-05-12 11:26:50
+  session_number: 1
+  day: 2014-05-12
+
+two:
+  package_id: 1
+  state: false
+  arrival_time: 2014-05-12 11:26:50
+  dismissal_time: 2014-05-12 11:26:50
+  session_number: 1
+  day: 2014-05-12

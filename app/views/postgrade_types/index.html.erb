@@ -1,0 +1,27 @@
+<h1>Listing postgrade_types</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @postgrade_types.each do |postgrade_type| %>
+      <tr>
+        <td><%= postgrade_type.name %></td>
+        <td><%= postgrade_type.description %></td>
+        <td><%= link_to 'Show', postgrade_type %></td>
+        <td><%= link_to 'Edit', edit_postgrade_type_path(postgrade_type) %></td>
+        <td><%= link_to 'Destroy', postgrade_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Postgrade type', new_postgrade_type_path %>

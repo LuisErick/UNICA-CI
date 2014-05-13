@@ -1,0 +1,25 @@
+<%= form_for(@matricualtion_validate) do |f| %>
+  <% if @matricualtion_validate.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@matricualtion_validate.errors.count, "error") %> prohibited this matricualtion_validate from being saved:</h2>
+
+      <ul>
+      <% @matricualtion_validate.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :matriculation_id %><br>
+    <%= f.number_field :matriculation_id %>
+  </div>
+  <div class="field">
+    <%= f.label :institution %><br>
+    <%= f.text_field :institution %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

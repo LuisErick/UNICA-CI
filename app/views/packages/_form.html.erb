@@ -1,0 +1,29 @@
+<%= form_for(@package) do |f| %>
+  <% if @package.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@package.errors.count, "error") %> prohibited this package from being saved:</h2>
+
+      <ul>
+      <% @package.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :teacher_id %><br>
+    <%= f.number_field :teacher_id %>
+  </div>
+  <div class="field">
+    <%= f.label :schedule_id %><br>
+    <%= f.number_field :schedule_id %>
+  </div>
+  <div class="field">
+    <%= f.label :room_id %><br>
+    <%= f.number_field :room_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

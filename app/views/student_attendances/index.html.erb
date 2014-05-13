@@ -1,0 +1,29 @@
+<h1>Listing student_attendances</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Matriculation course</th>
+      <th>Attendance date</th>
+      <th>State</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @student_attendances.each do |student_attendance| %>
+      <tr>
+        <td><%= student_attendance.matriculation_course_id %></td>
+        <td><%= student_attendance.attendance_date %></td>
+        <td><%= student_attendance.state %></td>
+        <td><%= link_to 'Show', student_attendance %></td>
+        <td><%= link_to 'Edit', edit_student_attendance_path(student_attendance) %></td>
+        <td><%= link_to 'Destroy', student_attendance, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Student attendance', new_student_attendance_path %>

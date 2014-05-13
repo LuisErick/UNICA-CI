@@ -1,0 +1,37 @@
+<%= form_for(@matriculation_course) do |f| %>
+  <% if @matriculation_course.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@matriculation_course.errors.count, "error") %> prohibited this matriculation_course from being saved:</h2>
+
+      <ul>
+      <% @matriculation_course.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :matriculation_id %><br>
+    <%= f.number_field :matriculation_id %>
+  </div>
+  <div class="field">
+    <%= f.label :package_id %><br>
+    <%= f.number_field :package_id %>
+  </div>
+  <div class="field">
+    <%= f.label :start_date %><br>
+    <%= f.date_select :start_date %>
+  </div>
+  <div class="field">
+    <%= f.label :end_date %><br>
+    <%= f.date_select :end_date %>
+  </div>
+  <div class="field">
+    <%= f.label :final_grade %><br>
+    <%= f.text_field :final_grade %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

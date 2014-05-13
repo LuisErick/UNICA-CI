@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  matriculation_course_id: 1
+  value: 1.5
+  grade_type_id: 1
+
+two:
+  matriculation_course_id: 1
+  value: 1.5
+  grade_type_id: 1

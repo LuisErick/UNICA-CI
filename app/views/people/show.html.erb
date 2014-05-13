@@ -1,0 +1,79 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @person.user_id %>
+</p>
+
+<p>
+  <strong>Paternal lastname:</strong>
+  <%= @person.paternal_lastname %>
+</p>
+
+<p>
+  <strong>Maternal lastname:</strong>
+  <%= @person.maternal_lastname %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @person.name %>
+</p>
+
+<p>
+  <strong>Dni:</strong>
+  <%= @person.dni %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @person.address %>
+</p>
+
+<p>
+  <strong>District:</strong>
+  <%= @person.district %>
+</p>
+
+<p>
+  <strong>Province:</strong>
+  <%= @person.province %>
+</p>
+
+<p>
+  <strong>Department:</strong>
+  <%= @person.department %>
+</p>
+
+<p>
+  <strong>Home phone:</strong>
+  <%= @person.home_phone %>
+</p>
+
+<p>
+  <strong>Mobile phone:</strong>
+  <%= @person.mobile_phone %>
+</p>
+
+<p>
+  <strong>Sex:</strong>
+  <%= @person.sex %>
+</p>
+
+<p>
+  <strong>Birthday:</strong>
+  <%= @person.birthday %>
+</p>
+
+<p>
+  <strong>Birthplace:</strong>
+  <%= @person.birthplace %>
+</p>
+
+<p>
+  <strong>Marital status:</strong>
+  <%= @person.marital_status_id %>
+</p>
+
+<%= link_to 'Edit', edit_person_path(@person) %> |
+<%= link_to 'Back', people_path %>

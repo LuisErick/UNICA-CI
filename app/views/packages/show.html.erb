@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Teacher:</strong>
+  <%= @package.teacher_id %>
+</p>
+
+<p>
+  <strong>Schedule:</strong>
+  <%= @package.schedule_id %>
+</p>
+
+<p>
+  <strong>Room:</strong>
+  <%= @package.room_id %>
+</p>
+
+<%= link_to 'Edit', edit_package_path(@package) %> |
+<%= link_to 'Back', packages_path %>

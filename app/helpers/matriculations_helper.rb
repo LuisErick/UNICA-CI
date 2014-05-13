@@ -1,0 +1,2 @@
+module MatriculationsHelper
+end

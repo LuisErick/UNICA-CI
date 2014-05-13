@@ -1,0 +1,31 @@
+<h1>Listing pre_matriculations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Person</th>
+      <th>Curse type</th>
+      <th>Languaje</th>
+      <th>State</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pre_matriculations.each do |pre_matriculation| %>
+      <tr>
+        <td><%= pre_matriculation.person_id %></td>
+        <td><%= pre_matriculation.curse_type_id %></td>
+        <td><%= pre_matriculation.languaje_id %></td>
+        <td><%= pre_matriculation.state %></td>
+        <td><%= link_to 'Show', pre_matriculation %></td>
+        <td><%= link_to 'Edit', edit_pre_matriculation_path(pre_matriculation) %></td>
+        <td><%= link_to 'Destroy', pre_matriculation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Pre matriculation', new_pre_matriculation_path %>

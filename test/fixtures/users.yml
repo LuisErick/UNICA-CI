@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  permission_id: 1
+  username: MyString
+  password: MyString
+  state: 
+
+two:
+  permission_id: 1
+  username: MyString
+  password: MyString
+  state: 

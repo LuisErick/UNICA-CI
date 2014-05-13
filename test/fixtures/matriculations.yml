@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  pre_matriculation_id: 1
+  acceptance_day: 2014-05-12
+
+two:
+  pre_matriculation_id: 1
+  acceptance_day: 2014-05-12

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  matricualtion_id: 1
+  payment_type_id: 1
+  payment_day: 2014-05-12
+  receipt_number: MyString
+
+two:
+  matricualtion_id: 1
+  payment_type_id: 1
+  payment_day: 2014-05-12
+  receipt_number: MyString

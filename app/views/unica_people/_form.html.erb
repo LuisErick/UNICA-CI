@@ -1,0 +1,29 @@
+<%= form_for(@unica_person) do |f| %>
+  <% if @unica_person.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@unica_person.errors.count, "error") %> prohibited this unica_person from being saved:</h2>
+
+      <ul>
+      <% @unica_person.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :person_id %><br>
+    <%= f.number_field :person_id %>
+  </div>
+  <div class="field">
+    <%= f.label :college_id %><br>
+    <%= f.number_field :college_id %>
+  </div>
+  <div class="field">
+    <%= f.label :semester %><br>
+    <%= f.number_field :semester %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,35 @@
+<h1>Listing teacher_attendaces</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Package</th>
+      <th>State</th>
+      <th>Arrival time</th>
+      <th>Dismissal time</th>
+      <th>Session number</th>
+      <th>Day</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @teacher_attendaces.each do |teacher_attendace| %>
+      <tr>
+        <td><%= teacher_attendace.package_id %></td>
+        <td><%= teacher_attendace.state %></td>
+        <td><%= teacher_attendace.arrival_time %></td>
+        <td><%= teacher_attendace.dismissal_time %></td>
+        <td><%= teacher_attendace.session_number %></td>
+        <td><%= teacher_attendace.day %></td>
+        <td><%= link_to 'Show', teacher_attendace %></td>
+        <td><%= link_to 'Edit', edit_teacher_attendace_path(teacher_attendace) %></td>
+        <td><%= link_to 'Destroy', teacher_attendace, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Teacher attendace', new_teacher_attendace_path %>

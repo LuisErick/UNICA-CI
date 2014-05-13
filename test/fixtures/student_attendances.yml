@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  matriculation_course_id: 1
+  attendance_date: 2014-05-12
+  state: false
+
+two:
+  matriculation_course_id: 1
+  attendance_date: 2014-05-12
+  state: false

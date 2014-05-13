@@ -1,0 +1,27 @@
+<h1>Listing pre_mariculation_communicatives</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Pre matriculation</th>
+      <th>Level</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pre_mariculation_communicatives.each do |pre_mariculation_communicative| %>
+      <tr>
+        <td><%= pre_mariculation_communicative.pre_matriculation_id %></td>
+        <td><%= pre_mariculation_communicative.level_id %></td>
+        <td><%= link_to 'Show', pre_mariculation_communicative %></td>
+        <td><%= link_to 'Edit', edit_pre_mariculation_communicative_path(pre_mariculation_communicative) %></td>
+        <td><%= link_to 'Destroy', pre_mariculation_communicative, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Pre mariculation communicative', new_pre_mariculation_communicative_path %>

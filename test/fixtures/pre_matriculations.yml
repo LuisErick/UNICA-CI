@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  person_id: 1
+  curse_type_id: 1
+  languaje_id: 1
+  state: false
+
+two:
+  person_id: 1
+  curse_type_id: 1
+  languaje_id: 1
+  state: false

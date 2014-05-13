@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Person:</strong>
+  <%= @postgrade_person.person_id %>
+</p>
+
+<p>
+  <strong>Postgrade type:</strong>
+  <%= @postgrade_person.postgrade_type_id %>
+</p>
+
+<%= link_to 'Edit', edit_postgrade_person_path(@postgrade_person) %> |
+<%= link_to 'Back', postgrade_people_path %>

@@ -1,0 +1,27 @@
+<h1>Listing matriculations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Pre matriculation</th>
+      <th>Acceptance day</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @matriculations.each do |matriculation| %>
+      <tr>
+        <td><%= matriculation.pre_matriculation_id %></td>
+        <td><%= matriculation.acceptance_day %></td>
+        <td><%= link_to 'Show', matriculation %></td>
+        <td><%= link_to 'Edit', edit_matriculation_path(matriculation) %></td>
+        <td><%= link_to 'Destroy', matriculation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Matriculation', new_matriculation_path %>

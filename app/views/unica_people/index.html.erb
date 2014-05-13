@@ -1,0 +1,29 @@
+<h1>Listing unica_people</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Person</th>
+      <th>College</th>
+      <th>Semester</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @unica_people.each do |unica_person| %>
+      <tr>
+        <td><%= unica_person.person_id %></td>
+        <td><%= unica_person.college_id %></td>
+        <td><%= unica_person.semester %></td>
+        <td><%= link_to 'Show', unica_person %></td>
+        <td><%= link_to 'Edit', edit_unica_person_path(unica_person) %></td>
+        <td><%= link_to 'Destroy', unica_person, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Unica person', new_unica_person_path %>

@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @postgrade_type.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @postgrade_type.description %>
+</p>
+
+<%= link_to 'Edit', edit_postgrade_type_path(@postgrade_type) %> |
+<%= link_to 'Back', postgrade_types_path %>

@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @grade_type.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @grade_type.description %>
+</p>
+
+<%= link_to 'Edit', edit_grade_type_path(@grade_type) %> |
+<%= link_to 'Back', grade_types_path %>

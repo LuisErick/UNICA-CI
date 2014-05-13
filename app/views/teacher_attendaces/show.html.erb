@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Package:</strong>
+  <%= @teacher_attendace.package_id %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @teacher_attendace.state %>
+</p>
+
+<p>
+  <strong>Arrival time:</strong>
+  <%= @teacher_attendace.arrival_time %>
+</p>
+
+<p>
+  <strong>Dismissal time:</strong>
+  <%= @teacher_attendace.dismissal_time %>
+</p>
+
+<p>
+  <strong>Session number:</strong>
+  <%= @teacher_attendace.session_number %>
+</p>
+
+<p>
+  <strong>Day:</strong>
+  <%= @teacher_attendace.day %>
+</p>
+
+<%= link_to 'Edit', edit_teacher_attendace_path(@teacher_attendace) %> |
+<%= link_to 'Back', teacher_attendaces_path %>

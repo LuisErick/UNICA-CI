@@ -1,0 +1,25 @@
+<%= form_for(@postgrade_person) do |f| %>
+  <% if @postgrade_person.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@postgrade_person.errors.count, "error") %> prohibited this postgrade_person from being saved:</h2>
+
+      <ul>
+      <% @postgrade_person.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :person_id %><br>
+    <%= f.number_field :person_id %>
+  </div>
+  <div class="field">
+    <%= f.label :postgrade_type_id %><br>
+    <%= f.number_field :postgrade_type_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
