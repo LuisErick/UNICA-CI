@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :salaries
+
   resources :grades
 
   resources :grade_types
@@ -8,8 +10,6 @@ Rails.application.routes.draw do
   resources :payments
 
   resources :payment_types
-
-  resources :salaries
 
   resources :teacher_attendaces
 

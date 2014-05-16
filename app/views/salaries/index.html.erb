@@ -12,7 +12,7 @@
   <tbody>
     <% @salaries.each do |salary| %>
       <tr>
-        <td><%= salary.teacher_attendance %></td>
+        <td><%= salary.teacher_attendance_id %></td>
         <td><%= salary.amount %></td>
         <td><%= link_to 'Show', salary %></td>
         <td><%= link_to 'Edit', edit_salary_path(salary) %></td>

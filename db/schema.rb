@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140512163122) do
+ActiveRecord::Schema.define(version: 20140516031740) do
 
   create_table "administrators", force: true do |t|
     t.integer  "person_id"
@@ -213,7 +213,7 @@ ActiveRecord::Schema.define(version: 20140512163122) do
   end
 
   create_table "salaries", force: true do |t|
-    t.integer  "teacher_attendance"
+    t.integer  "teacher_attendance_id"
     t.float    "amount"
     t.datetime "created_at"
     t.datetime "updated_at"
