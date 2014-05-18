@@ -1,10 +1,10 @@
-<%= form_for(@matricualtion_validate) do |f| %>
-  <% if @matricualtion_validate.errors.any? %>
+<%= form_for(@matriculation_validate) do |f| %>
+  <% if @matriculation_validate.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@matricualtion_validate.errors.count, "error") %> prohibited this matricualtion_validate from being saved:</h2>
+      <h2><%= pluralize(@matriculation_validate.errors.count, "error") %> prohibited this matriculation_validate from being saved:</h2>
 
       <ul>
-      <% @matricualtion_validate.errors.full_messages.each do |message| %>
+      <% @matriculation_validate.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
@@ -18,6 +18,10 @@
   <div class="field">
     <%= f.label :institution %><br>
     <%= f.text_field :institution %>
+  </div>
+  <div class="field">
+    <%= f.label :state %><br>
+    <%= f.check_box :state %>
   </div>
   <div class="actions">
     <%= f.submit %>

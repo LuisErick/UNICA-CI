@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Matriculation:</strong>
+  <%= @matriculation_validate.matriculation_id %>
+</p>
+
+<p>
+  <strong>Institution:</strong>
+  <%= @matriculation_validate.institution %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @matriculation_validate.state %>
+</p>
+
+<%= link_to 'Edit', edit_matriculation_validate_path(@matriculation_validate) %> |
+<%= link_to 'Back', matriculation_validates_path %>

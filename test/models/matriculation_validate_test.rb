@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class MatricualtionValidateTest < ActiveSupport::TestCase
+class MatriculationValidateTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

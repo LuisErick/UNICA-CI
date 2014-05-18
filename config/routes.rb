@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :matriculation_validate_exams
+
+  resources :matriculation_validates
+
   resources :salaries
 
   resources :grades
@@ -24,8 +28,6 @@ Rails.application.routes.draw do
   resources :documents
 
   resources :document_types
-
-  resources :matricualtion_validates
 
   resources :matriculations
 

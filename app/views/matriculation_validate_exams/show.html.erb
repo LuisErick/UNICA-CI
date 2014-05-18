@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Matriculation validate:</strong>
+  <%= @matriculation_validate_exam.matriculation_validate %>
+</p>
+
+<p>
+  <strong>Grade:</strong>
+  <%= @matriculation_validate_exam.grade %>
+</p>
+
+<%= link_to 'Edit', edit_matriculation_validate_exam_path(@matriculation_validate_exam) %> |
+<%= link_to 'Back', matriculation_validate_exams_path %>

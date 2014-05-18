@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140516031740) do
+ActiveRecord::Schema.define(version: 20140518215316) do
 
   create_table "administrators", force: true do |t|
     t.integer  "person_id"
@@ -112,6 +112,21 @@ ActiveRecord::Schema.define(version: 20140516031740) do
     t.date     "start_date"
     t.date     "end_date"
     t.float    "final_grade"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "matriculation_validate_exams", force: true do |t|
+    t.integer  "matriculation_validate"
+    t.float    "grade"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "matriculation_validates", force: true do |t|
+    t.integer  "matriculation_id"
+    t.string   "institution"
+    t.boolean  "state"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

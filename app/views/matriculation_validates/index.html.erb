@@ -1,0 +1,29 @@
+<h1>Listing matriculation_validates</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Matriculation</th>
+      <th>Institution</th>
+      <th>State</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @matriculation_validates.each do |matriculation_validate| %>
+      <tr>
+        <td><%= matriculation_validate.matriculation_id %></td>
+        <td><%= matriculation_validate.institution %></td>
+        <td><%= matriculation_validate.state %></td>
+        <td><%= link_to 'Show', matriculation_validate %></td>
+        <td><%= link_to 'Edit', edit_matriculation_validate_path(matriculation_validate) %></td>
+        <td><%= link_to 'Destroy', matriculation_validate, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Matriculation validate', new_matriculation_validate_path %>
