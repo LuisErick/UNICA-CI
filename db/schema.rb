@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140518215316) do
+ActiveRecord::Schema.define(version: 20140518234040) do
 
   create_table "administrators", force: true do |t|
     t.integer  "person_id"
@@ -99,13 +99,6 @@ ActiveRecord::Schema.define(version: 20140518215316) do
     t.datetime "updated_at"
   end
 
-  create_table "matricualtion_validates", force: true do |t|
-    t.integer  "matriculation_id"
-    t.string   "institution"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "matriculation_courses", force: true do |t|
     t.integer  "matriculation_id"
     t.integer  "package_id"
@@ -179,6 +172,13 @@ ActiveRecord::Schema.define(version: 20140518215316) do
     t.date     "birthday"
     t.string   "birthplace"
     t.integer  "marital_status_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "permissions", force: true do |t|
+    t.string   "name"
+    t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

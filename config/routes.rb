@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+  resources :permissions
+
+  get 'profile/index'
+  get "/me" => "profile#index", as: :profile
+  get 'security/index'
+  get "" => "security#index", as: :security
+  post 'security/login'
+  post 'security/logout'
+
   resources :matriculation_validate_exams
 
   resources :matriculation_validates
@@ -65,13 +74,11 @@ Rails.application.routes.draw do
 
   resources :users
 
-  resources :permisssions
-
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'security#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

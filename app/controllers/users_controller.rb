@@ -1,12 +1,18 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-
+  before_action :get_permissions, only: [:new, :edit]
   # GET /users
   # GET /users.json
   def index
     @users = User.all
   end
-
+  def get_permissions
+    permissions = Permission.all
+    @list = Hash.new
+    permissions.each do |p|
+      @list[p.name] = p.id
+    end
+  end
   # GET /users/1
   # GET /users/1.json
   def show

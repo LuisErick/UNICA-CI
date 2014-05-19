@@ -11,21 +11,21 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :permission_id %><br>
-    <%= f.number_field :permission_id %>
-  </div>
-  <div class="field">
+   <div class="field">
     <%= f.label :username %><br>
     <%= f.text_field :username %>
   </div>
   <div class="field">
     <%= f.label :password %><br>
-    <%= f.text_field :password %>
+    <%= f.password_field :password %>
   </div>
   <div class="field">
     <%= f.label :state %><br>
-    <%= f.text_field :state %>
+    <%= f.check_box :state %>
+  </div>
+   <div class="field">
+    <%= f.label :permission_id %><br>
+    <%= f.select :permission_id, @list %>
   </div>
   <div class="actions">
     <%= f.submit %>

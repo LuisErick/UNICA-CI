@@ -1,6 +1,6 @@
-class CreatePermisssions < ActiveRecord::Migration
+class CreatePermissions < ActiveRecord::Migration
   def change
-    create_table :permisssions do |t|
+    create_table :permissions do |t|
       t.string :name
       t.text :description
 

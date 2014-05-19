@@ -1,10 +1,10 @@
-<%= form_for(@permisssion) do |f| %>
-  <% if @permisssion.errors.any? %>
+<%= form_for(@permission) do |f| %>
+  <% if @permission.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@permisssion.errors.count, "error") %> prohibited this permisssion from being saved:</h2>
+      <h2><%= pluralize(@permission.errors.count, "error") %> prohibited this permission from being saved:</h2>
 
       <ul>
-      <% @permisssion.errors.full_messages.each do |message| %>
+      <% @permission.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>

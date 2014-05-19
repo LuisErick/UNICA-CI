@@ -1,0 +1,22 @@
+<h1>Security#index</h1>
+<p>Find me in app/views/security/index.html.erb</p>
+<div class="error">
+	<%=@message%>
+</div>
+<div class="form">
+	<%= form_tag({controller: 'security', action: 'login'}, method: 'post') do %>
+		<div class="field">
+			<p><%=label_tag :username, 'Nombre de usuario'%></p>
+			<p><%=text_field_tag :username %></p>
+		</div>
+		</br>
+		<div class="field">
+			<p><%=label_tag :password, 'Contraseña'%></p>
+			<p><%=password_field_tag :password %></p>
+		</div>
+		</br>
+		<div class="action">
+			<p><%=submit_tag 'Ingresar'%></p>
+		</div>
+	<%end%>
+</div>
