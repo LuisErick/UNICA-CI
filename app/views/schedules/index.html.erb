@@ -1,33 +1,44 @@
-<h1>Listing schedules</h1>
-
-<table>
+<%- model_class = Schedule -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Days</th>
-      <th>Start time</th>
-      <th>End time</th>
-      <th>Week days</th>
-      <th>Number of sessions</th>
-      <th colspan="3"></th>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:days) %></th>
+      <th><%= model_class.human_attribute_name(:start_time) %></th>
+      <th><%= model_class.human_attribute_name(:end_time) %></th>
+      <th><%= model_class.human_attribute_name(:week_days) %></th>
+      <th><%= model_class.human_attribute_name(:number_of_sessions) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @schedules.each do |schedule| %>
       <tr>
+        <td><%= link_to schedule.id, schedule_path(schedule) %></td>
         <td><%= schedule.days %></td>
         <td><%= schedule.start_time %></td>
         <td><%= schedule.end_time %></td>
         <td><%= schedule.week_days %></td>
         <td><%= schedule.number_of_sessions %></td>
-        <td><%= link_to 'Show', schedule %></td>
-        <td><%= link_to 'Edit', edit_schedule_path(schedule) %></td>
-        <td><%= link_to 'Destroy', schedule, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%=l schedule.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_schedule_path(schedule), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      schedule_path(schedule),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Schedule', new_schedule_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_schedule_path,
+            :class => 'btn btn-primary' %>

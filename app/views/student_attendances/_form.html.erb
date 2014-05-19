@@ -1,29 +1,26 @@
-<%= form_for(@student_attendance) do |f| %>
-  <% if @student_attendance.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@student_attendance.errors.count, "error") %> prohibited this student_attendance from being saved:</h2>
-
-      <ul>
-      <% @student_attendance.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<%= form_for @student_attendance, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :matriculation_course_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :matriculation_course_id, :class => 'text_field' %>
     </div>
-  <% end %>
+  </div>
+  <div class="control-group">
+    <%= f.label :attendance_date, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :attendance_date, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :state, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :state, :class => 'text_field' %>
+    </div>
+  </div>
 
-  <div class="field">
-    <%= f.label :matriculation_course_id %><br>
-    <%= f.number_field :matriculation_course_id %>
-  </div>
-  <div class="field">
-    <%= f.label :attendance_date %><br>
-    <%= f.date_select :attendance_date %>
-  </div>
-  <div class="field">
-    <%= f.label :state %><br>
-    <%= f.check_box :state %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                student_attendances_path, :class => 'btn' %>
   </div>
 <% end %>

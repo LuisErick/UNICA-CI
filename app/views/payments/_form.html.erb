@@ -1,33 +1,32 @@
-<%= form_for(@payment) do |f| %>
-  <% if @payment.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@payment.errors.count, "error") %> prohibited this payment from being saved:</h2>
-
-      <ul>
-      <% @payment.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<%= form_for @payment, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :matricualtion_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :matricualtion_id, :class => 'text_field' %>
     </div>
-  <% end %>
+  </div>
+  <div class="control-group">
+    <%= f.label :payment_type_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :payment_type_id, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :payment_day, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :payment_day, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :receipt_number, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :receipt_number, :class => 'text_field' %>
+    </div>
+  </div>
 
-  <div class="field">
-    <%= f.label :matricualtion_id %><br>
-    <%= f.number_field :matricualtion_id %>
-  </div>
-  <div class="field">
-    <%= f.label :payment_type_id %><br>
-    <%= f.number_field :payment_type_id %>
-  </div>
-  <div class="field">
-    <%= f.label :payment_day %><br>
-    <%= f.date_select :payment_day %>
-  </div>
-  <div class="field">
-    <%= f.label :receipt_number %><br>
-    <%= f.text_field :receipt_number %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                payments_path, :class => 'btn' %>
   </div>
 <% end %>

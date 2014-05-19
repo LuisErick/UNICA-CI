@@ -1,14 +1,23 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Matriculation -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
 
-<p>
-  <strong>Pre matriculation:</strong>
-  <%= @matriculation.pre_matriculation_id %>
-</p>
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:pre_matriculation_id) %>:</strong></dt>
+  <dd><%= @matriculation.pre_matriculation_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:acceptance_day) %>:</strong></dt>
+  <dd><%= @matriculation.acceptance_day %></dd>
+</dl>
 
-<p>
-  <strong>Acceptance day:</strong>
-  <%= @matriculation.acceptance_day %>
-</p>
-
-<%= link_to 'Edit', edit_matriculation_path(@matriculation) %> |
-<%= link_to 'Back', matriculations_path %>
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              matriculations_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_matriculation_path(@matriculation), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              matriculation_path(@matriculation),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>

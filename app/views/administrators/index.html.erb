@@ -1,27 +1,38 @@
-<h1>Listing administrators</h1>
-
-<table>
+<%- model_class = Administrator -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Person</th>
-      <th>Start date</th>
-      <th colspan="3"></th>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:person_id) %></th>
+      <th><%= model_class.human_attribute_name(:start_date) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @administrators.each do |administrator| %>
       <tr>
+        <td><%= link_to administrator.id, administrator_path(administrator) %></td>
         <td><%= administrator.person_id %></td>
         <td><%= administrator.start_date %></td>
-        <td><%= link_to 'Show', administrator %></td>
-        <td><%= link_to 'Edit', edit_administrator_path(administrator) %></td>
-        <td><%= link_to 'Destroy', administrator, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%=l administrator.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_administrator_path(administrator), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      administrator_path(administrator),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Administrator', new_administrator_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_administrator_path,
+            :class => 'btn btn-primary' %>

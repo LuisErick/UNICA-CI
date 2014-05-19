@@ -1,33 +1,32 @@
-<%= form_for(@pre_matriculation) do |f| %>
-  <% if @pre_matriculation.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@pre_matriculation.errors.count, "error") %> prohibited this pre_matriculation from being saved:</h2>
-
-      <ul>
-      <% @pre_matriculation.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<%= form_for @pre_matriculation, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :person_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :person_id, :class => 'text_field' %>
     </div>
-  <% end %>
+  </div>
+  <div class="control-group">
+    <%= f.label :curse_type_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :curse_type_id, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :languaje_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :languaje_id, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :state, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :state, :class => 'text_field' %>
+    </div>
+  </div>
 
-  <div class="field">
-    <%= f.label :person_id %><br>
-    <%= f.number_field :person_id %>
-  </div>
-  <div class="field">
-    <%= f.label :curse_type_id %><br>
-    <%= f.number_field :curse_type_id %>
-  </div>
-  <div class="field">
-    <%= f.label :languaje_id %><br>
-    <%= f.number_field :languaje_id %>
-  </div>
-  <div class="field">
-    <%= f.label :state %><br>
-    <%= f.check_box :state %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                pre_matriculations_path, :class => 'btn' %>
   </div>
 <% end %>
