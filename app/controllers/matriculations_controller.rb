@@ -1,6 +1,6 @@
 class MatriculationsController < ApplicationController
   before_action :set_matriculation, only: [:show, :edit, :update, :destroy]
-
+  before_action :require_login
   # GET /matriculations
   # GET /matriculations.json
   def index
