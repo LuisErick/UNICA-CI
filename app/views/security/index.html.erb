@@ -1,6 +1,8 @@
 <div align="center"><h1>Ingresar</h1>
 <div class="error">
+	<br>
 	<%=@message%>
+	<br><br>
 </div>
 <div class="form">
 	<%= form_tag({controller: 'security', action: 'login'}, method: 'post') do %>
@@ -18,5 +20,8 @@
 			<p><%=submit_tag 'Ingresar'%></p>
 		</div>
 	<%end%>
+</div>
+<div class="link">
+	¿No estás registrado? <%= link_to 'Matrículate' , matriculations_path %>
 </div>
 </div
