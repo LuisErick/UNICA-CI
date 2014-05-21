@@ -1,6 +1,6 @@
-class CreateTeacherAttendaces < ActiveRecord::Migration
+class CreateTeacherAttendances < ActiveRecord::Migration
   def change
-    create_table :teacher_attendaces do |t|
+    create_table :teacher_attendances do |t|
       t.integer :package_id
       t.boolean :state
       t.time :arrival_time

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :teacher_attendances
+
   resources :permissions
 
   get 'profile/index'
@@ -23,8 +25,6 @@ Rails.application.routes.draw do
   resources :payments
 
   resources :payment_types
-
-  resources :teacher_attendaces
 
   resources :packages
 

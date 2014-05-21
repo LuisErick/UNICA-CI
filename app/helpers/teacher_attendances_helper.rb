@@ -1,0 +1,2 @@
+module TeacherAttendancesHelper
+end
