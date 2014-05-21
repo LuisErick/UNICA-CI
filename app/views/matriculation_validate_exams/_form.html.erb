@@ -1,25 +1,20 @@
-<%= form_for(@matriculation_validate_exam) do |f| %>
-  <% if @matriculation_validate_exam.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@matriculation_validate_exam.errors.count, "error") %> prohibited this matriculation_validate_exam from being saved:</h2>
-
-      <ul>
-      <% @matriculation_validate_exam.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<%= form_for @matriculation_validate_exam, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :matriculation_validate, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :matriculation_validate, :class => 'text_field' %>
     </div>
-  <% end %>
+  </div>
+  <div class="control-group">
+    <%= f.label :grade, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :grade, :class => 'text_field' %>
+    </div>
+  </div>
 
-  <div class="field">
-    <%= f.label :matriculation_validate %><br>
-    <%= f.number_field :matriculation_validate %>
-  </div>
-  <div class="field">
-    <%= f.label :grade %><br>
-    <%= f.text_field :grade %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                matriculation_validate_exams_path, :class => 'btn' %>
   </div>
 <% end %>

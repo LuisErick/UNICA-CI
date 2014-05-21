@@ -1,34 +1,31 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = TeacherAttendace -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
 
-<p>
-  <strong>Package:</strong>
-  <%= @teacher_attendace.package_id %>
-</p>
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:package_id) %>:</strong></dt>
+  <dd><%= @teacher_attendace.package_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:state) %>:</strong></dt>
+  <dd><%= @teacher_attendace.state %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:arrival_time) %>:</strong></dt>
+  <dd><%= @teacher_attendace.arrival_time %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:dismissal_time) %>:</strong></dt>
+  <dd><%= @teacher_attendace.dismissal_time %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:session_number) %>:</strong></dt>
+  <dd><%= @teacher_attendace.session_number %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:day) %>:</strong></dt>
+  <dd><%= @teacher_attendace.day %></dd>
+</dl>
 
-<p>
-  <strong>State:</strong>
-  <%= @teacher_attendace.state %>
-</p>
-
-<p>
-  <strong>Arrival time:</strong>
-  <%= @teacher_attendace.arrival_time %>
-</p>
-
-<p>
-  <strong>Dismissal time:</strong>
-  <%= @teacher_attendace.dismissal_time %>
-</p>
-
-<p>
-  <strong>Session number:</strong>
-  <%= @teacher_attendace.session_number %>
-</p>
-
-<p>
-  <strong>Day:</strong>
-  <%= @teacher_attendace.day %>
-</p>
-
-<%= link_to 'Edit', edit_teacher_attendace_path(@teacher_attendace) %> |
-<%= link_to 'Back', teacher_attendaces_path %>
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              teacher_attendaces_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_teacher_attendace_path(@teacher_attendace), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              teacher_attendace_path(@teacher_attendace),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>

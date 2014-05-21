@@ -1,29 +1,26 @@
-<%= form_for(@unica_person) do |f| %>
-  <% if @unica_person.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@unica_person.errors.count, "error") %> prohibited this unica_person from being saved:</h2>
-
-      <ul>
-      <% @unica_person.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<%= form_for @unica_person, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :person_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :person_id, :class => 'text_field' %>
     </div>
-  <% end %>
+  </div>
+  <div class="control-group">
+    <%= f.label :college_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :college_id, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :semester, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :semester, :class => 'text_field' %>
+    </div>
+  </div>
 
-  <div class="field">
-    <%= f.label :person_id %><br>
-    <%= f.number_field :person_id %>
-  </div>
-  <div class="field">
-    <%= f.label :college_id %><br>
-    <%= f.number_field :college_id %>
-  </div>
-  <div class="field">
-    <%= f.label :semester %><br>
-    <%= f.number_field :semester %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                unica_people_path, :class => 'btn' %>
   </div>
 <% end %>

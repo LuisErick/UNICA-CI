@@ -1,25 +1,20 @@
-<%= form_for(@matriculation) do |f| %>
-  <% if @matriculation.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@matriculation.errors.count, "error") %> prohibited this matriculation from being saved:</h2>
-
-      <ul>
-      <% @matriculation.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<%= form_for @matriculation, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :pre_matriculation_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :pre_matriculation_id, :class => 'text_field' %>
     </div>
-  <% end %>
+  </div>
+  <div class="control-group">
+    <%= f.label :acceptance_day, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :acceptance_day, :class => 'text_field' %>
+    </div>
+  </div>
 
-  <div class="field">
-    <%= f.label :pre_matriculation_id %><br>
-    <%= f.number_field :pre_matriculation_id %>
-  </div>
-  <div class="field">
-    <%= f.label :acceptance_day %><br>
-    <%= f.date_select :acceptance_day %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                matriculations_path, :class => 'btn' %>
   </div>
 <% end %>

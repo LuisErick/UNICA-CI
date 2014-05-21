@@ -1,30 +1,34 @@
-<h1>Listing people</h1>
-
-<table>
+<%- model_class = Person -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>User</th>
-      <th>Paternal lastname</th>
-      <th>Maternal lastname</th>
-      <th>Name</th>
-      <th>Dni</th>
-      <th>Address</th>
-      <th>District</th>
-      <th>Province</th>
-      <th>Department</th>
-      <th>Home phone</th>
-      <th>Mobile phone</th>
-      <th>Sex</th>
-      <th>Birthday</th>
-      <th>Birthplace</th>
-      <th>Marital status</th>
-      <th colspan="3"></th>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:user_id) %></th>
+      <th><%= model_class.human_attribute_name(:paternal_lastname) %></th>
+      <th><%= model_class.human_attribute_name(:maternal_lastname) %></th>
+      <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%= model_class.human_attribute_name(:dni) %></th>
+      <th><%= model_class.human_attribute_name(:address) %></th>
+      <th><%= model_class.human_attribute_name(:district) %></th>
+      <th><%= model_class.human_attribute_name(:province) %></th>
+      <th><%= model_class.human_attribute_name(:department) %></th>
+      <th><%= model_class.human_attribute_name(:home_phone) %></th>
+      <th><%= model_class.human_attribute_name(:mobile_phone) %></th>
+      <th><%= model_class.human_attribute_name(:sex) %></th>
+      <th><%= model_class.human_attribute_name(:birthday) %></th>
+      <th><%= model_class.human_attribute_name(:birthplace) %></th>
+      <th><%= model_class.human_attribute_name(:marital_status_id) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @people.each do |person| %>
       <tr>
+        <td><%= link_to person.id, person_path(person) %></td>
         <td><%= person.user_id %></td>
         <td><%= person.paternal_lastname %></td>
         <td><%= person.maternal_lastname %></td>
@@ -40,14 +44,21 @@
         <td><%= person.birthday %></td>
         <td><%= person.birthplace %></td>
         <td><%= person.marital_status_id %></td>
-        <td><%= link_to 'Show', person %></td>
-        <td><%= link_to 'Edit', edit_person_path(person) %></td>
-        <td><%= link_to 'Destroy', person, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%=l person.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_person_path(person), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      person_path(person),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Person', new_person_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_person_path,
+            :class => 'btn btn-primary' %>

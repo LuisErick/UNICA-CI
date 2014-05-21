@@ -1,25 +1,20 @@
-<%= form_for(@pre_mariculation_communicative) do |f| %>
-  <% if @pre_mariculation_communicative.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@pre_mariculation_communicative.errors.count, "error") %> prohibited this pre_mariculation_communicative from being saved:</h2>
-
-      <ul>
-      <% @pre_mariculation_communicative.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<%= form_for @pre_mariculation_communicative, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :pre_matriculation_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :pre_matriculation_id, :class => 'text_field' %>
     </div>
-  <% end %>
+  </div>
+  <div class="control-group">
+    <%= f.label :level_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :level_id, :class => 'text_field' %>
+    </div>
+  </div>
 
-  <div class="field">
-    <%= f.label :pre_matriculation_id %><br>
-    <%= f.number_field :pre_matriculation_id %>
-  </div>
-  <div class="field">
-    <%= f.label :level_id %><br>
-    <%= f.number_field :level_id %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                pre_mariculation_communicatives_path, :class => 'btn' %>
   </div>
 <% end %>

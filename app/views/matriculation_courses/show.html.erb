@@ -1,29 +1,29 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = MatriculationCourse -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
 
-<p>
-  <strong>Matriculation:</strong>
-  <%= @matriculation_course.matriculation_id %>
-</p>
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:matriculation_id) %>:</strong></dt>
+  <dd><%= @matriculation_course.matriculation_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:package_id) %>:</strong></dt>
+  <dd><%= @matriculation_course.package_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:start_date) %>:</strong></dt>
+  <dd><%= @matriculation_course.start_date %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:end_date) %>:</strong></dt>
+  <dd><%= @matriculation_course.end_date %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:final_grade) %>:</strong></dt>
+  <dd><%= @matriculation_course.final_grade %></dd>
+</dl>
 
-<p>
-  <strong>Package:</strong>
-  <%= @matriculation_course.package_id %>
-</p>
-
-<p>
-  <strong>Start date:</strong>
-  <%= @matriculation_course.start_date %>
-</p>
-
-<p>
-  <strong>End date:</strong>
-  <%= @matriculation_course.end_date %>
-</p>
-
-<p>
-  <strong>Final grade:</strong>
-  <%= @matriculation_course.final_grade %>
-</p>
-
-<%= link_to 'Edit', edit_matriculation_course_path(@matriculation_course) %> |
-<%= link_to 'Back', matriculation_courses_path %>
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              matriculation_courses_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_matriculation_course_path(@matriculation_course), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              matriculation_course_path(@matriculation_course),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>

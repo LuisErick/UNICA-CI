@@ -1,14 +1,23 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Salary -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
 
-<p>
-  <strong>Teacher attendance:</strong>
-  <%= @salary.teacher_attendance_id %>
-</p>
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:teacher_attendance_id) %>:</strong></dt>
+  <dd><%= @salary.teacher_attendance_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:amount) %>:</strong></dt>
+  <dd><%= @salary.amount %></dd>
+</dl>
 
-<p>
-  <strong>Amount:</strong>
-  <%= @salary.amount %>
-</p>
-
-<%= link_to 'Edit', edit_salary_path(@salary) %> |
-<%= link_to 'Back', salaries_path %>
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              salaries_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_salary_path(@salary), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              salary_path(@salary),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>

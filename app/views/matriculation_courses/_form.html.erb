@@ -1,37 +1,38 @@
-<%= form_for(@matriculation_course) do |f| %>
-  <% if @matriculation_course.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@matriculation_course.errors.count, "error") %> prohibited this matriculation_course from being saved:</h2>
-
-      <ul>
-      <% @matriculation_course.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<%= form_for @matriculation_course, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :matriculation_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :matriculation_id, :class => 'text_field' %>
     </div>
-  <% end %>
+  </div>
+  <div class="control-group">
+    <%= f.label :package_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :package_id, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :start_date, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :start_date, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :end_date, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :end_date, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :final_grade, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :final_grade, :class => 'text_field' %>
+    </div>
+  </div>
 
-  <div class="field">
-    <%= f.label :matriculation_id %><br>
-    <%= f.number_field :matriculation_id %>
-  </div>
-  <div class="field">
-    <%= f.label :package_id %><br>
-    <%= f.number_field :package_id %>
-  </div>
-  <div class="field">
-    <%= f.label :start_date %><br>
-    <%= f.date_select :start_date %>
-  </div>
-  <div class="field">
-    <%= f.label :end_date %><br>
-    <%= f.date_select :end_date %>
-  </div>
-  <div class="field">
-    <%= f.label :final_grade %><br>
-    <%= f.text_field :final_grade %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                matriculation_courses_path, :class => 'btn' %>
   </div>
 <% end %>

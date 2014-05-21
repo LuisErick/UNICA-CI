@@ -99,6 +99,13 @@ ActiveRecord::Schema.define(version: 20140518234040) do
     t.datetime "updated_at"
   end
 
+  create_table "matricualtion_validates", force: true do |t|
+    t.integer  "matriculation_id"
+    t.string   "institution"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "matriculation_courses", force: true do |t|
     t.integer  "matriculation_id"
     t.integer  "package_id"

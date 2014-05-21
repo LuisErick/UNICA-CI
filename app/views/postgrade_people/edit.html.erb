@@ -1,6 +1,5 @@
-<h1>Editing postgrade_person</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @postgrade_person %> |
-<%= link_to 'Back', postgrade_people_path %>
+<%- model_class = PostgradePerson -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => model_class.model_name.human.titleize %></h1>
+</div>
+<%= render :partial => 'form' %>
