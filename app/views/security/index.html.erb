@@ -1,27 +1,30 @@
-<div align="center"><h1>Ingresar</h1>
+<div class="page-header">
+  <h1>Ingresar</h1>
+</div>
 <div class="error">
 	<br>
-	<%=@message%>
+		<%=@message%>
 	<br><br>
 </div>
-<div class="form">
+<div class="form-horizontal">
 	<%= form_tag({controller: 'security', action: 'login'}, method: 'post') do %>
-		<div class="field">
-			<p><%=label_tag :username, 'Nombre de usuario'%></p>
-			<p><%=text_field_tag :username %></p>
+	<div class="control-group">
+		<%=label_tag :username, 'Nombre de usuario', :class => 'control-label'%>
+		<div class="controls">
+			<%=text_field_tag :username%>
 		</div>
-		</br>
-		<div class="field">
-			<p><%=label_tag :password, 'Contraseña'%></p>
-			<p><%=password_field_tag :password %></p>
+	</div>
+	<div class="control-group">
+		<%=label_tag :password, 'Contraseña', :class => 'control-label'%>
+		<div class="controls">
+			<%=password_field_tag :password%>
 		</div>
-		</br>
-		<div class="action">
-			<p><%=submit_tag 'Ingresar'%></p>
+	</div>
+		<div class="form-actions">
+			<%=submit_tag 'Ingresar', :class => 'btn btn-primary' %>
 		</div>
 	<%end%>
 </div>
 <div class="link">
-	¿No estás registrado? <%= link_to 'Matrículate' , matriculations_path %>
+		¿No estás registrado? <%= link_to 'Matrículate' , matriculations_path %>
 </div>
-</div
