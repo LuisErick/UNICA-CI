@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'welcome/index'
+  get '' => "welcome#index", as: :index
+
   resources :teacher_attendances
 
   resources :permissions
@@ -6,9 +9,9 @@ Rails.application.routes.draw do
   get 'profile/index'
   get "/me" => "profile#index", as: :profile
   get 'security/index'
-  get "" => "security#index", as: :security
+  get "login" => "security#index", as: :security
   post 'security/login'
-  post 'security/logout'
+  get 'security/logout'
 
   resources :matriculation_validate_exams
 
@@ -78,7 +81,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'security#index'
+  root 'welcome#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

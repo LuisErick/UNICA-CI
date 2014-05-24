@@ -51,14 +51,12 @@
                 <a id="logo" class="pull-left" href="index.html"></a>
                 <div class="nav-collapse collapse pull-right">
                     <ul class="nav">
-                        <li class="active"><a href="index.html">Home</a></li>
-                        <li><%= link_to "Matrìculas", matriculations_path  %></li>
+                        <li <%=paint_active('welcome')%>><%= link_to 'Home' , index_path %></li>
+                        <li <%=paint_active('matriculations')%>><%= link_to "Matrìculas", matriculations_path  %></li>
                         <% if is_loged %>
-                        <li><%= link_to "Docentes", teachers_path  %></li>
-                        <li><%= link_to "Estudiantes", students_path  %></li>
-                        <% end %>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li <%=paint_active('teachers')%>><%= link_to "Docentes", teachers_path  %></li>
+                        <li <%=paint_active('students')%>><%= link_to "Estudiantes", students_path  %></li>
+                        <% end %>                        
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <i class="icon-angle-down"></i></a>
                             <ul class="dropdown-menu">
@@ -77,7 +75,9 @@
                         <li><a href="blog.html">Blog</a></li> 
                         <li><a href="contact-us.html">Contact</a></li>
                         <li class="login">
-                            <a data-toggle="modal" href="#loginForm"><i class="icon-lock"></i></a>
+                            <%= link_to to_security, class: 'icon-lock', 'data-toggle' => 'modal' do %>
+                            <i class="icon-lock"></i>
+                            <% end %>
                         </li>
                     </ul>        
                 </div><!--/.nav-collapse -->
@@ -89,6 +89,7 @@
     <div class="container">
       <%= bootstrap_flash %>
       <%= yield %>
+      <br><br>        
     </div> <!-- /container -->
 
 

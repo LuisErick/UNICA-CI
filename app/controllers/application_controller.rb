@@ -14,4 +14,6 @@ class ApplicationController < ActionController::Base
   		redirect_to security_path
   	end
   end
+
+  
 end

@@ -259,6 +259,17 @@ ActiveRecord::Schema.define(version: 20140521061705) do
     t.datetime "updated_at"
   end
 
+  create_table "teacher_attendaces", force: true do |t|
+    t.integer  "package_id"
+    t.boolean  "state"
+    t.time     "arrival_time"
+    t.time     "dismissal_time"
+    t.integer  "session_number"
+    t.date     "day"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "teacher_attendances", force: true do |t|
     t.integer  "package_id"
     t.boolean  "state"
