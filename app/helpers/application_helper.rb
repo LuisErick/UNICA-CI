@@ -12,13 +12,25 @@ module ApplicationHelper
 		else
 			security_path
 		end
-
 	end
 
+	def security_message
+		if is_loged
+			'LOGOUT'
+		else
+			'LOGIN'
+		end
+	end
+	
 	def paint_active(controller)
-    current  = params[:controller]
-    if current == controller
-      'class=active'        
-    end
-  end
+		if controller.class.to_s == 'Array'
+			if controller[0]==params[:controller] or controller[1] == params[:controller]
+				'class=active'
+			end
+		else
+			if controller == params[:controller]
+				'class=active'
+			end
+		end		
+  	end
 end

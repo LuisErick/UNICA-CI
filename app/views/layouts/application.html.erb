@@ -51,7 +51,7 @@
                 <a id="logo" class="pull-left" href="index.html"></a>
                 <div class="nav-collapse collapse pull-right">
                     <ul class="nav">
-                        <li <%=paint_active('welcome')%>><%= link_to 'Home' , index_path %></li>
+                        <li <%=paint_active(['profile','welcome'])%>><%= link_to 'Home' , index_path %></li>
                         <li <%=paint_active('matriculations')%>><%= link_to "Matrìculas", matriculations_path  %></li>
                         <% if is_loged %>
                         <li <%=paint_active('teachers')%>><%= link_to "Docentes", teachers_path  %></li>
@@ -74,9 +74,9 @@
                         </li>
                         <li><a href="blog.html">Blog</a></li> 
                         <li><a href="contact-us.html">Contact</a></li>
-                        <li class="login">
+                        <li <%=paint_active('security')%> class="login">
                             <%= link_to to_security, class: 'icon-lock', 'data-toggle' => 'modal' do %>
-                            <i class="icon-lock"></i>
+                            <i class="icon-lock"></i> <%=security_message%>
                             <% end %>
                         </li>
                     </ul>        
