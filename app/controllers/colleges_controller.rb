@@ -15,6 +15,7 @@ class CollegesController < ApplicationController
   # GET /colleges/new
   def new
     @college = College.new
+    @faculties = Faculty.all
   end
 
   # GET /colleges/1/edit

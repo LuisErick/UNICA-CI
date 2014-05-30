@@ -25,5 +25,7 @@ module UNICACi
 
     # Precompile additional assets
     config.assets.precompile += %w( .svg .eot .woff .ttf )
+
+    config.assets.enabled = true
   end
 end
