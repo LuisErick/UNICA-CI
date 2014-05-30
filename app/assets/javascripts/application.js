@@ -14,4 +14,4 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require turbolinks
-$('#1fac').hide().after('<%= j render("form") %>');
+//= require_tree .

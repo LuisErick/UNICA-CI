@@ -1,27 +1,8 @@
 <%= form_for @college, :html => { :class => 'form-horizontal' } do |f| %>
-  
-  <table class="table table-striped">
-  <thead>
-    <tr>
-      <th><%= @faculties.human_attribute_name(:id) %></th>
-      <th><%= @faculties.human_attribute_name(:name) %></th>
-      <th><%= @faculties.human_attribute_name(:description) %></th>  
-    </tr>
-  </thead>
-  <tbody>
-    <% @faculties.each do |faculty| %>
-      <tr>
-        <td><%= link_to faculty.id, faculty_path(faculty), remote: true, id: faculty.id.to_s+'fac' %></td>
-        <td><%= faculty.name %></td>
-        <td><%= faculty.description %></td>      
-      </tr>
-    <% end %>
-  </tbody>
-</table>
   <div class="control-group">
     <%= f.label :faculty_id, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :faculty_id, :class => 'text_field', readonly: true %>
+      <%= f.text_field :faculty_id, :class => 'text_field' %>
     </div>
   </div>
   <div class="control-group">
