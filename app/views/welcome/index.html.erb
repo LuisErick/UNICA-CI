@@ -53,89 +53,91 @@
     </div>
     </section>
 
-    <section id="content">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="row">
-                    <div class="col-lg-3">
-                        <div class="box">
-                            <div class="box-gray aligncenter">
-                                <h4>Inglés - Gringows</h4>
-                                <div class="icon">
-                                <i class="fa fa-desktop fa-3x"></i>
-                                </div>
-                                <p>
-                                 Voluptatem accusantium doloremque laudantium sprea totam rem aperiam.
-                                </p>
-                                    
-                            </div>
-                            <div class="box-bottom">
-                                <a href="#">Learn more</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="box">
-                            <div class="box-gray aligncenter">
-                                <h4>Francés -  Elegantis</h4>
-                                <div class="icon">
-                                <i class="fa fa-pagelines fa-3x"></i>
-                                </div>
-                                <p>
-                                 Voluptatem accusantium doloremque laudantium sprea totam rem aperiam.
-                                </p>
-                                    
-                            </div>
-                            <div class="box-bottom">
-                                <a href="#">Learn more</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="box">
-                            <div class="box-gray aligncenter">
-                                <h4>Portugués - Felices do mundo</h4>
-                                <div class="icon">
-                                <i class="fa fa-edit fa-3x"></i>
-                                </div>
-                                <p>
-                                 Voluptatem accusantium doloremque laudantium sprea totam rem aperiam.
-                                </p>
-                                    
-                            </div>
-                            <div class="box-bottom">
-                                <a href="#">Learn more</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="box">
-                            <div class="box-gray aligncenter">
-                                <h4>Italiano - Estos son aburridos</h4>
-                                <div class="icon">
-                                <i class="fa fa-code fa-3x"></i>
-                                </div>
-                                <p>
-                                 Voluptatem accusantium doloremque laudantium sprea totam rem aperiam.
-                                </p>
-                                    
-                            </div>
-                            <div class="box-bottom">
-                                <a href="#">Learn more</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- divider -->
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="solidline">
-                </div>
-            </div>
-        </div>
-        <!-- end divider -->
-    </div>
+    
+        
+    <section id="grid" class="grid clearfix">
+                <a href="#" data-path-hover="m 180,34.57627 -180,0 L 0,0 180,0 z">
+                    <figure>
+                        <%= image_tag "1.png"%>
+                        <svg viewBox="0 0 180 320" preserveAspectRatio="none"><path d="M 180,160 0,218 0,0 180,0 z"/></svg>
+                        <figcaption>
+                            <h2>Inglés</h2>
+                            <p>La lengua universal por excelencia.</p>
+                            
+                        </figcaption>
+                    </figure>
+                </a>
+                <a href="#" data-path-hover="m 180,34.57627 -180,0 L 0,0 180,0 z">
+                    <figure>
+                        <%= image_tag "2.png"%>
+                        <svg viewBox="0 0 180 320" preserveAspectRatio="none"><path d="M 180,160 0,218 0,0 180,0 z"/></svg>
+                        <figcaption>
+                            <h2>Francés</h2>
+                            <p>Una lengua muy artística, para los románticos y poetas.</p>
+                            
+                        </figcaption>
+                    </figure>
+                </a>
+                <a href="#" data-path-hover="m 180,34.57627 -180,0 L 0,0 180,0 z">
+                    <figure>
+                        <%= image_tag "3.png"%>
+                        <svg viewBox="0 0 180 320" preserveAspectRatio="none"><path d="M 180,160 0,218 0,0 180,0 z"/></svg>
+                        <figcaption>
+                            <h2>Italiano</h2>
+                            <p>Aproximadamente 70 millones lo hablan (60 millones en Italia y 10 en el resto del mundo).</p>
+                            
+                        </figcaption>
+                    </figure>
+                </a>
+                <a href="#" data-path-hover="m 180,34.57627 -180,0 L 0,0 180,0 z">
+                    <figure>
+                        <%= image_tag "4.png"%>
+
+                        <svg viewBox="0 0 180 320" preserveAspectRatio="none"><path d="M 180,160 0,218 0,0 180,0 z"/>
+                        </svg>
+
+                        <figcaption>
+                            <h2>Portugués</h2>
+                            <p>Un idioma emergente. Figura Brasil, una potencia económica emergente y muy poderosa en América Latina.</p>
+                            
+                        </figcaption>
+                    </figure>
+
+                </a>
+                
+                
+                
+                
     </section>
+            
+        
+
+    
+    <script>
+            (function() {
+    
+                function init() {
+                    var speed = 250,
+                        easing = mina.easeinout;
+
+                    [].slice.call ( document.querySelectorAll( '#grid > a' ) ).forEach( function( el ) {
+                        var s = Snap( el.querySelector( 'svg' ) ), path = s.select( 'path' ),
+                            pathConfig = {
+                                from : path.attr( 'd' ),
+                                to : el.getAttribute( 'data-path-hover' )
+                            };
+
+                        el.addEventListener( 'mouseenter', function() {
+                            path.animate( { 'path' : pathConfig.to }, speed, easing );
+                        } );
+
+                        el.addEventListener( 'mouseleave', function() {
+                            path.animate( { 'path' : pathConfig.from }, speed, easing );
+                        } );
+                    } );
+                }
+
+                init();
+
+            })();
+        </script>
