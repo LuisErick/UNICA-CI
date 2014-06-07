@@ -27,7 +27,7 @@
 .clearfix:after{clear:both}
 .hide-text{font:0/0 a;color:transparent;text-shadow:none;background-color:transparent;border:0}
 .input-block-level{display:block;width:100%;min-height:30px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
-body{padding-top:80px;font-size:12px;color:#34495e;background:#ffffff}
+body{padding-top:80px;font-size:12px;color:#34495e;background:#f5f5f5}
 body h1,body h2,body h3,body h4,body .created{font-family:"Fjalla One";font-weight:normal}
 body h5,body h6{margin:0}
 body h3,body h4{margin-top:0}.btn{-webkit-border-radius:0;-moz-border-radius:0;border-radius:0;border:0;background-image:none;text-shadow:none;-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none}
@@ -40,7 +40,7 @@ body h3,body h4{margin-top:0}.btn{-webkit-border-radius:0;-moz-border-radius:0;b
 a{color:#2dcc70;-webkit-transition:300ms;-moz-transition:300ms;-o-transition:300ms;transition:300ms}
 a:hover,a:focus{color:#005580;text-decoration:none;outline:0}
 .dropdown-menu{margin-top:-1px;min-width:180px}
-body>section{padding:50px 0}
+body>section, #about-us{padding:50px 0}
 body>section#slide-show{padding:0}
 #recent-works{background:#2dcc70;color:#fff}
 #recent-works .links>a{background:#fff;color:#2dcc70;text-shadow:none}
@@ -72,7 +72,7 @@ ul.tag-cloud li{display:inline-block;margin:0 0 2px 0}
 .btn-social.btn-google-plus:hover{background:#e36957}
 .btn-social:hover{color:#fff}
 header.navbar .navbar-inner{background:#fff!important;border:0;-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none}
-header #logo{width:200px;height:60px;background:url(logo.png) no-repeat 0 50%}
+header #logo{width:200px;height:80px;background:url(logo.png) no-repeat 0 50%}
 header.navbar{margin-bottom:0}
 header.navbar .nav{margin-top:20px}
 header.navbar .nav>li{margin-left:1px}
@@ -183,19 +183,7 @@ ul.faq li span.number{display:block;float:left;width:50px;height:50px;line-heigh
 ul.faq li>div{margin-left:70px}
 ul.faq li>div h3{margin-top:0}
 #error{text-align:center;margin-top:150px;margin-bottom:150px}
-
-/* ===================================
-5. Section: Featured
-==================================== */
-
-#featured{
-	width: 100%;
-	background:#fcfcfc;
-	position:relative;
-	margin:0;
-	padding:0;
-}
-
+.title .row-fluid{text-align: center;}
 /* ===================================
 6. Sliders
 ==================================== */
@@ -258,159 +246,3 @@ section.demogrid .col-lg-12.nest {
 
 }
 
-/* ===================================
-7. Section: call action
-==================================== */
-section.callaction {
-	background:#f9f9f9;
-	padding:50px 0 0 0;
-}
-
-section.demogrid .col-lg-12.nest {
-	background:#f6f6f6;
-	text-align:center;
-	padding:20px 0 0;
-}
-
-.cta-text {
-	text-align: center;
-	margin-top:10px;
-}
-
-
-.big-cta .cta {
-	margin-top:10px;
-}
-
-/* --- box --- */
-
-/* box */
-.box-bottom {
-	background:#68A4C4;
-}
-
-.box {
-	width: 100%;
-	padding-bottom:20px;
-}
-.box-gray  {
-	background: #f8f8f8;
-	padding: 20px 20px 30px;
-}
-.box-gray  h4,.box-gray  i {
-	margin-bottom: 20px;
-}
-.box-bottom {
-	padding: 20px 0;
-	text-align: center;
-}
-.box-bottom a {
-	color: #fff;
-	font-weight: 700;
-}
-.box-bottom a:hover {
-	color: #eee;
-	text-decoration: none;
-}
-.aligncenter{
-	text-align:center;
-}
-
-/* ===================================
-8. Section: Content
-==================================== */
-
-#content {
-	position:relative;
-	background:#fff;
-	padding:50px 0 40px 0;
-}
-
-#content img {
-	max-width:100%;
-	height:auto;
-}
-
-/* ===================================
-2. layout
-==================================== */
-
-.container {
-	padding:0 20px 0 20px;
-	position:relative;
-}
-
-#wrapper{
-	width:100%;
-	margin:0;	
-	padding:0;
-}
-
-
-.row{margin-left:-15px;margin-right:-15px}
-
-.row,.row-fluid {
-	margin-bottom:30px;
-}
-
-.row .row,.row-fluid .row-fluid{
-	margin-bottom:30px;
-}
-
-.row.nomargin,.row-fluid.nomargin {
-	margin-bottom:0;
-}
-
-
-/* ===============================
-17. Divider, Line & Misc
-================================ */
-
-.solidline {
-	border-top:1px solid #f5f5f5;
-	margin:0 0 30px;
-}
-
-.dottedline {
-	border-top:1px dotted #f5f5f5;
-	margin:0 0 30px;
-}
-
-.dashedline {
-	border-top:1px dashed #f5f5f5;
-	margin:0 0 30px;
-}
-
-.blankline {
-	height:1px;
-	margin:0 0 30px;
-}
-
-
-/* scroll to top */
-.scrollup{
-    position:fixed;
-	width:32px;
-	height:32px;
-    bottom:0px;
-    right:20px;
-	background: #222;
-	
-}
-
-a.scrollup {
-	outline:0;
-	text-align: center;
-}
-
-a.scrollup:hover,a.scrollup:active,a.scrollup:focus {
-	opacity:1;
-	text-decoration:none;
-}
-a.scrollup i {
-	margin-top: 10px;
-	color: #fff;
-}
-a.scrollup i:hover {
-	text-decoration:none;
-}
