@@ -33,16 +33,4 @@ module ApplicationHelper
 			end
 		end		
   	end
-
-
-  	def div_container(controller)
-		if controller.class.to_s == 'Array'
-			if controller[0]==params[:controller] or controller[1] == params[:controller]
-				
-			else
-				'class=container'
-			end
-		end		
-  	end
-
 end

@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'faq/index'
+  get 'faq/index', as: :faq
+
   get 'welcome/index'
   get '' => "welcome#index", as: :index
 

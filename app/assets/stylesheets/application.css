@@ -40,7 +40,7 @@ body h3,body h4{margin-top:0}.btn{-webkit-border-radius:0;-moz-border-radius:0;b
 a{color:#2dcc70;-webkit-transition:300ms;-moz-transition:300ms;-o-transition:300ms;transition:300ms}
 a:hover,a:focus{color:#005580;text-decoration:none;outline:0}
 .dropdown-menu{margin-top:-1px;min-width:180px}
-body>section, #about-us{padding:50px 0}
+body>section, #about-us, #faqs{padding:50px 0}
 body>section#slide-show{padding:0}
 #recent-works{background:#2dcc70;color:#fff}
 #recent-works .links>a{background:#fff;color:#2dcc70;text-shadow:none}
@@ -184,6 +184,7 @@ ul.faq li>div{margin-left:70px}
 ul.faq li>div h3{margin-top:0}
 #error{text-align:center;margin-top:150px;margin-bottom:150px}
 .title .row-fluid{text-align: center;}
+.title .row-fluid .span6 {text-align: left;}
 /* ===================================
 6. Sliders
 ==================================== */
@@ -245,4 +246,5 @@ section.demogrid .col-lg-12.nest {
 
 
 }
+
 

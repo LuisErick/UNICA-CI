@@ -72,7 +72,7 @@
                                 <li><a href="terms.html">Terms of Use</a></li>
                             </ul>
                         </li>
-                        <li><a href="blog.html">Blog</a></li> 
+                        <li><%= link_to 'FAQ' , faq_path %></li> 
                         <li><a href="contact-us.html">Contact</a></li>
                         <li <%=paint_active('security')%> class="login">
                             <%= link_to to_security, 'data-toggle' => 'modal' do %>
@@ -86,10 +86,12 @@
     </header>
     <!-- /header -->
 
-    <div <%=div_container(['profile','welcome'])%>>
+    <!-- Principal -->
+
         <%= bootstrap_flash %>
         <%= yield %>
-    </div>
+
+    <!-- final Principal -->
 
 
     <!-- divider -->
