@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'first_register/create'
+
   get 'faq/index'
   get 'faq/index', as: :faq
 
