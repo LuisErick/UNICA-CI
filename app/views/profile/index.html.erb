@@ -2,7 +2,7 @@
 <p>Find me in app/views/profile/index.html.erb</p>
 <h1><%=User.find(session[:id]).username%></h1>
 <div class="form">
-	<%=form_tag({controller: 'security', action: 'logout'}, method: 'post') do %>
+	<%=form_tag({controller: 'security', action: 'logout'}, method: 'get') do %>
 		<div class="actions">
 			<%=submit_tag 'Cerrar Sesión'%>
 		</div>

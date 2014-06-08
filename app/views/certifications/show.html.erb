@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Matriculation:</strong>
+  <%= @certification.matriculation_id %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @certification.state %>
+</p>
+
+<p>
+  <strong>Delivery date:</strong>
+  <%= @certification.delivery_date %>
+</p>
+
+<%= link_to 'Edit', edit_certification_path(@certification) %> |
+<%= link_to 'Back', certifications_path %>
