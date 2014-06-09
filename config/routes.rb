@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   resources :certifications
 
-  get 'first_register/create'
+  get 'first_register/new'
+  post 'first_register/create'
+  get "/registro" => "first_register#new", as: :new_register
+  post "/registro_realizado" => "first_register#create", as: :create_register
 
   get 'faq/index'
   get 'faq/index', as: :faq

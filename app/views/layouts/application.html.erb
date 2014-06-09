@@ -52,7 +52,7 @@
                 <div class="nav-collapse collapse pull-right">
                     <ul class="nav">
                         <li <%=paint_active(['profile','welcome'])%>><%= link_to 'Inicio' , index_path %></li>
-                        <li <%=paint_active('matriculations')%>><%= link_to "Matriculas", matriculations_path  %></li>
+                        <li <%=paint_active('matriculations')%>><%= link_to "Matriculas", new_register_path  %></li>
                         <% if is_loged %>
                         <li <%=paint_active('teachers')%>><%= link_to "Docentes", teachers_path  %></li>
                         <li <%=paint_active('students')%>><%= link_to "Estudiantes", students_path  %></li>

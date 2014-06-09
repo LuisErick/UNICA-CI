@@ -1,0 +1,92 @@
+<%= form_tag( create_register_path, method: 'post') do %>
+
+	<% #Parte del usuario %>
+	<%= label_tag :username, 'Nombre de Usuario' %><br>
+	<%= text_field_tag :username %><br><br>
+	<%= label_tag :password, 'Contraseña' %><br>
+	<%= password_field_tag :password %><br><br>
+	<%= label_tag :confirm_password, 'Confirme Contraseña' %><br>
+	<%= password_field_tag :confirm_password %><br><br>
+
+	<% #Parte de la persona #%>
+	<%= label_tag :paternal_lastname, 'Apellido Paterno' %><br>	
+	<%= text_field_tag :paternal_lastname %><br><br>
+	<%= label_tag :maternal_lastname, 'Apellido Materno' %><br>
+	<%= text_field_tag :maternal_lastname %><br><br>
+	<%= label_tag :name, 'Nombres' %><br>
+	<%= text_field_tag :name %><br><br>
+	<%= label_tag :dni, 'DNI' %><br>
+	<%= text_field_tag :dni %><br><br>
+	<%= label_tag :address, 'Dirección' %><br>
+	<%= text_field_tag :address %><br><br>
+	<%= label_tag :district, 'Distrito' %><br>
+	<%= text_field_tag :district %><br><br>
+	<%= label_tag :province, 'Provincia' %><br>
+	<%= text_field_tag :province %><br><br>
+	<%= label_tag :department, 'Departamento' %><br>
+	<%= text_field_tag :department %><br><br>
+	<%= label_tag :home_phone, 'Teléfono Fijo' %><br>
+	<%= text_field_tag :home_phone %><br><br>
+	<%= label_tag :mobile_phone, 'Teléfono Móvil' %><br>
+	<%= text_field_tag :mobile_phone %><br><br>
+	<%= label_tag :sex, 'Sexo' %><br>
+	<% @sex.each do |s| %>
+	<%= radio_button_tag :sex, s[0]  %>
+	<%= label_tag 'sex_'+s[0].to_s, s[1]  %>
+	<% end %>
+
+	<%= label_tag :birthday, 'Fecha de nacimiento' %><br>
+	<%= date_field_tag :birthday %><br><br>
+
+	<%= label_tag :birthplace, 'Lugar de nacimiento' %><br>
+	<%= text_field_tag :birthplace %><br><br>
+
+	<%= label_tag :marital_status, 'Estado Civil' %><br>
+	<% @marital_statuses.each do |ms| %>
+	<%= radio_button_tag :marital_status, ms[0]  %>
+	<%= label_tag 'marital_status_'+ms[0].to_s, ms[1]  %>
+	<% end %>
+
+	<% #Escoger idioma %>
+
+	<%= label_tag :language, 'Escoge el idioma' %><br>
+	<% @languages.each do |la| %>
+	<%= radio_button_tag :language, la[0]  %>
+	<%= label_tag 'language_'+la[0].to_s, la[1]  %>
+	<% end %>
+
+	<% #Escoger tipo de curso %>
+
+	<%= label_tag :course_type, 'Escoge el tipo d ecurso' %><br>
+	<% @languages.each do |ct| %>
+	<%= radio_button_tag :course_type, ct[0]  %>
+	<%= label_tag 'course_type_'+ct[0].to_s, ct[1]  %>
+	<% end %>
+
+	<% #Escoger tipo de curso %>
+
+	<%= label_tag :student_type, '¿Has estudiado el idioma anteriormente?' %><br>
+	<% @student_types.each do |ct| %>
+	<%= radio_button_tag :student_type, ct[0]  %>
+	<%= label_tag 'student_type_'+ct[0].to_s, ct[1]  %>
+	<% end %>
+
+	<% #Escoger nivel %>
+
+	<%= label_tag :level, 'Escoge el nivel' %><br>
+	<% @languages.each do |l| %>
+	<%= radio_button_tag :level, l[0]  %>
+	<%= label_tag 'level_'+l[0].to_s, l[1]  %>
+	<% end %>
+
+	<% #Escoger paquete %>
+
+	<%= label_tag :package, 'Escoge el Horario' %><br>
+	<% @languages.each do |l| %>
+	<%= radio_button_tag :package, l[0]  %>
+	<%= label_tag 'package_'+l[0].to_s, l[1]  %>
+	<% end %>
+
+
+	<%= submit_tag %>
+<% end %>
