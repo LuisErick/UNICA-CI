@@ -5,3 +5,46 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Language.create(name: 'Inglés', description: 'Idioma Inglés')
+Language.create(name: 'Francés', description: 'Idioma Francés')
+Language.create(name: 'Portugués', description: 'Idioma Portugués')
+Language.create(name: 'Italiano', description: 'Idioma Italiano')
+
+
+Permission.create(name: 'Administrador', description: 'Administrador del Centro de Idiomas')
+Permission.create(name: 'Oficinista', description: 'Oficinista del Centro de Idiomas')
+Permission.create(name: 'Profesor', description: 'Profesor del Centro de Idiomas')
+Permission.create(name: 'Estudiante', description: 'Estudiante del Centro de Idiomas')
+
+Level.create(name: 'Básico', description: 'Nivel de Idioma Básico')
+Level.create(name: 'Intermedio', description: 'Nivel de Idioma Intermedio')
+Level.create(name: 'Avanzado', description: 'Nivel de Idioma Avanzado')
+
+CourseType.create(name: 'Técnico', description: 'Curso Técnico')
+CourseType.create(name: 'Comunicativo', description: 'Curso Comunicativo')
+
+Faculty.create(name: 'Administración', description: 'Facultad de Administración')
+Faculty.create(name: 'Agronomía', description: 'Facultad de Agronomía')
+Faculty.create(name: 'Ciencias Biológicas', description: 'Facultad de Ciencias Biológicas')
+Faculty.create(name: 'Comunicación', description: 'Facultad de Comunicación')
+Faculty.create(name: 'Derecho', description: 'Facultad de Derecho')
+Faculty.create(name: 'Educación', description: 'Facultad de Educación')
+Faculty.create(name: 'Economía', description: 'Facultad de Economía')
+Faculty.create(name: 'Enfermería', description: 'Facultad de Enfermería')
+Faculty.create(name: 'Farmacia', description: 'Facultad de Farmacia')
+Faculty.create(name: 'Ing. Quimica', description: 'Facultad de Ing. Quimica')
+Faculty.create(name: 'Ing. Ambiental', description: 'Facultad de Ing. Ambiental')
+Faculty.create(name: 'Ing. Civil', description: 'Facultad de Ing. Civil')
+Faculty.create(name: 'Ing. Mecánica', description: 'Facultad de Ing. Mecánica')
+Faculty.create(name: 'Ing. de Sistemas', description: 'Facultad de Ing. de Sistemas')
+Faculty.create(name: 'Ing. Pesquera', description: 'Facultad de Ing. Pesquera')
+Faculty.create(name: 'Medicina Humana', description: 'Facultad de Medicina Humana')
+Faculty.create(name: 'Med. Veterinaria', description: 'Facultad de Med. Veterinaria')
+Faculty.create(name: 'Odontología', description: 'Facultad de Odontología')
+Faculty.create(name: 'Psicología', description: 'Facultad de Psicología')
+Faculty.create(name: 'Arquitectura', description: 'Facultad de Arquitectura')
+Faculty.create(name: 'Obstetricia', description: 'Facultad de Obstetricia')
+
+PostgradeType.create(name: 'Master', description: 'Grado de Magister')
+PostgradeType.create(name: 'Doctor', description: 'Grado de Doctorado')
