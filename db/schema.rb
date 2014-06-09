@@ -11,11 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140521061705) do
+ActiveRecord::Schema.define(version: 20140608193639) do
 
   create_table "administrators", force: true do |t|
     t.integer  "person_id"
     t.date     "start_date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "certifications", force: true do |t|
+    t.integer  "matriculation_id"
+    t.boolean  "state"
+    t.date     "delivery_date"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -95,6 +103,13 @@ ActiveRecord::Schema.define(version: 20140521061705) do
   create_table "marital_statuses", force: true do |t|
     t.string   "name"
     t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "matricualtion_validates", force: true do |t|
+    t.integer  "matriculation_id"
+    t.string   "institution"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

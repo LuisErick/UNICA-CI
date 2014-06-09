@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :certifications
+
+  get 'first_register/create'
+
   get 'faq/index'
   get 'faq/index', as: :faq
 
