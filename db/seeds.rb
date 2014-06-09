@@ -11,6 +11,32 @@ Language.create(name: 'Francés', description: 'Idioma Francés')
 Language.create(name: 'Portugués', description: 'Idioma Portugués')
 Language.create(name: 'Italiano', description: 'Idioma Italiano')
 
+MaritalStatus.create(name: 'Casado(a)', description: 'Está casado')
+MaritalStatus.create(name: 'Soltero(a)', description: 'Está soltero')
+MaritalStatus.create(name: 'Divorciado(a)', description: 'Está divorciado')
+MaritalStatus.create(name: 'Separado(a)', description: 'Está separado')
+MaritalStatus.create(name: 'Conviviente', description: 'Es conviviente')
+MaritalStatus.create(name: 'Tijero', description: 'No tiene remedio')
+
+
+User.create(name: 'admin2'. description: '123456', permission_id: 1 )
+Person.create(user_id: 1, paternal_lastname: 'Apellidoadmin1' maternal_lastname: 'Apellidomadmin1',
+	name: 'Julio', dni: '32165487', address: 'La Tinguiña', district: 'Ica'
+	province: 'Ica', department: 'Ica', home_phone: '056321987', mobile_phone: '956183729',
+	sex: 1, birthday: '')
+User.create(name: 'admin3'. description: '123456', permission_id: 1 )
+User.create(name: 'docente1'. description: '123456', permission_id: 3 )
+User.create(name: 'docente2'. description: '123456', permission_id: 3 )
+User.create(name: 'docente3'. description: '123456', permission_id: 3 )
+User.create(name: 'docente4'. description: '123456', permission_id: 3 )
+User.create(name: 'docente5'. description: '123456', permission_id: 2 )
+User.create(name: 'secretaria1'. description: '123456', permission_id: 2 )
+User.create(name: 'contador'. description: '123456', permission_id: 2 )
+User.create(name: 'secretaria2'. description: '123456', permission_id: 2 )
+User.create(name: 'alumno4'. description: '123456', permission_id: 4 )
+User.create(name: 'alumno3'. description: '123456', permission_id: 4 )
+User.create(name: 'alumno1'. description: '123456', permission_id: 4 )
+User.create(name: 'alumno2'. description: '123456', permission_id: 4 )
 
 Permission.create(name: 'Administrador', description: 'Administrador del Centro de Idiomas')
 Permission.create(name: 'Oficinista', description: 'Oficinista del Centro de Idiomas')

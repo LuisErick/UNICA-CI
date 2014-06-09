@@ -9,6 +9,6 @@ class FirstRegisterController < ApplicationController
 		@student_types = {'1' => 'Si, ya he cursado', '0' => 'No, es la primera vez'}
 	end
 	def create
-		render text: params[:sex]
+		render text: params[:birthday]
 	end
 end
