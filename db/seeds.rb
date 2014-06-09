@@ -23,7 +23,7 @@ User.create(name: 'admin2'. description: '123456', permission_id: 1 )
 Person.create(user_id: 1, paternal_lastname: 'Apellidoadmin1' maternal_lastname: 'Apellidomadmin1',
 	name: 'Julio', dni: '32165487', address: 'La Tinguiña', district: 'Ica'
 	province: 'Ica', department: 'Ica', home_phone: '056321987', mobile_phone: '956183729',
-	sex: 1, birthday: '')
+	sex: 1, birthday: '2014-06-09', birthplace: 'Ica', marital_status_id: 1)
 User.create(name: 'admin3'. description: '123456', permission_id: 1 )
 User.create(name: 'docente1'. description: '123456', permission_id: 3 )
 User.create(name: 'docente2'. description: '123456', permission_id: 3 )
