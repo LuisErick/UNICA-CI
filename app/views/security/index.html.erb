@@ -2,39 +2,46 @@
         <div class="container">
             <div class="row-fluid">
                 <div class="span6">
-                    <h1>Ingresar</h1>
+                    <h1>Iniciar sesión</h1>
                 </div>
             </div>
         </div>
  </section>
-<section id="" class="container">
-<div class="error">
-	<br>
-		<%=@message%>
-	<br><br>
-</div>
-<div class="form-horizontal">
-		<%= form_tag({controller: 'security', action: 'login'}, method: 'post') do %>
-		<div class="control-group">
-			<%=label_tag :username, 'Nombre de usuario', :class => 'control-label'%>
-			<div class="controls">
-				<%=text_field_tag :username%>
+<section id="sectionsep" class="container">
+	<div class="row-fluid">
+		<div class="span6 center">
+                <%= image_tag "candado.png"%>
+		</div>
+		<div class="span5">
+			<div class="form-horizontal box">
+					<div class="control-group">
+						<div class="controls">
+							<%=@message%>
+						</div>
+					</div>
+					<%= form_tag({controller: 'security', action: 'login'}, method: 'post') do %>
+					<div class="control-group">
+						<%=label_tag :username, 'Nombre de usuario', :class => 'control-label'%>
+						<div class="controls">
+							<%=text_field_tag :username%>
+						</div>
+					</div>
+					<div class="control-group">
+						<%=label_tag :password, 'Contraseña', :class => 'control-label'%>
+						<div class="controls">
+							<%=password_field_tag :password%>
+						</div>
+					</div>
+					<div class="controls">
+						<%=submit_tag 'Ingresar', :class => 'btn btn-primary' %>
+					</div>
+					<hr>
+					<%end%>
+					<div class="controls">
+						¿No estás registrado? <%= link_to 'Matrículate' , matriculations_path %>
+					</div>
 			</div>
 		</div>
-		<div class="control-group">
-			<%=label_tag :password, 'Contraseña', :class => 'control-label'%>
-			<div class="controls">
-				<%=password_field_tag :password%>
-			</div>
-		</div>
-		<div class="controls">
-			<%=submit_tag 'Ingresar', :class => 'btn btn-primary' %>
-		</div>
-		<hr>
-			<div class="controls">
-			¿No estás registrado? <%= link_to 'Matrículate' , matriculations_path %>
-			</div>
-		<%end%>
-</div>
-
+	</div>
+	<hr>
 </section>
