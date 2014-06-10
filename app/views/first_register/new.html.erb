@@ -7,7 +7,7 @@
 	<%= password_field_tag :password %><br><br>
 	<%= label_tag :confirm_password, 'Confirme Contraseña' %><br>
 	<%= password_field_tag :confirm_password %><br><br>
-
+	<hr>
 	<% #Parte de la persona #%>
 	<%= label_tag :paternal_lastname, 'Apellido Paterno' %><br>	
 	<%= text_field_tag :paternal_lastname %><br><br>
@@ -34,59 +34,58 @@
 	<%= radio_button_tag :sex, s[0]  %>
 	<%= label_tag 'sex_'+s[0].to_s, s[1]  %>
 	<% end %>
-
 	<%= label_tag :birthday, 'Fecha de nacimiento' %><br>
 	<%= date_field_tag :birthday %><br><br>
-
 	<%= label_tag :birthplace, 'Lugar de nacimiento' %><br>
 	<%= text_field_tag :birthplace %><br><br>
-
-	<%= label_tag :marital_status, 'Estado Civil' %><br>
+	<%= label_tag :marital_status, 'Estado Civil' %>
 	<% @marital_statuses.each do |ms| %>
-	<%= radio_button_tag :marital_status, ms[0]  %>
-	<%= label_tag 'marital_status_'+ms[0].to_s, ms[1]  %>
+	<%= radio_button_tag :marital_status, ms.id  %>
+	<%= label_tag 'marital_status_'+ms.id.to_s, ms.name  %>
 	<% end %>
-
+	<hr>
 	<% #Escoger idioma %>
 
-	<%= label_tag :language, 'Escoge el idioma' %><br>
+	<%= label_tag :language, 'Escoge el idioma' %>
 	<% @languages.each do |la| %>
-	<%= radio_button_tag :language, la[0]  %>
-	<%= label_tag 'language_'+la[0].to_s, la[1]  %>
+	<%= radio_button_tag :language, la.id  %>
+	<%= label_tag 'language_'+la.id.to_s, la.name  %>
 	<% end %>
-
+	<hr>
 	<% #Escoger tipo de curso %>
 
-	<%= label_tag :course_type, 'Escoge el tipo d ecurso' %><br>
-	<% @languages.each do |ct| %>
-	<%= radio_button_tag :course_type, ct[0]  %>
-	<%= label_tag 'course_type_'+ct[0].to_s, ct[1]  %>
+	<%= label_tag :course_type, 'Escoge el tipo d ecurso' %>
+	<% @course_types.each do |ct| %>
+	<%= radio_button_tag :course_type, ct.id  %>
+	<%= label_tag 'course_type_'+ct.id.to_s, ct.name  %>
 	<% end %>
-
+	<hr>
 	<% #Escoger tipo de curso %>
 
-	<%= label_tag :student_type, '¿Has estudiado el idioma anteriormente?' %><br>
+	<%= label_tag :student_type, '¿Has estudiado el idioma anteriormente?' %>
 	<% @student_types.each do |ct| %>
 	<%= radio_button_tag :student_type, ct[0]  %>
 	<%= label_tag 'student_type_'+ct[0].to_s, ct[1]  %>
 	<% end %>
-
+	<hr>
 	<% #Escoger nivel %>
 
-	<%= label_tag :level, 'Escoge el nivel' %><br>
-	<% @languages.each do |l| %>
-	<%= radio_button_tag :level, l[0]  %>
-	<%= label_tag 'level_'+l[0].to_s, l[1]  %>
+	<%= label_tag :level, 'Escoge el nivel' %>
+	<% @levels.each do |l| %>
+	<%= radio_button_tag :level, l.id  %>
+	<%= label_tag 'level_'+l.id.to_s, l.name  %>
 	<% end %>
-
+	---------------------------------------------------
 	<% #Escoger paquete %>
-
-	<%= label_tag :package, 'Escoge el Horario' %><br>
-	<% @languages.each do |l| %>
-	<%= radio_button_tag :package, l[0]  %>
-	<%= label_tag 'package_'+l[0].to_s, l[1]  %>
+	<hr>
+	<%= label_tag :package, 'Escoge el Horario' %>
+	<br><strong>Falta agregar paquetes en los seeds</strong>
+	<% @packages.each do |l| %>
+	<%= radio_button_tag :package, l.id  %>
+	<%= label_tag 'package_'+l.id.to_s, l.name  %>
 	<% end %>
-
-
-	<%= submit_tag %>
+	----------------------------------------------------
+	<hr>
+	<br>
+	<%= submit_tag 'Registrar' %>
 <% end %>
