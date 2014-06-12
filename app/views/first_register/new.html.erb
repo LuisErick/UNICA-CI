@@ -1,6 +1,134 @@
 <%= form_tag( create_register_path, method: 'post') do %>
+<div class="sequence-theme">
+	<div id="sequence">
+		<div class="sequence-prev">
+			<%= image_tag "bt-prev.png"%>
+		</div>		
+		
+			<ul class="sequence-canvas">
+			
+				<li class="animate-in">
+				
+					<h2 class="titleSlide">
+						Idioma
+					</h2>
+					<h3 class="subtitleSlide">
+					
+					<% #Escoger idioma %>
+					<%= label_tag :language, 'Escoge el idioma' %>
+					<% @languages.each do |la| %>
+					<%= radio_button_tag :language, la.id  %>
+					<%= label_tag 'language_'+la.id.to_s, la.name  %>
+					<% end %>
+					
+					</br>
+					
+					<div class="sequence-next">
+					
+					CONTINUAR
+					
+					</div>
 
-	<% #Parte del usuario %>
+
+					</h3>
+				
+				</li>
+
+
+				<li>
+					<h2 class="titleSlide">Curso</h2>
+					<h3 class="subtitleSlide">
+					
+					<% #Escoger tipo de curso %>
+
+					<%= label_tag :course_type, 'Escoge el tipo de curso' %>
+					<% @course_types.each do |ct| %>
+					<%= radio_button_tag :course_type, ct.id  %>
+					<%= label_tag 'course_type_'+ct.id.to_s, ct.name  %>
+					<% end %>
+
+					</br>
+					<div class="sequence-next">
+					CONTINUAR
+					</div>
+					</h3>
+					
+				</li>
+				<li>
+					<h2 class="titleSlide">Estudios previos</h2>
+					<h3 class="subtitleSlide">
+
+					<% #Preguntar estudios previos %>
+
+					<%= label_tag :student_type, '¿Has estudiado el idioma anteriormente?' %>
+					<% @student_types.each do |ct| %>
+					<%= radio_button_tag :student_type, ct[0]  %>
+					<%= label_tag 'student_type_'+ct[0].to_s, ct[1]  %>
+					<% end %>
+
+					</br>
+					<div class="sequence-next">
+					CONTINUAR
+					</div>
+
+					</h3>
+					
+				</li>
+
+				<li>
+					<h2 class="titleSlide">Nivel</h2>
+					<h3 class="subtitleSlide">
+					<% #Escoger nivel %>
+
+					<%= label_tag :level, 'Escoge el nivel' %>
+					<% @levels.each do |l| %>
+					<%= radio_button_tag :level, l.id  %>
+					<%= label_tag 'level_'+l.id.to_s, l.name  %>
+					<% end %>
+					</br>
+					<div class="sequence-next">
+					CONTINUAR
+					</div>
+
+					</h3>
+					
+				</li>
+
+				<li>
+					<h2 class="titleSlide">Horario
+					<hr>
+					</h2>
+					<h3 class="subtitleSlide">
+					<% #Escoger paquete %>
+					
+					<%= label_tag :package, 'Escoge el Horario' %>
+					<br><strong>Falta agregar paquetes en los seeds</strong>
+					<% @packages.each do |l| %>
+					<%= radio_button_tag :package, l.id  %>
+					<%= label_tag 'package_'+l.id.to_s, l.name  %>
+					<% end %>
+					</br>
+
+							
+					<button id="trigger-overlay" type="button">Open Overlay</button>
+					<%= button_tag "CONTINUAR", :id => "trigger-overlay", :type => "button" %>
+					
+
+					</h3>
+					
+				</li>
+
+			
+			</ul>
+		
+				
+
+	</div>
+</div>
+
+<div class="overlay overlay-door">
+			<button type="button" class="overlay-close">Close</button>
+			<% #Parte del usuario %>
 	<%= label_tag :username, 'Nombre de Usuario' %><br>
 	<%= text_field_tag :username %><br><br>
 	<%= label_tag :password, 'Contraseña' %><br>
@@ -43,49 +171,117 @@
 	<%= radio_button_tag :marital_status, ms.id  %>
 	<%= label_tag 'marital_status_'+ms.id.to_s, ms.name  %>
 	<% end %>
-	<hr>
-	<% #Escoger idioma %>
-
-	<%= label_tag :language, 'Escoge el idioma' %>
-	<% @languages.each do |la| %>
-	<%= radio_button_tag :language, la.id  %>
-	<%= label_tag 'language_'+la.id.to_s, la.name  %>
-	<% end %>
-	<hr>
-	<% #Escoger tipo de curso %>
-
-	<%= label_tag :course_type, 'Escoge el tipo d ecurso' %>
-	<% @course_types.each do |ct| %>
-	<%= radio_button_tag :course_type, ct.id  %>
-	<%= label_tag 'course_type_'+ct.id.to_s, ct.name  %>
-	<% end %>
-	<hr>
-	<% #Escoger tipo de curso %>
-
-	<%= label_tag :student_type, '¿Has estudiado el idioma anteriormente?' %>
-	<% @student_types.each do |ct| %>
-	<%= radio_button_tag :student_type, ct[0]  %>
-	<%= label_tag 'student_type_'+ct[0].to_s, ct[1]  %>
-	<% end %>
-	<hr>
-	<% #Escoger nivel %>
-
-	<%= label_tag :level, 'Escoge el nivel' %>
-	<% @levels.each do |l| %>
-	<%= radio_button_tag :level, l.id  %>
-	<%= label_tag 'level_'+l.id.to_s, l.name  %>
-	<% end %>
-	---------------------------------------------------
-	<% #Escoger paquete %>
-	<hr>
-	<%= label_tag :package, 'Escoge el Horario' %>
-	<br><strong>Falta agregar paquetes en los seeds</strong>
-	<% @packages.each do |l| %>
-	<%= radio_button_tag :package, l.id  %>
-	<%= label_tag 'package_'+l.id.to_s, l.name  %>
-	<% end %>
-	----------------------------------------------------
-	<hr>
-	<br>
-	<%= submit_tag 'Registrar' %>
+</div>
 <% end %>
+<script>
+(function( window ) {
+
+	'use strict';
+
+// class helper functions from bonzo https://github.com/ded/bonzo
+
+	function classReg( className ) {
+  	return new RegExp("(^|\\s+)" + className + "(\\s+|$)");
+	}
+
+// classList support for class management
+// altho to be fair, the api sucks because it won't accept multiple classes at once
+	var hasClass, addClass, removeClass;
+
+	if ( 'classList' in document.documentElement ) {
+  		hasClass = function( elem, c ) {
+    		return elem.classList.contains( c );
+  		};
+  		addClass = function( elem, c ) {
+    		elem.classList.add( c );
+  		};
+  		removeClass = function( elem, c ) {
+    		elem.classList.remove( c );
+  		};
+	}
+	else {
+  		hasClass = function( elem, c ) {
+    		return classReg( c ).test( elem.className );
+  		};
+  		addClass = function( elem, c ) {
+    		if ( !hasClass( elem, c ) ) {
+     			elem.className = elem.className + ' ' + c;
+    		}
+  		};
+  		removeClass = function( elem, c ) {
+    		elem.className = elem.className.replace( classReg( c ), ' ' );
+  		};
+	}
+
+function toggleClass( elem, c ) {
+  var fn = hasClass( elem, c ) ? removeClass : addClass;
+  fn( elem, c );
+}
+
+var classie = {
+  // full names
+  hasClass: hasClass,
+  addClass: addClass,
+  removeClass: removeClass,
+  toggleClass: toggleClass,
+  // short names
+  has: hasClass,
+  add: addClass,
+  remove: removeClass,
+  toggle: toggleClass
+};
+
+// transport
+if ( typeof define === 'function' && define.amd ) {
+  // AMD
+  define( classie );
+} else {
+  // browser global
+  window.classie = classie;
+}
+
+})( window );
+</script>
+
+<script>
+	(function() {
+	var triggerBttn = document.getElementById( 'trigger-overlay' ),
+		overlay = document.querySelector( 'div.overlay' ),
+		closeBttn = overlay.querySelector( 'button.overlay-close' );
+		transEndEventNames = {
+			'WebkitTransition': 'webkitTransitionEnd',
+			'MozTransition': 'transitionend',
+			'OTransition': 'oTransitionEnd',
+			'msTransition': 'MSTransitionEnd',
+			'transition': 'transitionend'
+		},
+		transEndEventName = transEndEventNames[ Modernizr.prefixed( 'transition' ) ],
+		support = { transitions : Modernizr.csstransitions };
+
+	function toggleOverlay() {
+		if( classie.has( overlay, 'open' ) ) {
+			classie.remove( overlay, 'open' );
+			classie.add( overlay, 'close' );
+			var onEndTransitionFn = function( ev ) {
+				if( support.transitions ) {
+					if( ev.propertyName !== 'visibility' ) return;
+					this.removeEventListener( transEndEventName, onEndTransitionFn );
+				}
+				classie.remove( overlay, 'close' );
+			};
+			if( support.transitions ) {
+				overlay.addEventListener( transEndEventName, onEndTransitionFn );
+			}
+			else {
+				onEndTransitionFn();
+			}
+		}
+		else if( !classie.has( overlay, 'close' ) ) {
+			classie.add( overlay, 'open' );
+		}
+	}
+
+	triggerBttn.addEventListener( 'click', toggleOverlay );
+	closeBttn.addEventListener( 'click', toggleOverlay );
+})();
+</script>
