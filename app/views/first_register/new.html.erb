@@ -1,287 +1,200 @@
 <%= form_tag( create_register_path, method: 'post') do %>
-<div class="sequence-theme">
-	<div id="sequence">
-		<div class="sequence-prev">
-			<%= image_tag "bt-prev.png"%>
-		</div>		
-		
-			<ul class="sequence-canvas">
-			
-				<li class="animate-in">
-				
-					<h2 class="titleSlide">
-						Idioma
-					</h2>
-					<h3 class="subtitleSlide">
-					
-					<% #Escoger idioma %>
-					<%= label_tag :language, 'Escoge el idioma' %>
-					<% @languages.each do |la| %>
-					<%= radio_button_tag :language, la.id  %>
-					<%= label_tag 'language_'+la.id.to_s, la.name  %>
-					<% end %>
-					
-					</br>
-					
-					<div class="sequence-next">
-					
-					CONTINUAR
-					
-					</div>
+
+<div id="container">
+        
+	<h1>REGISTRO DE <span>USUARIO</span></h1>
+            <!-- #first_step -->
+            <div id="first_step">
+                
+
+                <div class="form">
+                	
+                    <%= text_field_tag 'username' %>
+                    <%= label_tag :username, 'Nombre de Usuario' %>
+                    
+                    
+                    <%= password_field_tag 'password' %>
+                    <%= label_tag :password, 'Contraseña de al menos 4 caracteres' %>
+
+                    <%= password_field_tag :cpassword %>
+                    <%= label_tag :cpassword, 'Confirme contraseña. Si tus contraseñas no coinciden, no podrás continuar con el registro.' %>
+                                       
+
+                </div>      
+
+                <!-- clearfix --><div class="clear"></div><!-- /clearfix -->
+                
+                
+                 <input class="submit" type="submit" name="submit_first" id="submit_first" value="" onclick="return false;" />
+            </div>      
+            <!-- clearfix --><div class="clear"></div><!-- /clearfix -->
 
 
-					</h3>
-				
-				</li>
+            <!-- #second_step -->
+            <div id="second_step">
+                
 
+                <div class="form">
 
-				<li>
-					<h2 class="titleSlide">Curso</h2>
-					<h3 class="subtitleSlide">
-					
-					<% #Escoger tipo de curso %>
+                <h2>Datos del curso</h2>
+                
+                <% #Escoger idioma %>
 
-					<%= label_tag :course_type, 'Escoge el tipo de curso' %>
-					<% @course_types.each do |ct| %>
-					<%= radio_button_tag :course_type, ct.id  %>
-					<%= label_tag 'course_type_'+ct.id.to_s, ct.name  %>
-					<% end %>
-
-					</br>
-					<div class="sequence-next">
-					CONTINUAR
-					</div>
-					</h3>
-					
-				</li>
-				<li>
-					<h2 class="titleSlide">Estudios previos</h2>
-					<h3 class="subtitleSlide">
-
-					<% #Preguntar estudios previos %>
-
-					<%= label_tag :student_type, '¿Has estudiado el idioma anteriormente?' %>
-					<% @student_types.each do |ct| %>
-					<%= radio_button_tag :student_type, ct[0]  %>
-					<%= label_tag 'student_type_'+ct[0].to_s, ct[1]  %>
-					<% end %>
-
-					</br>
-					<div class="sequence-next">
-					CONTINUAR
-					</div>
-
-					</h3>
-					
-				</li>
-
-				<li>
-					<h2 class="titleSlide">Nivel</h2>
-					<h3 class="subtitleSlide">
-					<% #Escoger nivel %>
-
-					<%= label_tag :level, 'Escoge el nivel' %>
-					<% @levels.each do |l| %>
-					<%= radio_button_tag :level, l.id  %>
-					<%= label_tag 'level_'+l.id.to_s, l.name  %>
-					<% end %>
-					</br>
-					<div class="sequence-next">
-					CONTINUAR
-					</div>
-
-					</h3>
-					
-				</li>
-
-				<li>
-					<h2 class="titleSlide">Horario
-					<hr>
-					</h2>
-					<h3 class="subtitleSlide">
-					<% #Escoger paquete %>
-					
-					<%= label_tag :package, 'Escoge el Horario' %>
-					<br><strong>Falta agregar paquetes en los seeds</strong>
-					<% @packages.each do |l| %>
-					<%= radio_button_tag :package, l.id  %>
-					<%= label_tag 'package_'+l.id.to_s, l.name  %>
-					<% end %>
-					</br>
-
-							
-					<button id="trigger-overlay" type="button">Open Overlay</button>
-					<%= button_tag "CONTINUAR", :id => "trigger-overlay", :type => "button" %>
-					
-
-					</h3>
-					
-				</li>
-
-			
-			</ul>
-		
-				
-
-	</div>
-</div>
-
-<div class="overlay overlay-door">
-			<button type="button" class="overlay-close">Close</button>
-			<% #Parte del usuario %>
-	<%= label_tag :username, 'Nombre de Usuario' %><br>
-	<%= text_field_tag :username %><br><br>
-	<%= label_tag :password, 'Contraseña' %><br>
-	<%= password_field_tag :password %><br><br>
-	<%= label_tag :confirm_password, 'Confirme Contraseña' %><br>
-	<%= password_field_tag :confirm_password %><br><br>
+	<%= label_tag :language, 'Escoge el idioma' %>
+	<% @languages.each do |la| %>
+	<%= radio_button_tag :language, la.id  %>
+	<%= label_tag 'language_'+la.id.to_s, la.name  %>
+	<% end %>
 	<hr>
-	<% #Parte de la persona #%>
-	<%= label_tag :paternal_lastname, 'Apellido Paterno' %><br>	
-	<%= text_field_tag :paternal_lastname %><br><br>
-	<%= label_tag :maternal_lastname, 'Apellido Materno' %><br>
-	<%= text_field_tag :maternal_lastname %><br><br>
-	<%= label_tag :name, 'Nombres' %><br>
-	<%= text_field_tag :name %><br><br>
-	<%= label_tag :dni, 'DNI' %><br>
-	<%= text_field_tag :dni %><br><br>
-	<%= label_tag :address, 'Dirección' %><br>
-	<%= text_field_tag :address %><br><br>
-	<%= label_tag :district, 'Distrito' %><br>
-	<%= text_field_tag :district %><br><br>
-	<%= label_tag :province, 'Provincia' %><br>
-	<%= text_field_tag :province %><br><br>
-	<%= label_tag :department, 'Departamento' %><br>
-	<%= text_field_tag :department %><br><br>
-	<%= label_tag :home_phone, 'Teléfono Fijo' %><br>
-	<%= text_field_tag :home_phone %><br><br>
-	<%= label_tag :mobile_phone, 'Teléfono Móvil' %><br>
-	<%= text_field_tag :mobile_phone %><br><br>
-	<%= label_tag :sex, 'Sexo' %><br>
-	<% @sex.each do |s| %>
-	<%= radio_button_tag :sex, s[0]  %>
-	<%= label_tag 'sex_'+s[0].to_s, s[1]  %>
+	<% #Escoger tipo de curso %>
+
+	<%= label_tag :course_type, 'Escoge el tipo de curso' %>
+	<% @course_types.each do |ct| %>
+	<%= radio_button_tag :course_type, ct.id  %>
+	<%= label_tag 'course_type_'+ct.id.to_s, ct.name  %>
 	<% end %>
-	<%= label_tag :birthday, 'Fecha de nacimiento' %><br>
-	<%= date_field_tag :birthday %><br><br>
-	<%= label_tag :birthplace, 'Lugar de nacimiento' %><br>
-	<%= text_field_tag :birthplace %><br><br>
-	<%= label_tag :marital_status, 'Estado Civil' %>
-	<% @marital_statuses.each do |ms| %>
-	<%= radio_button_tag :marital_status, ms.id  %>
-	<%= label_tag 'marital_status_'+ms.id.to_s, ms.name  %>
+
+	<% #Escoger nivel %>
+
+	<%= label_tag :level, 'Escoge el nivel' %>
+	<% @levels.each do |l| %>
+	<%= radio_button_tag :level, l.id  %>
+	<%= label_tag 'level_'+l.id.to_s, l.name  %>
 	<% end %>
-</div>
+                
+             </div>      <!-- clearfix --><div class="clear"></div><!-- /clearfix -->
+                <input class="submit" type="submit" name="submit_second" id="submit_second" value="" onclick="return false;" />
+            </div>      <!-- clearfix --><div class="clear"></div><!-- /clearfix -->
+
+
+            <!-- #third_step -->
+            <div id="third_step">
+                
+
+                <div class="form">
+                    <% #Escoger tipo de curso %>
+
+			<h2>¿Has estudiado el idioma anteriormente?</h2>
+
+			<% @student_types.each do |ct| %>
+			<%= radio_button_tag :student_type, ct[0]  %>
+			<%= label_tag 'student_type_'+ct[0].to_s, ct[1]  %>
+			<% end %>
+	
+                    
+                </div>      <!-- clearfix --><div class="clear"></div><!-- /clearfix -->
+                <input class="submit" type="submit" name="submit_third" id="submit_third" value="" onclick="return false;" />
+                
+            </div>      <!-- clearfix --><div class="clear"></div><!-- /clearfix -->
+            
+            
+            <!-- #fourth_step -->
+            <div id="fourth_step">
+                
+                <div class="form">
+
+                <h2>Datos del curso</h2>
+                    <% #Escoger paquete %>
+	
+	<%= label_tag :package, 'Escoge el Horario' %>
+	<br><strong>Falta agregar paquetes en los seeds</strong>
+	<% @packages.each do |l| %>
+	<%= radio_button_tag :package, l.id  %>
+	<%= label_tag 'package_'+l.id.to_s, l.name  %>
+	<% end %>
+
+                </div>      <!-- clearfix --><div class="clear"></div><!-- /clearfix -->
+                <input class="submit" type="submit" name="submit_fourth" id="submit_fourth" value="" onclick="return false;" />       
+                    
+            </div>
+
+            <div id="fifth_step">
+                
+            <div class="form">
+            <h2>Datos personales</h2>
+            <%= label_tag :paternal_lastname, 'Apellido Paterno' %> 
+    <%= text_field_tag :paternal_lastname %>
+    <%= label_tag :maternal_lastname, 'Apellido Materno' %>
+    <%= text_field_tag :maternal_lastname %>
+    <%= label_tag :name, 'Nombres' %>
+    <%= text_field_tag :name %>
+            </div>      <!-- clearfix --><div class="clear"></div><!-- /clearfix -->
+            <input class="submit" type="submit" name="submit_fifth" id="submit_fifth" value="" onclick="return false;" />
+            </div>
+
+            <div id="sixth_step">
+                
+            <div class="form">
+            <h2>Datos personales</h2>
+
+            <%= label_tag :dni, 'DNI' %><br>
+    <%= text_field_tag :dni %><br><br>
+    <%= label_tag :address, 'Dirección' %><br>
+    <%= text_field_tag :address %><br><br>
+
+            </div>      <!-- clearfix --><div class="clear"></div><!-- /clearfix -->
+            <input class="submit" type="submit" name="submit_sixth" id="submit_sixth" value="" onclick="return false;" />
+            </div>
+
+            <div id="siete_step">
+                
+            <div class="form">
+            <h2>Datos personales</h2>
+
+            <%= label_tag :district, 'Distrito' %><br>
+    <%= text_field_tag :district %><br><br>
+    <%= label_tag :province, 'Provincia' %><br>
+    <%= text_field_tag :province %><br><br>
+    <%= label_tag :department, 'Departamento' %><br>
+    <%= text_field_tag :department %><br><br>
+
+            </div>      <!-- clearfix --><div class="clear"></div><!-- /clearfix -->
+            <input class="submit" type="submit" name="submit_siete" id="submit_siete" value="" onclick="return false;" />
+            </div>
+
+            <div id="ocho_step">
+                
+            <div class="form"> 
+            <h2>Datos personales</h2>
+
+            <%= label_tag :home_phone, 'Teléfono Fijo' %><br>
+    <%= text_field_tag :home_phone %><br><br>
+    <%= label_tag :mobile_phone, 'Teléfono Móvil' %><br>
+    <%= text_field_tag :mobile_phone %><br><br>
+    <%= label_tag :sex, 'Sexo' %><br>
+    <% @sex.each do |s| %>
+    <%= radio_button_tag :sex, s[0]  %>
+    <%= label_tag 'sex_'+s[0].to_s, s[1]  %>
+    <% end %>
+            </div>      <!-- clearfix --><div class="clear"></div><!-- /clearfix -->
+            <input class="submit" type="submit" name="submit_ocho" id="submit_ocho" value="" onclick="return false;" />
+            </div>
+
+            <div id="nueve_step">
+                
+            <div class="form">
+            <h2>Datos personales</h2>
+
+            <%= label_tag :birthday, 'Fecha de nacimiento' %><br>
+    <%= date_field_tag :birthday %><br><br>
+    <%= label_tag :birthplace, 'Lugar de nacimiento' %><br>
+    <%= text_field_tag :birthplace %><br><br>
+    <%= label_tag :marital_status, 'Estado Civil' %>
+    <% @marital_statuses.each do |ms| %>
+    <%= radio_button_tag :marital_status, ms.id  %>
+    <%= label_tag 'marital_status_'+ms.id.to_s, ms.name  %>
+    <% end %>
+    <%= submit_tag 'Registrar' %>
+
+            </div>      <!-- clearfix --><div class="clear"></div><!-- /clearfix -->
+            
+            
+            
+            </div>
+            
+        
+	</div>
+
+
 <% end %>
-<script>
-(function( window ) {
 
-	'use strict';
-
-// class helper functions from bonzo https://github.com/ded/bonzo
-
-	function classReg( className ) {
-  	return new RegExp("(^|\\s+)" + className + "(\\s+|$)");
-	}
-
-// classList support for class management
-// altho to be fair, the api sucks because it won't accept multiple classes at once
-	var hasClass, addClass, removeClass;
-
-	if ( 'classList' in document.documentElement ) {
-  		hasClass = function( elem, c ) {
-    		return elem.classList.contains( c );
-  		};
-  		addClass = function( elem, c ) {
-    		elem.classList.add( c );
-  		};
-  		removeClass = function( elem, c ) {
-    		elem.classList.remove( c );
-  		};
-	}
-	else {
-  		hasClass = function( elem, c ) {
-    		return classReg( c ).test( elem.className );
-  		};
-  		addClass = function( elem, c ) {
-    		if ( !hasClass( elem, c ) ) {
-     			elem.className = elem.className + ' ' + c;
-    		}
-  		};
-  		removeClass = function( elem, c ) {
-    		elem.className = elem.className.replace( classReg( c ), ' ' );
-  		};
-	}
-
-function toggleClass( elem, c ) {
-  var fn = hasClass( elem, c ) ? removeClass : addClass;
-  fn( elem, c );
-}
-
-var classie = {
-  // full names
-  hasClass: hasClass,
-  addClass: addClass,
-  removeClass: removeClass,
-  toggleClass: toggleClass,
-  // short names
-  has: hasClass,
-  add: addClass,
-  remove: removeClass,
-  toggle: toggleClass
-};
-
-// transport
-if ( typeof define === 'function' && define.amd ) {
-  // AMD
-  define( classie );
-} else {
-  // browser global
-  window.classie = classie;
-}
-
-})( window );
-</script>
-
-<script>
-	(function() {
-	var triggerBttn = document.getElementById( 'trigger-overlay' ),
-		overlay = document.querySelector( 'div.overlay' ),
-		closeBttn = overlay.querySelector( 'button.overlay-close' );
-		transEndEventNames = {
-			'WebkitTransition': 'webkitTransitionEnd',
-			'MozTransition': 'transitionend',
-			'OTransition': 'oTransitionEnd',
-			'msTransition': 'MSTransitionEnd',
-			'transition': 'transitionend'
-		},
-		transEndEventName = transEndEventNames[ Modernizr.prefixed( 'transition' ) ],
-		support = { transitions : Modernizr.csstransitions };
-
-	function toggleOverlay() {
-		if( classie.has( overlay, 'open' ) ) {
-			classie.remove( overlay, 'open' );
-			classie.add( overlay, 'close' );
-			var onEndTransitionFn = function( ev ) {
-				if( support.transitions ) {
-					if( ev.propertyName !== 'visibility' ) return;
-					this.removeEventListener( transEndEventName, onEndTransitionFn );
-				}
-				classie.remove( overlay, 'close' );
-			};
-			if( support.transitions ) {
-				overlay.addEventListener( transEndEventName, onEndTransitionFn );
-			}
-			else {
-				onEndTransitionFn();
-			}
-		}
-		else if( !classie.has( overlay, 'close' ) ) {
-			classie.add( overlay, 'open' );
-		}
-	}
-
-	triggerBttn.addEventListener( 'click', toggleOverlay );
-	closeBttn.addEventListener( 'click', toggleOverlay );
-})();
-</script>

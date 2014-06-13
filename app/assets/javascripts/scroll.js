@@ -1,4 +1,4 @@
-jQuery(document).ready(function() {
+var ready = function() {
 				var offset = 220;
 				var duration = 500;
 				jQuery(window).scroll(function() {
@@ -14,4 +14,6 @@ jQuery(document).ready(function() {
 					jQuery('html, body').animate({scrollTop: 0}, duration);
 					return false;
 				})
-			});
+			};
+$(document).ready(ready);
+$(document).on('page:load', ready);
