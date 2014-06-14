@@ -1,12 +1,18 @@
 <%= form_tag( create_register_path, method: 'post') do %>
-
+<div id="register">
 <div id="container">
         
-	<h1>REGISTRO DE <span>USUARIO</span></h1>
+	<section class="subtitle">
+        <div class="container">
+            <div class="row-fluid">
+                <div class="span6">
+                    <h1>Crear Usuario</h1>
+                </div>
+            </div>
+        </div>
+    </section>
             <!-- #first_step -->
             <div id="first_step">
-                
-
                 <div class="form">
                 	
                     <%= text_field_tag 'username' %>
@@ -20,12 +26,8 @@
                     <%= label_tag :cpassword, 'Confirme contraseña. Si tus contraseñas no coinciden, no podrás continuar con el registro.' %>
                                        
 
-                </div>      
-
-                <!-- clearfix --><div class="clear"></div><!-- /clearfix -->
-                
-                
-                 <input class="submit" type="submit" name="submit_first" id="submit_first" value="" onclick="return false;" />
+                </div><!-- clearfix --><div class="clear"></div><!-- /clearfix -->
+                    <input class="submit" type="submit" name="submit_first" id="submit_first" value="" onclick="return false;" />
             </div>      
             <!-- clearfix --><div class="clear"></div><!-- /clearfix -->
 
@@ -34,34 +36,31 @@
             <div id="second_step">
                 
 
-                <div class="form">
-
-                <h2>Datos del curso</h2>
-                
+                <div class="form">                
                 <% #Escoger idioma %>
 
-	<%= label_tag :language, 'Escoge el idioma' %>
-	<% @languages.each do |la| %>
-	<%= radio_button_tag :language, la.id  %>
-	<%= label_tag 'language_'+la.id.to_s, la.name  %>
-	<% end %>
-	<hr>
-	<% #Escoger tipo de curso %>
+                	<%= label_tag :language, 'Escoge el idioma' %>
+                	<% @languages.each do |la| %>
+                	<%= radio_button_tag :language, la.id  %>
+                	<%= label_tag 'language_'+la.id.to_s, la.name  %>
+                	<% end %>
+                	<hr>
+                	<% #Escoger tipo de curso %>
 
-	<%= label_tag :course_type, 'Escoge el tipo de curso' %>
-	<% @course_types.each do |ct| %>
-	<%= radio_button_tag :course_type, ct.id  %>
-	<%= label_tag 'course_type_'+ct.id.to_s, ct.name  %>
-	<% end %>
+                	<%= label_tag :course_type, 'Escoge el tipo de curso' %>
+                	<% @course_types.each do |ct| %>
+                	<%= radio_button_tag :course_type, ct.id  %>
+                	<%= label_tag 'course_type_'+ct.id.to_s, ct.name  %>
+                	<% end %>
 
-	<% #Escoger nivel %>
+                	<% #Escoger nivel %>
 
-	<%= label_tag :level, 'Escoge el nivel' %>
-	<% @levels.each do |l| %>
-	<%= radio_button_tag :level, l.id  %>
-	<%= label_tag 'level_'+l.id.to_s, l.name  %>
-	<% end %>
-                
+                	<%= label_tag :level, 'Escoge el nivel' %>
+                	<% @levels.each do |l| %>
+                	<%= radio_button_tag :level, l.id  %>
+                	<%= label_tag 'level_'+l.id.to_s, l.name  %>
+                	<% end %>
+
              </div>      <!-- clearfix --><div class="clear"></div><!-- /clearfix -->
                 <input class="submit" type="submit" name="submit_second" id="submit_second" value="" onclick="return false;" />
             </div>      <!-- clearfix --><div class="clear"></div><!-- /clearfix -->
@@ -69,22 +68,17 @@
 
             <!-- #third_step -->
             <div id="third_step">
-                
-
                 <div class="form">
                     <% #Escoger tipo de curso %>
 
-			<h2>¿Has estudiado el idioma anteriormente?</h2>
+            			<h2>¿Has estudiado el idioma anteriormente?</h2>
 
-			<% @student_types.each do |ct| %>
-			<%= radio_button_tag :student_type, ct[0]  %>
-			<%= label_tag 'student_type_'+ct[0].to_s, ct[1]  %>
-			<% end %>
-	
-                    
+            			<% @student_types.each do |ct| %>
+            			<%= radio_button_tag :student_type, ct[0]  %>
+            			<%= label_tag 'student_type_'+ct[0].to_s, ct[1]  %>
+            			<% end %>
                 </div>      <!-- clearfix --><div class="clear"></div><!-- /clearfix -->
-                <input class="submit" type="submit" name="submit_third" id="submit_third" value="" onclick="return false;" />
-                
+                <input class="submit" type="submit" name="submit_third" id="submit_third" value="" onclick="return false;" />            
             </div>      <!-- clearfix --><div class="clear"></div><!-- /clearfix -->
             
             
@@ -194,7 +188,7 @@
             
         
 	</div>
-
+</div>
 
 <% end %>
 

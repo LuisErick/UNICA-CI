@@ -1,19 +1,20 @@
-<section class="subtitle">
-        <div class="container">
-            <div class="row-fluid">
-                <div class="span6">
-                    <h1>Iniciar sesión</h1>
-                </div>
-            </div>
-        </div>
- </section>
-<section id="sectionsep" class="container">
-	<div class="row-fluid">
-		<div class="span6 center">
-                <%= image_tag "candado.png"%>
-		</div>
-		<div class="span5">
-			<div class="form-horizontal">
+<div id="login" class="row-fluid">    
+			<section class="subtitle">
+		        <div class="container">
+		            <div class="row-fluid">
+		                <div class="span6 center">
+		                    <h1>Iniciar Sesión</h1>
+		                </div>
+		            </div>
+		        </div>
+		    </section>
+		    <br>
+		    <br>
+    		<div class="form-horizontal">
+    			<div class="span5">
+    				<%= image_tag "candado.png"%>
+    			</div>
+    			<div class="span7">
 					<div class="control-group">
 						<div class="controls">
 							<%=@message%>
@@ -41,9 +42,6 @@
 					<div class="controls">
 						¿No estás registrado? <%= link_to 'Matrículate' , new_register_path %>
 					</div>
+				</div>
 			</div>
-		</div>
-	</div>
-	<hr>
-</section>
-
+  </div>
