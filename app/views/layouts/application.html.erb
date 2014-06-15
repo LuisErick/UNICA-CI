@@ -32,7 +32,7 @@
 
     <!-- For all other devices -->
     <!-- Size should be 32 x 32 pixels -->
-    <%= favicon_link_tag 'favicon.ico', :rel => 'shortcut icon' %>
+    <%= favicon_link_tag 'ico/favicon1.ico', :rel => 'shortcut icon' %>
 
     <%= javascript_include_tag "application", :media => "all" %>
   </head>
@@ -52,7 +52,7 @@
                 <div class="nav-collapse collapse pull-right">
                     <ul class="nav">
                         <li <%=paint_active(['profile','welcome'])%>><%= link_to 'Inicio' , index_path %></li>
-                        <li <%=paint_active('matriculations')%>><%= link_to "Matriculas", new_register_path  %></li>
+                        <li <%=paint_active('first_register')%>><%= link_to "Matriculas", new_register_path  %></li>
                         <% if is_loged %>
                         <li <%=paint_active('teachers')%>><%= link_to "Docentes", teachers_path  %></li>
                         <li <%=paint_active('students')%>><%= link_to "Estudiantes", students_path  %></li>

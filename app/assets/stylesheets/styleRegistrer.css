@@ -77,6 +77,23 @@ body #register{
         -webkit-border-radius: 6px;
     }
 
+        #register #container #buttonsmall input, #register #container #buttonsmall select {
+        color: #888;
+        border: 1px solid #ccc;
+        font-family: Cantarell, Verdana, sans-serif;
+        font-weight: bold;
+        font-size: 15px;
+        width: 300px;
+        height: 25px;
+        padding: 0 25px;
+        margin: 20px 0;
+        float: left;
+        
+        border-radius: 6px;
+        -moz-border-radius: 6px;
+        -webkit-border-radius: 6px;
+    }
+
     
         #register #container input.submit {
             background: url('button2.png') no-repeat;
