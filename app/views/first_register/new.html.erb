@@ -1,6 +1,6 @@
 <%= form_tag( create_register_path, method: 'post') do %>
 <div id="register">
-<div id="container">
+  <div id="container">
         
 	<section class="subtitle">
         <div class="container">
@@ -13,20 +13,31 @@
     </section>
             <!-- #first_step -->
             <div id="first_step">
-                <div class="form">
-                	
-                    <%= text_field_tag 'username' %>
-                    <%= label_tag :username, 'Nombre de Usuario' %>
-                    
-                    
-                    <%= password_field_tag 'password' %>
-                    <%= label_tag :password, 'Contraseña de al menos 4 caracteres' %>
+                <div class="span6" id="sectionsep">
+                    <div class="form-horizontal">
+                        <div class="control-group"> 
+                            <%= label_tag :username, 'Nombre de Usuario', :class => 'control-label'%>
+                            <div class="controls">
+                            <%= text_field_tag 'username' %>
+                            </div>
+                        </div>
+                        
+                        <div class="control-group">
+                            <%= label_tag :password, 'Contraseña de al menos 4 caracteres', :class => 'control-label' %> 
+                            <div class="controls">                  
+                            <%= password_field_tag 'password' %> 
+                            </div>
+                        </div>
 
-                    <%= password_field_tag :cpassword %>
-                    <%= label_tag :cpassword, 'Confirme contraseña. Si tus contraseñas no coinciden, no podrás continuar con el registro.' %>
-                                       
-
-                </div><!-- clearfix --><div class="clear"></div><!-- /clearfix -->
+                        <div class="control-group">
+                            <%= label_tag :cpassword, 'Confirme contraseña.', :class => 'control-label' %>
+                            <div class="controls">
+                            <%= password_field_tag :cpassword %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- clearfix --><div class="clear"></div><!-- /clearfix -->
                     <input class="submit" type="submit" name="submit_first" id="submit_first" value="" onclick="return false;" />
             </div>      
             <!-- clearfix --><div class="clear"></div><!-- /clearfix -->
@@ -34,163 +45,269 @@
 
             <!-- #second_step -->
             <div id="second_step">
-                <div class="form-horizontal">  
-
-                    <div class="control-group">
-                    <% #Escoger idioma %>
-                    <%= label_tag :language, 'Escoge el idioma' %>
-                	<% @languages.each do |la| %>
-                	<%= radio_button_tag :language, la.id  %>
-                	<%= label_tag 'language_'+la.id.to_s, la.name  %>
-                	<% end %>
-           
-
-
-                	<% #Escoger tipo de curso %>
-                	<%= label_tag :course_type, 'Escoge el tipo de curso' %>
-                	<% @course_types.each do |ct| %>
-                	<%= radio_button_tag :course_type, ct.id  %>
-                	<%= label_tag 'course_type_'+ct.id.to_s, ct.name  %>
-                	<% end %>
-
-                	<% #Escoger nivel %>
-                	<%= label_tag :level, 'Escoge el nivel' %>
-                	<% @levels.each do |l| %>
-                	<%= radio_button_tag :level, l.id  %>
-                	<%= label_tag 'level_'+l.id.to_s, l.name  %>
-                	<% end %>
+                <div class="span6">
+                    <div class="form-horizontal">  
+                        <% #Escoger idioma %>
+                        <div class="span6">
+                            <h2>Escoge Idioma:</h2>
+                        </div>
+                        <div class="span6">
+                        	<% @languages.each do |la| %>
+                                <div class="control-group">
+                                    <%= label_tag 'language_'+la.id.to_s, la.name, :class => 'control-label'  %>
+                                    <div class="controls">
+                                        <%= radio_button_tag :language, la.id  %>
+                                    </div>
+                                </div>
+                        	<% end %>
+                        </div>
                     </div>
-
-             </div>      <!-- clearfix --><div class="clear"></div><!-- /clearfix -->
+                </div>      <!-- clearfix --><div class="clear"></div><!-- /clearfix -->
                 <input class="submit" type="submit" name="submit_second" id="submit_second" value="" onclick="return false;" />
             </div>      <!-- clearfix --><div class="clear"></div><!-- /clearfix -->
 
 
+
             <!-- #third_step -->
             <div id="third_step">
-                <div class="form">
-                    <% #Escoger tipo de curso %>
+                <div class="row-fluid">
+                    <div class="span6 container">
+                        <div class="form-horizontal">  
+                            <% #Escoger tipo de curso %>
+                            <div class="">
+                                <h2>Escoge el tipo de curso:</h2>
+                            </div>
+                            <div class="span6">
+                                <% @course_types.each do |ct| %>
+                                    <div class="control-group">
+                                        <%= label_tag 'course_type_'+ct.id.to_s, ct.name, :class => 'control-label'  %>
+                                        <div class="controls">
+                                            <%= radio_button_tag :course_type, ct.id  %>
+                                        </div>
+                                    </div>
+                                <% end %>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="span6">
+                        <div class="form-horizontal">  
+                            <% #Escoger nivel %>
+                            <div class="">
+                                <h2>Escoge el nivel:</h2>
+                            </div>
+                            <div class="span6 container">
+                                <% @levels.each do |l| %>
+                                    <div class="control-group">
+                                        <%= label_tag 'level_'+l.id.to_s, l.name, :class => 'control-label' %>
+                                        <div class="controls">
+                                            <%= radio_button_tag :level, l.id  %>
+                                        </div>
+                                    </div>
+                                <% end %>
+                            </div>
+                        </div>
+                    </div>
+                </div>      <!-- clearfix --><div class="clear"></div><!-- /clearfix -->
+                <input class="submit" type="submit" name="submit_third" id="submit_third" value="" onclick="return false;" />
+            </div>      <!-- clearfix --><div class="clear"></div><!-- /clearfix -->
+
+
+            <!-- #fourth_step -->
+            <div id="fourth_step">
+                <div class="form-horizontal">
                         <div class="span6">
                             <h2>¿Has estudiado el idioma anteriormente?</h2>
                         </div>
-                        <div class="span6" id="buttonsmall">
+                        <div class="span6">
             			 <% @student_types.each do |ct| %>
-                            <%= radio_button_tag :student_type, ct[0]  %>
-                            <%= label_tag 'student_type_'+ct[0].to_s, ct[1]  %>
+                            <div class="control-group">
+                                <%= label_tag 'student_type_'+ct[0].to_s, ct[1], :class => 'control-label'   %>
+                                <div class="controls">
+                                    <%= radio_button_tag :student_type, ct[0]  %>
+                                </div>
+                            </div>
             			 <% end %>
                         </div>
                 </div>      <!-- clearfix --><div class="clear"></div><!-- /clearfix -->
-                <input class="submit" type="submit" name="submit_third" id="submit_third" value="" onclick="return false;" />            
+                <input class="submit" type="submit" name="submit_fourth" id="submit_fourth" value="" onclick="return false;" />            
             </div>      <!-- clearfix --><div class="clear"></div><!-- /clearfix -->
             
             
-            <!-- #fourth_step -->
-            <div id="fourth_step">
-                
-                <div class="form">
-
-                <h2>Datos del curso</h2>
-                    <% #Escoger paquete %>
-	
-	<%= label_tag :package, 'Escoge el Horario' %>
-	<br><strong>Falta agregar paquetes en los seeds</strong>
-	<% @packages.each do |l| %>
-	<%= radio_button_tag :package, l.id  %>
-	<%= label_tag 'package_'+l.id.to_s, l.name  %>
-	<% end %>
-
-                </div>      <!-- clearfix --><div class="clear"></div><!-- /clearfix -->
-                <input class="submit" type="submit" name="submit_fourth" id="submit_fourth" value="" onclick="return false;" />       
-                    
-            </div>
-
+            <!-- #fifth_step -->
             <div id="fifth_step">
-                
-            <div class="form">
-            <h2>Datos personales</h2>
-            <%= label_tag :paternal_lastname, 'Apellido Paterno' %> 
-    <%= text_field_tag :paternal_lastname %>
-    <%= label_tag :maternal_lastname, 'Apellido Materno' %>
-    <%= text_field_tag :maternal_lastname %>
-    <%= label_tag :name, 'Nombres' %>
-    <%= text_field_tag :name %>
-            </div>      <!-- clearfix --><div class="clear"></div><!-- /clearfix -->
-            <input class="submit" type="submit" name="submit_fifth" id="submit_fifth" value="" onclick="return false;" />
-            </div>
+                <div class="form-horizontal">
+                    <div class="span6">
+                        <h2>Escoge el Horario:</h2>
+                    </div>
+                    <% #Escoger paquete %>
+                    <div class="span6">
+                        <% @packages.each do |l| %>
+                        <div class="control-group">
+                            <%= label_tag 'package_'+l.id.to_s, l.name,  :class => 'control-label' %>
+                            <div class="controls">
+                                <%= radio_button_tag :package, l.id  %>
+                            </div>
+                        </div>
+                        <% end %>
+                    </div>
+                </div>      <!-- clearfix --><div class="clear"></div><!-- /clearfix -->
+                <input class="submit" type="submit" name="submit_fifth" id="submit_fifth" value="" onclick="return false;" />       
+            </div> <!-- clearfix --><div class="clear"></div><!-- /clearfix -->
 
-            <div id="sixth_step">
-                
-            <div class="form">
-            <h2>Datos personales</h2>
 
-            <%= label_tag :dni, 'DNI' %><br>
-    <%= text_field_tag :dni %><br><br>
-    <%= label_tag :address, 'Dirección' %><br>
-    <%= text_field_tag :address %><br><br>
-
-            </div>      <!-- clearfix --><div class="clear"></div><!-- /clearfix -->
+            <!-- #sixth_step -->
+             <div id="sixth_step">
+                <div class="span6">
+                    <h2>Datos personales:</h2>
+                </div>
+                <div class="form-horizontal">
+                    <div class="control-group">
+                        <%= label_tag :paternal_lastname, 'Apellido Paterno', :class => 'control-label' %>
+                        <div class="controls"> 
+                            <%= text_field_tag :paternal_lastname %>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <%= label_tag :maternal_lastname, 'Apellido Materno', :class => 'control-label' %>
+                        <div class="controls">
+                            <%= text_field_tag :maternal_lastname %>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <%= label_tag :name, 'Nombres',  :class => 'control-label' %>
+                        <div class="controls">
+                            <%= text_field_tag :name %>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <%= label_tag :dni, 'DNI',  :class => 'control-label'  %>
+                        <div class="controls">
+                            <%= text_field_tag :dni %>
+                        </div>
+                    </div>
+                </div>      
+                <!-- clearfix --><div class="clear"></div><!-- /clearfix -->
             <input class="submit" type="submit" name="submit_sixth" id="submit_sixth" value="" onclick="return false;" />
-            </div>
+            </div> <!-- clearfix --><div class="clear"></div><!-- /clearfix -->
 
-            <div id="siete_step">
-                
-            <div class="form">
-            <h2>Datos personales</h2>
 
-            <%= label_tag :district, 'Distrito' %><br>
-    <%= text_field_tag :district %><br><br>
-    <%= label_tag :province, 'Provincia' %><br>
-    <%= text_field_tag :province %><br><br>
-    <%= label_tag :department, 'Departamento' %><br>
-    <%= text_field_tag :department %><br><br>
 
-            </div>      <!-- clearfix --><div class="clear"></div><!-- /clearfix -->
-            <input class="submit" type="submit" name="submit_siete" id="submit_siete" value="" onclick="return false;" />
-            </div>
 
-            <div id="ocho_step">
-                
-            <div class="form"> 
-            <h2>Datos personales</h2>
 
-            <%= label_tag :home_phone, 'Teléfono Fijo' %><br>
-    <%= text_field_tag :home_phone %><br><br>
-    <%= label_tag :mobile_phone, 'Teléfono Móvil' %><br>
-    <%= text_field_tag :mobile_phone %><br><br>
-    <%= label_tag :sex, 'Sexo' %><br>
-    <% @sex.each do |s| %>
-    <%= radio_button_tag :sex, s[0]  %>
-    <%= label_tag 'sex_'+s[0].to_s, s[1]  %>
-    <% end %>
-            </div>      <!-- clearfix --><div class="clear"></div><!-- /clearfix -->
-            <input class="submit" type="submit" name="submit_ocho" id="submit_ocho" value="" onclick="return false;" />
-            </div>
+            <!-- #seventh_step -->
+            <div id="seventh_step">
+                <div class="form-horizontal" id="sectionsep">
+                    <div class="control-group">
+                        <%= label_tag :address, 'Dirección',  :class => 'control-label'  %>
+                        <div class="controls">
+                            <%= text_field_tag :address %>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <%= label_tag :district, 'Distrito',  :class => 'control-label'  %>
+                        <div class="controls">
+                            <%= text_field_tag :district %>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <%= label_tag :province, 'Provincia',  :class => 'control-label'  %>
+                        <div class="controls">
+                            <%= text_field_tag :province %>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                         <%= label_tag :department, 'Departamento',  :class => 'control-label'  %>
+                        <div class="controls">
+                            <%= text_field_tag :department %>
+                        </div>
+                    </div>
+                </div>      <!-- clearfix --><div class="clear"></div><!-- /clearfix -->
+                <input class="submit" type="submit" name="submit_seventh" id="submit_seventh" value="" onclick="return false;" />
+            </div> <!-- clearfix --><div class="clear"></div><!-- /clearfix -->
 
-            <div id="nueve_step">
-                
-            <div class="form">
-            <h2>Datos personales</h2>
 
-            <%= label_tag :birthday, 'Fecha de nacimiento' %><br>
-    <%= date_field_tag :birthday %><br><br>
-    <%= label_tag :birthplace, 'Lugar de nacimiento' %><br>
-    <%= text_field_tag :birthplace %><br><br>
-    <%= label_tag :marital_status, 'Estado Civil' %>
-    <% @marital_statuses.each do |ms| %>
-    <%= radio_button_tag :marital_status, ms.id  %>
-    <%= label_tag 'marital_status_'+ms.id.to_s, ms.name  %>
-    <% end %>
-    <%= submit_tag 'Registrar' %>
 
-            </div>      <!-- clearfix --><div class="clear"></div><!-- /clearfix -->
+            <!-- #eighth_step -->
+            <div id="eighth_step">
+                <div class="form-horizontal" id="sectionsep"> 
+                    <div class="control-group">
+                        <%= label_tag :home_phone, 'Teléfono Fijo',  :class => 'control-label'  %>
+                        <div class="controls">
+                            <%= text_field_tag :home_phone %>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <%= label_tag :mobile_phone, 'Teléfono Móvil',  :class => 'control-label'  %>
+                        <div class="controls">
+                            <%= text_field_tag :mobile_phone %>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <%= label_tag :sex, 'Sexo:', :class => 'control-label' %>
+                    </div>
+                    <div class="span6">
+                        <% @sex.each do |s| %>
+                            <div class="control-group">
+                                <%= label_tag 'sex_'+s[0].to_s, s[1],  :class => 'control-label'   %>
+                                <div class="controls">
+                                    <%= radio_button_tag :sex, s[0]  %>
+                                </div>
+                            </div>
+                        <% end %>
+                    </div>
+                </div>      <!-- clearfix --><div class="clear"></div><!-- /clearfix -->
+            <input class="submit" type="submit" name="submit_eighth" id="submit_eighth" value="" onclick="return false;" />
+            </div> <!-- clearfix --><div class="clear"></div><!-- /clearfix -->
+
+
+
+            <!-- #ninth_step -->
+            <div id="ninth_step">
+                <div class="form-horizontal" id="sectionsep">
+                    <div class="control-group">
+                        <%= label_tag :birthday, 'Fecha de nacimiento', :class => 'control-label' %>
+                        <div class="controls">
+                            <%= date_field_tag :birthday %> 
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <%= label_tag :birthplace, 'Lugar de nacimiento', :class => 'control-label' %>
+                        <div class="controls">
+                            <%= text_field_tag :birthplace %>
+                        </div>
+                    </div>
+                </div>      <!-- clearfix --><div class="clear"></div><!-- /clearfix --> 
+                <input class="submit" type="submit" name="submit_ninth" id="submit_ninth" value="" onclick="return false;" />
+            </div><!-- clearfix --><div class="clear"></div><!-- /clearfix --> 
             
-            
-            
+
+
+            <!-- #tenth_step -->
+            <div id="tenth_step">
+                <div class="form-horizontal">
+                    <div class="control-group">
+                        <%= label_tag :marital_status, 'Estado Civil', :class => 'control-label' %>
+                    </div>
+                    <div class="span6">
+                        <% @marital_statuses.each do |ms| %>
+                        <div class="control-group">
+                            <%= label_tag 'marital_status_'+ms.id.to_s, ms.name, :class => 'control-label'  %>
+                            <div class="controls">
+                                <%= radio_button_tag :marital_status, ms.id  %>
+                            </div>
+                        </div>
+                        <% end %>
+                    </div>
+                </div><!-- clearfix --><div class="clear"></div><!-- /clearfix --> 
+                <input class="send submit" type="submit" name="submit_ninth" id="submit_ninth" value="" onclick="return false;" />
             </div>
-            
-        
 	</div>
+    <div id="progress_bar">
+            <div id="progress"></div>
+            <div id="progress_text">0% Complete</div>
+    </div>
 </div>
-
 <% end %>
+
 
