@@ -280,9 +280,55 @@
                 </div>      <!-- clearfix --><div class="clear"></div><!-- /clearfix --> 
                 <input class="submit" type="submit" name="submit_ninth" id="submit_ninth" value="" onclick="return false;" />
             </div><!-- clearfix --><div class="clear"></div><!-- /clearfix --> 
-            
+<!-- REVISAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAR -->
+            <!-- Este esta para agregar -->           
+            <!-- #ninth_step -->
+            <div id="ninth_step">
+                <div class="form-horizontal" id="sectionsep">
 
-
+                    <div class="control-group">
+                        <%= label_tag :unica_person, '¿Es usted un estudiante de la Unica', :class => 'control-label' %>
+                        <div class="span6">
+                            <% @is_unica.each do |i| %>
+                                <div class="control-group">
+                                    <%= label_tag 'unica_person_'+i[0].to_s, i[1],  :class => 'control-label' %>
+                                    <div class="controls">
+                                        <%= radio_button_tag :unica_person, i[0] %>
+                                    </div>
+                                </div>
+                            <% end %>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <%= label_tag :college, '¿Cual es su escuela?', :class => 'control-label' %>
+                        <div class="span6">
+                            <% @colleges.each do |c| %>
+                                <div class="control-group">
+                                    <%= label_tag 'college_'+c.id.to_s, c.name,  :class => 'control-label' %>
+                                    <div class="controls">
+                                        <%= radio_button_tag :college, c.id %>
+                                    </div>
+                                </div>
+                            <% end %>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <%= label_tag :postgrade_person, '¿Ha estudiado algún posgrado?', :class => 'control-label' %>
+                        <div class="span6">
+                            <% @is_postgrade.each do |i| %>
+                                <div class="control-group">
+                                    <%= label_tag 'postgrade_person'+i[0].to_s, i[1],  :class => 'control-label' %>
+                                    <div class="controls">
+                                        <%= radio_button_tag :postgrade_person, i[0] %>
+                                    </div>
+                                </div>
+                            <% end %>
+                        </div>
+                    </div>
+                </div>      <!-- clearfix --><div class="clear"></div><!-- /clearfix --> 
+                <input class="submit" type="submit" name="submit_ninth" id="submit_ninth" value="" onclick="return false;" />
+            </div><!-- clearfix --><div class="clear"></div><!-- /clearfix --> 
+<!-- REVISAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAR -->
             <!-- #tenth_step -->
             <div id="tenth_step">
                 <div class="form-horizontal">
