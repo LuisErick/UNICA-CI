@@ -93,7 +93,7 @@ body #register{
             bottom: 2px;
             left: 655px;
         }
-            #register #container input.submit:focus { border: none; }
+        #register #container input.submit:focus { border: none; }
         
         
         #register #container input.send{ background: url('send2.png') no-repeat; }

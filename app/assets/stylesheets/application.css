@@ -247,6 +247,10 @@ section.demogrid .col-lg-12.nest {
 		font-size:14px;
 	}
 
+	.faq h1, .faq h2, .faq h3, .faq h4{
+		font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	}
+
 
 }
 

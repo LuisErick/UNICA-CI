@@ -45,21 +45,22 @@
     </section>
 
 
-    <!--¿Quíénes somos?-->
-    <section id="sectionsep" class="container main">
+<!--¿Quíénes somos?-->
+<section id="sectionsep" class="container main">
         <div class="row-fluid">
-            <div class="span6">
-                <h2>¿Quiénes somos? (Cambiar floro)</h2>
+            <div class="span8">
+                <h2>¿Quiénes somos?</h2>
                 <p>IDIOMAS UNICA es la unidad de Idiomas de la Universidad Nacional San Luis Gonzaga de Ica que integra la experiencia de más de 40 años de los centros e institutos que la precedieron; que está dedicada a la enseñanza del idioma inglés como lengua extranjera y del español como segunda lengua.</p>
+                <p>Somos el Centro de Idiomas de la Universidad Nacional San Luis Gonzaga de Ica y te damos la más cordial bienvenida.
+                Brindamos a nuestros estudiantes alta calidad en la enseñanza de idiomas, haciendo que pienses y te comuniques en el idioma que hayas elegido desde el primer día de clase.
+                Perseguimos niveles de excelencia, y esto es lo que te brindará nuestro Centro de Idiomas
+                Asimismo, ofrecemos cursos de conversación de inglés orientados específicamente a reforzar las habilidades de expresión oral de aquellas personas que ya tienen nivel intermedio o avanzado.</p>
+
+                <p>Además, contamos con otros idiomas (francés, portugués e italiano) para maestristas, doctorandos y público en general que lo requieran.
+                Te deseamos muchos éxitos en tus estudios.</p>
             </div>
-            <div class="span6">
-                <h2>Estadísticas mejores profesores</h2>
-                <div>
-                    <div class="progress"><div class="bar" style="width: 80%; text-align:left; padding-left:10px;">Mery</div></div>
-                    <div class="progress progress-warning"><div class="bar" style="width: 70%; text-align:left; padding-left:10px;">Magno</div></div>
-                    <div class="progress progress-info"><div class="bar" style="width: 60%; text-align:left; padding-left:10px;">Lino</div></div>
-                    <div class="progress progress-danger"><div class="bar" style="width: 40%; text-align:left; padding-left:10px;">Erwin</div></div>
-                </div>
+            <div class="span4">
+                <%=link_to( image_tag("galeria/1.jpg"), image_path( "galeria/1.jpg"), rel:'shadowbox', title: 'Central' )%>
             </div>
         </div>
 
@@ -71,6 +72,16 @@
 
         <hr>
 
+            <div class="row-fluid">
+                <div class="span3"></div>
+                <div class="span7">
+                    <h4>Idiomas más hablados en el mundo:</h4>
+                    <div class="progress"><div class="bar" style="width: 80%; text-align:left; padding-left:10px;">Inglés</div></div>
+                    <div class="progress progress-warning"><div class="bar" style="width: 70%; text-align:left; padding-left:10px;">Español</div></div>
+                    <div class="progress progress-info"><div class="bar" style="width: 60%; text-align:left; padding-left:10px;">Italiano</div></div>
+                    <div class="progress progress-danger"><div class="bar" style="width: 40%; text-align:left; padding-left:10px;">Francés</div></div>
+                </div>
+            </div>
         <!-- Boxes-Idiomas -->
         <section id="grid" class="grid clearfix">
                 <a href="#" data-path-hover="m 180,34.57627 -180,0 L 0,0 180,0 z">
@@ -121,123 +132,150 @@
                     </figure>
 
                 </a>       
-    </section>
-    <script>
-            (function() {
-    
-                function init() {
-                    var speed = 250,
-                        easing = mina.easeinout;
+        </section>
+        <script>
+                (function() {
+        
+                    function init() {
+                        var speed = 250,
+                            easing = mina.easeinout;
 
-                    [].slice.call ( document.querySelectorAll( '#grid > a' ) ).forEach( function( el ) {
-                        var s = Snap( el.querySelector( 'svg' ) ), path = s.select( 'path' ),
-                            pathConfig = {
-                                from : path.attr( 'd' ),
-                                to : el.getAttribute( 'data-path-hover' )
-                            };
+                        [].slice.call ( document.querySelectorAll( '#grid > a' ) ).forEach( function( el ) {
+                            var s = Snap( el.querySelector( 'svg' ) ), path = s.select( 'path' ),
+                                pathConfig = {
+                                    from : path.attr( 'd' ),
+                                    to : el.getAttribute( 'data-path-hover' )
+                                };
 
-                        el.addEventListener( 'mouseenter', function() {
-                            path.animate( { 'path' : pathConfig.to }, speed, easing );
+                            el.addEventListener( 'mouseenter', function() {
+                                path.animate( { 'path' : pathConfig.to }, speed, easing );
+                            } );
+
+                            el.addEventListener( 'mouseleave', function() {
+                                path.animate( { 'path' : pathConfig.from }, speed, easing );
+                            } );
                         } );
+                    }
 
-                        el.addEventListener( 'mouseleave', function() {
-                            path.animate( { 'path' : pathConfig.from }, speed, easing );
-                        } );
-                    } );
-                }
+                    init();
 
-                init();
-
-            })();
-    </script>
+                })();
+        </script>
 
 
-        <div class="row-fluid">
-            
+        <div class="row-fluid">          
                 <hr>
-
                 <!-- Meet the team -->
                 <h1 class="center">aCORDION, a lo mexicano weyyyyyyyyy!!</h1>
-
                 <hr>
 
-                <div class="accordion" id="accordion2">
-                    <div class="accordion-group">
-                        <div class="accordion-heading">
-                        <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
-                          Visión y Misión
-                        </a>
-                        </div>
-                        <div id="collapseOne" class="accordion-body collapse">
-                            <div class="accordion-inner">
-                              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-group">
-                        <div class="accordion-heading">
-                            <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
-                            Requisítos para convalidar
-                            </a>
-                        </div>
-                          <div id="collapseTwo" class="accordion-body collapse">
-                            <div class="accordion-inner">
-                              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                            </div>
-                          </div>
-                    </div>
+
+                <div class="span1"></div>
+                <div class="span9">
+                    <div class="accordion" id="accordion2">
                         <div class="accordion-group">
-                          <div class="accordion-heading">
-                            <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">
-                              Administración
-                          </a>
-                         </div>
-                          <div id="collapseThree" class="accordion-body collapse">
-                            <div class="accordion-inner">
-                                <div class="row-fluid">
-                                <div class="span3">
-                                    <div class="box">
-                                        <p><img src="images/sample/team1.jpg" alt="" ></p>
-                                        <h5>Roman Munive (cabeza de huevo)</h5>
-                                        <p>Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat.</p>
-                                        <a class="btn btn-social btn-facebook" href="#"><i class="icon-facebook"></i></a> <a class="btn btn-social btn-google-plus" href="#"><i class="icon-google-plus"></i></a> <a class="btn btn-social btn-twitter" href="#"><i class="icon-twitter"></i></a> <a class="btn btn-social btn-linkedin" href="#"><i class="icon-linkedin"></i></a>
-                                    </div>
-                                </div>
+                            <div class="accordion-heading">
+                            <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+                              Visión y Misión
+                            </a>
+                            </div>
+                            <div id="collapseOne" class="accordion-body collapse">
+                                <div class="accordion-inner">
+                                <p><strong>Misión</strong></p>
 
-                                <div class="span3">
-                                    <div class="box">
-                                        <p><img src="images/sample/team2.jpg" alt="" ></p>
-                                        <h5>Sub director</h5>
-                                        <p>Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat.</p>
-                                        <a class="btn btn-social btn-facebook" href="#"><i class="icon-facebook"></i></a> <a class="btn btn-social btn-google-plus" href="#"><i class="icon-google-plus"></i></a> <a class="btn btn-social btn-twitter" href="#"><i class="icon-twitter"></i></a> <a class="btn btn-social btn-linkedin" href="#"><i class="icon-linkedin"></i></a>
-                                    </div>
-                                </div>
+                                <p>Ofrecer una formación académica integral y de calidad en la enseñanza de idiomas, de manera que el alumno haga uso efectivo, funcional y autosuficiente de los mismos.</p>
+                                 
+                                <p><strong>Visión</strong></p>
 
-                                <div class="span3">
-                                    <div class="box">
-                                        <p><img src="images/sample/team4.jpg" alt="" ></p>
-                                        <h5>El contador (gordito simpaticon)</h5>
-                                        <p>Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat.</p>
-                                        <a class="btn btn-social btn-facebook" href="#"><i class="icon-facebook"></i></a> <a class="btn btn-social btn-google-plus" href="#"><i class="icon-google-plus"></i></a> <a class="btn btn-social btn-twitter" href="#"><i class="icon-twitter"></i></a> <a class="btn btn-social btn-linkedin" href="#"><i class="icon-linkedin"></i></a>
-                                    </div>
-                                </div>
-
-                                <div class="span3">
-                                    <div class="box">
-                                        <p><img src="images/sample/team3.jpg" alt="" ></p>
-                                        <h5>LA secre! ta tia! xdd</h5>
-                                        <p>Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat.</p>
-                                        <a class="btn btn-social btn-facebook" href="#"><i class="icon-facebook"></i></a> <a class="btn btn-social btn-google-plus" href="#"><i class="icon-google-plus"></i></a> <a class="btn btn-social btn-twitter" href="#"><i class="icon-twitter"></i></a> <a class="btn btn-social btn-linkedin" href="#"><i class="icon-linkedin"></i></a>
-                                    </div>
+                                <p>Ser una institución líder, referente del mejor nivel de enseñanza de idiomas como lengua  extranjera, en concordancia con la visión internacional de la Pontificia Universidad Católica del Perú.</p>
                                 </div>
                             </div>
-                            <p>&nbsp;</p>
-                            <p></p>
-                            <hr>
-                            </div>
-                           </div>
                         </div>
+                        <div class="accordion-group">
+                            <div class="accordion-heading">
+                                <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
+                                Nuestra Metología
+                                </a>
+                            </div>
+                              <div id="collapseTwo" class="accordion-body collapse">
+                                <div class="accordion-inner">
+                                  <p>La metodología que aplicamos en CENTRO DE IDIOMAS - UNICA se basa en la constante práctica que realizan nuestros alumnos. Una de las razones por la que nuestros alumnos alcanzan resultados superiores al promedio, es porque la enseñanza del idioma no está centrada en el estudio rutinario de la gramática o de sus funciones y frases comunicativas, sino en el uso de las habilidades naturales que todo ser humano tiene para establecer una comunicación apropiada.</p>
+ 
+                                <p>Quizás hayas estudiado algún idioma por mucho tiempo y aún así no puedes comunicarte o entender lo que otros dicen con facilidad. Esto es común en la enseñanza tradicional de los idiomas. Es similar a pasar meses tratando de aprender a nadar frente a una piscina, pero al momento de la verdad, probablemente ni te animas a lanzarte. Adquirir un idioma es muy similar a aprender a nadar, no se hace únicamente ante una pizarra, sino principalmente en la práctica real diaria. Por ello, con nuestro sistema de enseñanza aprenderás el inglés de una manera más amena y natural, con actividades de interacción continua, y atención al uso del inglés cotidiano verdadero, tal como se utiliza en los países de habla inglesa.</p>
+                                 
+                                <p>Nuestra metodología incluye, entre otros, actividades vivenciales, audio y video para su aplicación en clase.</p>
+                                 
+                                <p>Para que tu aprendizaje sea dinámico, y uses de manera natural lo aprendido, en CENTRO DE IDIOMAS - UNICA te ofrecemos la combinación perfecta entre la enseñanza presencial y el apoyo de medios virtuales (Blended Learning) de tal manera que tu interacción con el inglés sea una constante, ¡24/7!</p>
+                                 
+                                <p>En nuestra metodología también encontrarás:</p>
+                                 
+                                <ul>
+                                <li>Enfoque humanista.</li>
+                                <li>Práctica de frases lexicales.</li>
+                                <li>Actividades naturales de TPR (Total Physical Response).</li>
+                                <li>Task-based activities (actividades basadas en tareas).</li>
+                                <li>Práctica de vocabulario y expresiones con canciones de actualidad.</li>
+                                <li>Actividades de drama y juego de roles.</li>
+                                <ul>
+                                </div>
+                              </div>
+                        </div>
+                            <div class="accordion-group">
+                              <div class="accordion-heading">
+                                <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">
+                                  Administración
+                              </a>
+                             </div>
+                              <div id="collapseThree" class="accordion-body collapse">
+                                <div class="accordion-inner">
+                                    <div class="row-fluid">
+                                    <div class="span3">
+                                        <div class="box">
+                                            <p><%= image_tag "galeria/director.png"%></p>
+                                            <h5>Director</h5>
+                                            <p>Ing. Wilder Román Munive</p>
+                                            <a class="btn btn-social btn-facebook" href="https://www.facebook.com/wilder.romanmunive"><i class="icon-facebook"></i></a> 
+                                            <a class="btn btn-social btn-google-plus" href="#"><i class="icon-google-plus"></i></a> 
+                                            <a class="btn btn-social btn-twitter" href="#"><i class="icon-twitter"></i></a> 
+                                            <a class="btn btn-social btn-linkedin" href="#"><i class="icon-linkedin"></i></a>
+                                        </div>
+                                    </div>
 
-</div>
-</div>
-</section>
+                                    <div class="span3">
+                                        <div class="box">
+                                            <p><%= image_tag "galeria/contador.png"%></p>
+                                            <h5>Contador</h5>
+                                            <p>Sr. Johnny Lovera</p>
+                                            <a class="btn btn-social btn-facebook" href="#"><i class="icon-facebook"></i></a> <a class="btn btn-social btn-google-plus" href="#"><i class="icon-google-plus"></i></a> <a class="btn btn-social btn-twitter" href="#"><i class="icon-twitter"></i></a> <a class="btn btn-social btn-linkedin" href="#"><i class="icon-linkedin"></i></a>
+                                        </div>
+                                    </div>
+
+                                    <div class="span3">
+                                        <div class="box">
+                                            <p><%= image_tag "galeria/secretaria.png"%></p>
+                                            <h5>Secretaria</h5>
+                                            <p>Srta. Luz</p>
+                                            <a class="btn btn-social btn-facebook" href="#"><i class="icon-facebook"></i></a> <a class="btn btn-social btn-google-plus" href="#"><i class="icon-google-plus"></i></a> <a class="btn btn-social btn-twitter" href="#"><i class="icon-twitter"></i></a> <a class="btn btn-social btn-linkedin" href="#"><i class="icon-linkedin"></i></a>
+                                        </div>
+                                    </div>
+
+                                    <div class="span3">
+                                        <div class="box">
+                                            <p><%= image_tag "galeria/secretaria2.png"%></p>
+                                            <h5>Secretaria</h5>
+                                            <p>Srta. Mery</p>
+                                            <a class="btn btn-social btn-facebook" href="#"><i class="icon-facebook"></i></a> <a class="btn btn-social btn-google-plus" href="#"><i class="icon-google-plus"></i></a> <a class="btn btn-social btn-twitter" href="#"><i class="icon-twitter"></i></a> <a class="btn btn-social btn-linkedin" href="#"><i class="icon-linkedin"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p>&nbsp;</p>
+                                <p></p>
+                                <hr>
+                                </div>
+                               </div>
+                            </div>
+
+                        </div>
+                    </div>
+        </div>
+        </section>

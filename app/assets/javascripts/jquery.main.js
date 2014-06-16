@@ -8,7 +8,11 @@ var ready = function() {
             
     };
 
-    
+
+    //inputfocus
+    $('input#username').inputfocus({ value: field_values['username'] });
+    $('input#password').inputfocus({ value: field_values['password'] });
+    $('input#cpassword').inputfocus({ value: field_values['cpassword'] });     
 
     //reset progress bar
     $('#progress').css('width','0');
