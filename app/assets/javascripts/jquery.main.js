@@ -2,23 +2,23 @@ var ready = function() {
     //original field values
     var field_values = {
             //id        :  value
-            'username'  : 'username',
-            'password'  : 'password',
+            'usuario'  : 'usuario',
+            'pass'  : 'pass',
             'cpassword' : 'password',
             
     };
 
 
     //inputfocus
-    $('input#username').inputfocus({ value: field_values['username'] });
-    $('input#password').inputfocus({ value: field_values['password'] });
+    $('input#usuario').inputfocus({ value: field_values['usuario'] });
+    $('input#pass').inputfocus({ value: field_values['pass'] });
     $('input#cpassword').inputfocus({ value: field_values['cpassword'] });     
 
     //reset progress bar
     $('#progress').css('width','0');
     $('#progress_text').html('0% Complete');
 
-    $('form').submit(function(){ return false; });
+    
     $('#submit_first').click(function(){
         //remove classes
         $('#first_step input').removeClass('error').removeClass('valid');
@@ -39,7 +39,7 @@ var ready = function() {
         });        
         
         if(!error) {
-            if( $('#password').val() != $('#cpassword').val() ) {
+            if( $('#pass').val() != $('#cpassword').val() ) {
                     $('#first_step input[type=password]').each(function(){
                         $(this).removeClass('valid').addClass('error');
                         $(this).effect("shake", { times:3 }, 50);
