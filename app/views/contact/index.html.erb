@@ -1,0 +1,9 @@
+<%= form_tag(f_contact_path, method: 'post') do %>
+	<%= label_tag :name, 'Nombre :' %>
+	<%= text_field_tag :name %><br><br>
+	<%= label_tag :title, 'Título :' %>
+	<%= text_field_tag :title %><br><br>
+	<%= label_tag :body, 'Mensaje :' %>
+	<%= text_area_tag :body,"", :size => "1x8" %><br><br>
+	<%= submit_tag %>
+<% end %>

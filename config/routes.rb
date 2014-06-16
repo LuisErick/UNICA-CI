@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'contact/index'
+  post 'contact/email'
+  get 'contacto' => "contact#index", as: :contact
+  post 'enviando' => "contact#email", as: :f_contact
   resources :certifications
 
   get 'first_register/new'
@@ -7,7 +11,7 @@ Rails.application.routes.draw do
   post "/registro_realizado" => "first_register#create", as: :create_register
 
   get 'faq/index'
-  get 'faq/index', as: :faq
+  get 'faq' => "faq#index", as: :faq
 
   get 'welcome/index'
   get '' => "welcome#index", as: :index
