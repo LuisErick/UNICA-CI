@@ -42,6 +42,6 @@ class FirstRegisterController < ApplicationController
 
 		User.register(username,password,language,course_type,level,package,validation_type,name,paternal_lastname,maternal_lastname,address,district,province,department,home_phone,mobile_phone,sex,birthday,birthplace,unica_person,college,postgrade_person,marital_status)
 
-		render text: params.to_s
+		render text: params
 	end
 end
