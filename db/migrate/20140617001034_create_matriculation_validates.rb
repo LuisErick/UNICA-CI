@@ -3,7 +3,7 @@ class CreateMatriculationValidates < ActiveRecord::Migration
     create_table :matriculation_validates do |t|
       t.integer :matriculation_id
       t.string :institution
-      t.boolean :state
+      t.boolean :validation_type
 
       t.timestamps
     end

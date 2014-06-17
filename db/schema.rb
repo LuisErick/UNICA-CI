@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140613221556) do
+ActiveRecord::Schema.define(version: 20140617001221) do
 
   create_table "administrators", force: true do |t|
     t.integer  "person_id"
@@ -131,10 +131,16 @@ ActiveRecord::Schema.define(version: 20140613221556) do
     t.datetime "updated_at"
   end
 
+  create_table "matriculation_validate_pays", force: true do |t|
+    t.integer  "matriculation_validate_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "matriculation_validates", force: true do |t|
     t.integer  "matriculation_id"
     t.string   "institution"
-    t.boolean  "state"
+    t.boolean  "validation_type"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -142,7 +148,6 @@ ActiveRecord::Schema.define(version: 20140613221556) do
   create_table "matriculations", force: true do |t|
     t.integer  "pre_matriculation_id"
     t.date     "acceptance_day"
-    t.boolean  "state"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -151,7 +156,6 @@ ActiveRecord::Schema.define(version: 20140613221556) do
     t.integer  "teacher_id"
     t.integer  "schedule_id"
     t.integer  "room_id"
-    t.boolean  "state"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -214,7 +218,7 @@ ActiveRecord::Schema.define(version: 20140613221556) do
     t.datetime "updated_at"
   end
 
-  create_table "pre_matriculation_communicatives", force: true do |t|
+  create_table "pre_mariculation_communicatives", force: true do |t|
     t.integer  "pre_matriculation_id"
     t.integer  "level_id"
     t.datetime "created_at"
@@ -223,9 +227,8 @@ ActiveRecord::Schema.define(version: 20140613221556) do
 
   create_table "pre_matriculations", force: true do |t|
     t.integer  "person_id"
-    t.integer  "course_type_id"
-    t.integer  "language_id"
-    t.string   "validation_code"
+    t.integer  "curse_type_id"
+    t.integer  "languaje_id"
     t.boolean  "state"
     t.datetime "created_at"
     t.datetime "updated_at"
