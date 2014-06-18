@@ -2,12 +2,14 @@
 
 one:
   person_id: 1
-  curse_type_id: 1
-  languaje_id: 1
+  course_type_id: 1
+  language_id: 1
   state: false
+  code: MyString
 
 two:
   person_id: 1
-  curse_type_id: 1
-  languaje_id: 1
+  course_type_id: 1
+  language_id: 1
   state: false
+  code: MyString

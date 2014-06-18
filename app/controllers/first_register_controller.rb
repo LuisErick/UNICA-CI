@@ -7,6 +7,7 @@ class FirstRegisterController < ApplicationController
 		@packages = Package.all
 		@marital_statuses = MaritalStatus.all
 		@colleges = College.all
+		@postgrade_types = PostgradeType.all
 		@sex = {'1' => 'Masculino', '0' => "Femenino"}
 		@student_types = {'1' => 'Si, ya he cursado', '0' => 'No, es la primera vez'}
 		@validation_type = {'1' => 'Por exámen', '0' => 'Por pago único'}
@@ -24,6 +25,7 @@ class FirstRegisterController < ApplicationController
 		name = params[:name]
 		paternal_lastname = params[:paternal_lastname]
 		maternal_lastname = params[:maternal_lastname]
+		dni = params[:dni]
 		address = params[:address]
 		district = params[:district]
 		province = params[:province]
@@ -37,10 +39,13 @@ class FirstRegisterController < ApplicationController
 		college = params[:college]
 		postgrade_person = params[:postgrade_person]
 		marital_status = params[:marital_status]
+		student_type = params[:student_type]
+		postgrade_type = params[:postgrade_type]
+		semester = params[:semester]
 
 		#Enviando todos los parámetros
 
-		User.register(username,password,language,course_type,level,package,validation_type,name,paternal_lastname,maternal_lastname,address,district,province,department,home_phone,mobile_phone,sex,birthday,birthplace,unica_person,college,postgrade_person,marital_status)
+		User.register(username,password,language,course_type,level,package,validation_type,name,paternal_lastname,maternal_lastname,address,dni,district,province,department,home_phone,mobile_phone,sex,birthday,birthplace,unica_person,college,postgrade_person,marital_status,student_type,postgrade_type,semester)
 
 		render text: params
 	end

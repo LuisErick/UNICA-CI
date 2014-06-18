@@ -311,6 +311,21 @@
                             <% end %>
                         </div>
                     </div>
+
+                    <div class="control-group">
+                        <%= label_tag :postgrade_type, 'Escoja su tipo de Posgrado', :class => 'control-label' %>
+                        <div class="span6">
+                            <% @postgrade_types.each do |i| %>
+                                <div class="control-group">
+                                    <%= label_tag 'postgrade_type_'+i.id.to_s, i.name,  :class => 'control-label' %>
+                                    <div class="controls">
+                                        <%= radio_button_tag :postgrade_type, i.id %>
+                                    </div>
+                                </div>
+                            <% end %>
+                        </div>
+                    </div>
+
                     <div class="control-group">
                         <%= label_tag :college, '¿Cual es su escuela?', :class => 'control-label' %>
                         <div class="span6">
@@ -337,6 +352,15 @@
                             <% end %>
                         </div>
                     </div>
+
+                    <div class="control-group">
+                        <%= label_tag :semester, 'Ingrese su ciclo de estudio actual', :class => 'control-label' %>
+                        <div class="controls">
+                            <%= text_field_tag :semester %>
+                        </div>
+                    </div>
+
+
                 </div>      <!-- clearfix --><div class="clear"></div><!-- /clearfix --> 
                 <input class="submit" type="submit" name="submit_ninth" id="submit_ninth" value="" onclick="return false;" />
             </div><!-- clearfix --><div class="clear"></div><!-- /clearfix --> 

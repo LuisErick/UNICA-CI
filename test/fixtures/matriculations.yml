@@ -2,8 +2,10 @@
 
 one:
   pre_matriculation_id: 1
-  acceptance_day: 2014-05-12
+  acceptance_day: 2014-06-18
+  state: false
 
 two:
   pre_matriculation_id: 1
-  acceptance_day: 2014-05-12
+  acceptance_day: 2014-06-18
+  state: false

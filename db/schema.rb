@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140617001221) do
+ActiveRecord::Schema.define(version: 20140618065606) do
 
   create_table "administrators", force: true do |t|
     t.integer  "person_id"
@@ -148,6 +148,7 @@ ActiveRecord::Schema.define(version: 20140617001221) do
   create_table "matriculations", force: true do |t|
     t.integer  "pre_matriculation_id"
     t.date     "acceptance_day"
+    t.boolean  "state"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -218,7 +219,7 @@ ActiveRecord::Schema.define(version: 20140617001221) do
     t.datetime "updated_at"
   end
 
-  create_table "pre_mariculation_communicatives", force: true do |t|
+  create_table "pre_matriculation_communicatives", force: true do |t|
     t.integer  "pre_matriculation_id"
     t.integer  "level_id"
     t.datetime "created_at"
@@ -227,9 +228,10 @@ ActiveRecord::Schema.define(version: 20140617001221) do
 
   create_table "pre_matriculations", force: true do |t|
     t.integer  "person_id"
-    t.integer  "curse_type_id"
-    t.integer  "languaje_id"
+    t.integer  "course_type_id"
+    t.integer  "language_id"
     t.boolean  "state"
+    t.string   "code"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

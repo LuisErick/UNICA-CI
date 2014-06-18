@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class PreMariculationCommunicativeTest < ActiveSupport::TestCase
+class PreMatriculationCommunicativeTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
