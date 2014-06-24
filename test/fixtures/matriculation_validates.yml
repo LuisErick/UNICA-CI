@@ -3,9 +3,9 @@
 one:
   matriculation_id: 1
   institution: MyString
-  state: false
+  validation_type: false
 
 two:
   matriculation_id: 1
   institution: MyString
-  state: false
+  validation_type: false

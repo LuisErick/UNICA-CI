@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'help/index'
+
   get 'contact/index'
   post 'contact/email'
   get 'contacto' => "contact#index", as: :contact

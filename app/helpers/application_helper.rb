@@ -21,6 +21,14 @@ module ApplicationHelper
 			'LOGIN'
 		end
 	end
+
+	def security_confirm
+		if is_loged
+			{ confirm: "¿Está seguro que quiere salir?" }
+		else
+			''
+		end
+	end
 	
 	def paint_active(controller)
 		if controller.class.to_s == 'Array'
