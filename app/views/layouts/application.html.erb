@@ -63,8 +63,8 @@
                         <li <%=paint_active('teachers')%>><%= link_to "Docentes", teachers_path  %></li>
                         <li <%=paint_active('students')%>><%= link_to "Estudiantes", students_path  %></li>
                         <% end %>                        
-                        <li><%= link_to 'FAQ' , faq_path %></li> 
-                        <li><%= link_to 'Contacto' , contact_path %></li>
+                        <li <%=paint_active('faq')%>><%= link_to 'FAQ' , faq_path %></li> 
+                        <li <%=paint_active('contact')%>><%= link_to 'Contacto' , contact_path %></li>
                         <li <%=paint_active('security')%> class="login">
                             <%= link_to to_security, 'data-toggle' => 'modal', data: { confirm: "Are you sure?" } do %>
                             <i class="icon-lock"></i> <%=security_message%>

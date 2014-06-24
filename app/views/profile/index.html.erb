@@ -1,10 +1,24 @@
-<h1>Profile#index</h1>
-<p>Find me in app/views/profile/index.html.erb</p>
-<h1><%=User.find(session[:id]).username%></h1>
-<div class="form">
-	<%=form_tag({controller: 'security', action: 'logout'}, method: 'get') do %>
-		<div class="actions">
-			<%=submit_tag 'Cerrar Sesión'%>
+<section class="subtitle">
+        <div class="container">
+            <div class="row-fluid">
+                <div class="span6">
+                    <h1>Mi perfil</h1>
+                </div>
+            </div>
+        </div>
+</section>
+<div class="container" id="sectionsep">
+	<div class="row-fluid">
+		<div class="span4"><%= image_tag 'galeria/contador.png' %></div>
+		<div class="span6">
+			<h1><%=User.find(session[:id]).username%></h1>
+			<div class="form">
+				<%=form_tag({controller: 'security', action: 'logout'}, method: 'get') do %>
+					<div class="actions">
+						<%=submit_tag 'Cerrar Sesión', :class => 'btn btn-primary'%>
+					</div>
+				<%end%>
+			</div>
 		</div>
-	<%end%>
+	</div>
 </div>
