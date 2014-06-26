@@ -55,8 +55,8 @@ class User < ActiveRecord::Base
     	self.state = false
     end
 
-    def validate_object(object)
-    	if object.is_nil?
+    def self.validate_object(object)
+    	if object.nil?
     		false
     	else
     		true

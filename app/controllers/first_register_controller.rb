@@ -15,8 +15,6 @@ class FirstRegisterController < ApplicationController
 		@is_postgrade = {'0' => 'No tengo un posgrado', '1' => 'Magister', '2' => 'Doctorado'}
 	end
 	def create
-<<<<<<< HEAD
-=======
 		username = params[:username]
 		password = params[:password]
 		language = params[:language]
@@ -50,6 +48,5 @@ class FirstRegisterController < ApplicationController
 		User.register(username,password,language,course_type,level,package,validation_type,name,paternal_lastname,maternal_lastname,address,dni,district,province,department,home_phone,mobile_phone,sex,birthday,birthplace,unica_person,college,postgrade_person,marital_status,student_type,postgrade_type,semester)
 
 		render text: params
->>>>>>> 5ab12e51efa12563edf68b304cfec4b3446cd02c
 	end
 end
