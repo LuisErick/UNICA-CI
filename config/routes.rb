@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'tasks/pending_matriculations'
+  get "/pendientes" => "tasks#pending_matriculations", as: :pending_matriculations
+  post 'tasks/activate_matriculation'
+  post "/activar" => "tasks#activate_matriculation", as: :activate_matriculation
   get 'help/index'
 
   get 'contact/index'

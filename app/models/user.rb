@@ -36,7 +36,7 @@ class User < ActiveRecord::Base
 				end
 				pre_matriculation = PreMatriculation.new(person: person, course_type: course_type, language: language, state: false)
 				if pre_matriculation.save
-					if student_type == '0'
+					if course_type == '2'
 						pre_matriculation_communicative = PreMatriculationCommunicative.new(pre_matriculation: pre_matriculation, level: level)
 					end
 					matriculations = Matriculation.new(pre_matriculation: pre_matriculation)
