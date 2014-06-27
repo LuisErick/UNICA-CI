@@ -10,15 +10,12 @@ class User < ActiveRecord::Base
 	has_one :person
 
 	#validaciones
-	validates :username, presence: true
+	validates :username, presence: true, uniqueness: true
 	validates :password, presence: true, length: { minimum: 6, too_short: "La contraseña debe tener 6 carácteres como mínimo" }
 
     after_validation :set_state, on: :create
 
-    #pre_matriculations => Añadir codigo
-    #matriculations => Añadir state
-    #pre_mariculation_communicative => {corregir nombre, corregir course_type }
-    #packages => Añadir state
+   	
 	def self.register(username,password,language,course_type,level,package,validation_type,name,paternal_lastname,maternal_lastname,address,dni,district,province,department,home_phone,mobile_phone,sex,birthday,birthplace,unica_person,college,postgrade_person,marital_status,student_type,postgrade_type,semester)
 
 		user = self.new(username: username, password: password)
@@ -48,6 +45,34 @@ class User < ActiveRecord::Base
 			end
 		else
 
+		end
+	end
+
+	def self.create_teacher(params)
+		user = self.new(username: params[:username],password: params[:password], permission: Permission.find(3))
+		if user.save
+			person = Person.new(user: user, paternal_lastname: params[:paternal_lastname], maternal_lastname: params[:maternal_lastname], name: params[:name], dni: params[:dni], address: params[:address], district: params[:district], province: params[:province],  department: params[:department], home_phone: params[:home_phone], mobile_phone: params[:mobile_phone], sex: params[:sex], birthday: params[:birthday], birthplace: params[:birthplace], marital_status: params[:marital_status])
+			if person.save
+				teacher = Teacher.new(person: person,start_date: params[:start_date])			
+				if teacher.save
+					return teacher
+				else
+					return {user: user, person: person, teacher: teacher}
+					user.destroy
+					person.destroy
+					teacher.destroy
+				end
+			else
+				return {user: user, person: person, teacher: teacher}
+				user.destroy
+				person.destroy
+				teacher.destroy
+			end
+		else
+			return {user: user, person: person, teacher: teacher}
+			user.destroy
+			person.destroy
+			teacher.destroy
 		end
 	end
 

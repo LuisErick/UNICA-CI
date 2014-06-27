@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'tasks/new_teacher'
+  get "/registro_maestro" => "tasks#new_teacher", as: :new_teacher
+  post 'tasks/create_teacher'
+  post "/maestro_registrado" => "tasks#create_teacher", as: :create_teacher
   get 'tasks/pending_matriculations'
   get "/pendientes" => "tasks#pending_matriculations", as: :pending_matriculations
   post 'tasks/activate_matriculation'

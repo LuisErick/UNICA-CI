@@ -15,6 +15,7 @@ class FirstRegisterController < ApplicationController
 		@is_postgrade = {'0' => 'No tengo un posgrado', '1' => 'Magister', '2' => 'Doctorado'}
 	end
 	def create
+=begin
 		username = params[:username]
 		password = params[:password]
 		language = params[:language]
@@ -42,11 +43,11 @@ class FirstRegisterController < ApplicationController
 		student_type = params[:student_type]
 		postgrade_type = params[:postgrade_type]
 		semester = params[:semester]
-
+=end
 		#Enviando todos los parámetros
+		#User.create_pre_matriculation(params)
+		#User.register(username,password,language,course_type,level,package,validation_type,name,paternal_lastname,maternal_lastname,address,dni,district,province,department,home_phone,mobile_phone,sex,birthday,birthplace,unica_person,college,postgrade_person,marital_status,student_type,postgrade_type,semester)
 
-		User.register(username,password,language,course_type,level,package,validation_type,name,paternal_lastname,maternal_lastname,address,dni,district,province,department,home_phone,mobile_phone,sex,birthday,birthplace,unica_person,college,postgrade_person,marital_status,student_type,postgrade_type,semester)
-
-		render text: params
+		#render text: params
 	end
 end

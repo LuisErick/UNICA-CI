@@ -1,0 +1,74 @@
+<%= form_tag(create_teacher_path, method: 'post') do %>
+	
+	<!-- parte User -->
+	<fieldset>
+		<%= label_tag :username, 'Ingrese nombre de usuario' %>
+		<%= text_field_tag :username %>
+		<br>
+		<%= label_tag :password, 'Ingrese la contraseña' %>
+		<%= text_field_tag :password %>
+		<br>
+		<%= label_tag :confirm_password, 'Confirme la contraseña' %>
+		<%= text_field_tag :confirm_password %>
+		<br>		
+	</fieldset>
+
+	<!-- parte Person -->
+	<fieldset>
+		<%= label_tag :name, 'Ingrese el nombre' %>
+		<%= text_field_tag :name %>
+		<br>
+		<%= label_tag :paternal_lastname, 'Ingrese el apellido paterno' %>
+		<%= text_field_tag :paternal_lastname %>
+		<br>
+		<%= label_tag :maternal_lastname, 'Ingrese el apellido materno' %>
+		<%= text_field_tag :maternal_lastname %>
+		<br>
+		<%= label_tag :dni, 'Ingrese el DNI del profesor' %>
+		<%= text_field_tag :dni %>
+		<br>
+		<%= label_tag :address, 'Ingrese la dirección' %>
+		<%= text_field_tag :address %>
+		<br>
+		<%= label_tag :district, 'Ingrese el distrito' %>
+		<%= text_field_tag :district %>
+		<br>
+		<%= label_tag :province, 'Ingrese la provincia' %>
+		<%= text_field_tag :province %>
+		<br>
+		<%= label_tag :department, 'Ingrese el departamento' %>
+		<%= text_field_tag :department %>
+		<br>
+		<%= label_tag :home_phone, 'Ingrese número fijo' %>
+		<%= text_field_tag :home_phone %>
+		<br>
+		<%= label_tag :mobile_phone, 'Ingrese número de teléfono celular' %>
+		<%= text_field_tag :mobile_phone %>
+		<br>
+		<%= label_tag :sex, 'Sexo:', :class => 'control-label' %>    <% @sex.each do |s| %>                            
+                <%= label_tag 'sex_'+s[0].to_s, s[1],  :class => 'control-label'   %>
+                <%= radio_button_tag :sex, s[0]  %>
+            <% end %>
+		<br>
+		<%= label_tag :birthday, 'Ingrese la fecha de nacimiento' %>
+		<%= date_field_tag :birthday %>
+		<br>
+		<%= label_tag :birthplace, 'Ingrese el lugar de nacimiento' %>
+		<%= text_field_tag :birthplace %>
+		<br>
+		<%= label_tag :marital_status, 'Elija el estado civil' %>
+		<% @marital_status.each do |m| %>
+                <%= label_tag 'marital_status_'+m.id.to_s, m.name,  :class => 'control-label'   %>
+                <%= radio_button_tag :marital_status, m.id  %>
+        <% end %>
+		<br>
+	</fieldset>
+
+	<!-- parte Teacher -->
+	<fieldset>
+		<%= label_tag :start_date, 'Fecha de inicio' %>
+		<%= date_field_tag :start_date %>
+	</fieldset>
+
+	<%= submit_tag 'Registrar profesor' %>
+<% end %>
