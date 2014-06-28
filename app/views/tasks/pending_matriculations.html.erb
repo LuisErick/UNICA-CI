@@ -6,30 +6,36 @@
                 </div>
             </div>
         </div>
-    </section>
-    <center>
-    <table>
-    	<tr>
-    		<th>Código de activación</th>
-    		<th>Nombre de Usuario</th>
-    		<th>Nombre de Persona</th>
-    		<th>Código de Pre-Matrícula</th>
-    		<th></th>
-    	</tr>
-    	<tr>
-    		<% @pendings.each do |p| %>
-    			<td>p.pre_matriculation.code</td>
-    			<td>p.pre_matriculation.person.user.username</td>
-    			<td>get_name_person(p.pre_matriculation.person.user)</td>
-    			<td>p.pre_matriculation.id</td>
-    			<td>
-    				<%= form_tag(activate_matriculation, method: 'post') do %>
-    					<%= hidden_field_tag 'activate', '1' %>
-    					<%= submit_tag 'Activar' %>
-    				<% end %>
-    			</td>
-    		<% end %>
-    	</tr>
+</section>
+<section id="sectionsep">
+<div class="container box">
+    <table class="table table-striped">
+        <thead>
+        	<tr>
+        		<th>Código de activación</th>
+        		<th>Nombre de Usuario</th>
+        		<th>Nombre de Persona</th>
+        		<th>Código de Pre-Matrícula</th>
+        		<th></th>
+        	</tr>
+        </thead>
+        <tbody>
+        	<tr>
+        		<% @pendings.each do |p| %>
+        			<td>p.pre_matriculation.code</td>
+        			<td>p.pre_matriculation.person.user.username</td>
+        			<td>get_name_person(p.pre_matriculation.person.user)</td>
+        			<td>p.pre_matriculation.id</td>
+        			<td>
+        				<%= form_tag(activate_matriculation, method: 'post') do %>
+        					<%= hidden_field_tag 'activate', '1' %>
+        					<%= submit_tag 'Activar', :class => 'btn btn-mini' %>
+        				<% end %>
+        			</td>
+        		<% end %>
+        	</tr>
+        </tbody>
     </table>
-    </center>
+</div>
+</section>
 
