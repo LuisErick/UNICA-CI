@@ -37,7 +37,7 @@ body #register{
     overflow: hidden;
     position: relative;
 }
-    #container #first_step, #second_step, #third_step, #fourth_step, #fifth_step, #sixth_step, #seventh_step, #eighth_step, #ninth_step, #tenth_step { display: none; }
+    #container #first_step, #second_step, #third_step, #fourth_step, #fifth_step, #sixth_step, #seventh_step, #eighth_step, #ninth_step, #tenth_step, #eleventh_step { display: none; }
     #container #first_step { display: block; }
 
     #register #container .form { margin: 30px 72px 0 72px; }
