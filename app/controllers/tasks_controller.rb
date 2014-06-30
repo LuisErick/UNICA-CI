@@ -3,6 +3,18 @@ class TasksController < ApplicationController
   	@pendings = Matriculation.where(state: false)
   end
 
+  def activate_matriculation
+  	if request.post?
+  		if params[:activate] == 1 and params[:matriculation] != nil
+  			m = Matriculation.find(params[:matriculation]).state = true
+  			m.pre_matriculation.state = true
+  			redirect_to index_path
+  		end
+  	else
+  		redirect_to index_path
+  	end
+  end
+
   def new_teacher
   	if params[:error] == '1'
   		get_parameter_teacher(params[:backup])
