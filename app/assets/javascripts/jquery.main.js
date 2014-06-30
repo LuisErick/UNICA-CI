@@ -162,11 +162,7 @@ var ready = function() {
         
 
     });
-
-
-eleventh_step 
-
-      
+     
 
 };
 
