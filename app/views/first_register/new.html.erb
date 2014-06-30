@@ -280,13 +280,18 @@
                 </div>      <!-- clearfix --><div class="clear"></div><!-- /clearfix --> 
                 <input class="submit" type="submit" name="submit_ninth" id="submit_ninth" value="" onclick="return false;" />
             </div><!-- clearfix --><div class="clear"></div><!-- /clearfix --> 
-<!-- REVISAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAR -->
-            <!-- Este esta para agregar -->           
-            <!-- #ninth_step -->
+
+      <!-- AQUI LA CHAMBA DE IRIS VALIDAR ESTOS FORMS SEGUN CORREPONDA -->
+      <!-- AQUI LA CHAMBA DE IRIS VALIDAR ESTOS FORMS SEGUN CORREPONDA -->
+      <!-- AQUI LA CHAMBA DE IRIS VALIDAR ESTOS FORMS SEGUN CORREPONDA -->
+      <!-- AQUI EMPIEZA!!!! -->
+      <!-- AQUI EMPIEZA!!!! -->
+            <!-- #tenth_step -->
+
             <div id="ninth_step">
                 <div class="form-horizontal" id="sectionsep">
                     <div class="control-group">
-                        <%= label_tag :validation_type, '¿Que método d validación desea adquirir?', :class => 'control-label' %>
+                        <%= label_tag :validation_type, '¿Que método d validación desea adquirir?' %>
                         <div class="span6">
                             <% @is_unica.each do |i| %>
                                 <div class="control-group">
@@ -298,20 +303,25 @@
                             <% end %>
                         </div>
                     </div>
+                </div>      <!-- clearfix --><div class="clear"></div><!-- /clearfix --> 
+                <input class="submit" type="submit" name="submit_ninth" id="submit_ninth" value="" onclick="return false;" />
+            </div><!-- clearfix --><div class="clear"></div><!-- /clearfix --> 
+
+
+            <div id="ninth_step">
+                <div class="form-horizontal" id="sectionsep">
                     <div class="control-group">
-                        <%= label_tag :unica_person, '¿Es usted un estudiante de la Unica', :class => 'control-label' %>
-                        <div class="span6">
-                            <% @is_unica.each do |i| %>
-                                <div class="control-group">
-                                    <%= label_tag 'unica_person_'+i[0].to_s, i[1],  :class => 'control-label' %>
-                                    <div class="controls">
-                                        <%= radio_button_tag :unica_person, i[0] %>
-                                    </div>
-                                </div>
-                            <% end %>
+                        <%= label_tag :semester, 'Ingrese su ciclo de estudio actual', :class => 'control-label' %>
+                        <div class="controls">
+                            <%= text_field_tag :semester %>
                         </div>
                     </div>
+                </div>      <!-- clearfix --><div class="clear"></div><!-- /clearfix --> 
+                <input class="submit" type="submit" name="submit_ninth" id="submit_ninth" value="" onclick="return false;" />
+            </div><!-- clearfix --><div class="clear"></div><!-- /clearfix -->
 
+            <div id="ninth_step">
+                <div class="form-horizontal" id="sectionsep">
                     <div class="control-group">
                         <%= label_tag :postgrade_type, 'Escoja su tipo de Posgrado', :class => 'control-label' %>
                         <div class="span6">
@@ -325,7 +335,12 @@
                             <% end %>
                         </div>
                     </div>
+                </div>      <!-- clearfix --><div class="clear"></div><!-- /clearfix --> 
+                <input class="submit" type="submit" name="submit_ninth" id="submit_ninth" value="" onclick="return false;" />
+            </div><!-- clearfix --><div class="clear"></div><!-- /clearfix -->
 
+            <div id="ninth_step">
+                <div class="form-horizontal" id="sectionsep">
                     <div class="control-group">
                         <%= label_tag :college, '¿Cual es su escuela?', :class => 'control-label' %>
                         <div class="span6">
@@ -339,6 +354,12 @@
                             <% end %>
                         </div>
                     </div>
+                </div>      <!-- clearfix --><div class="clear"></div><!-- /clearfix --> 
+                <input class="submit" type="submit" name="submit_ninth" id="submit_ninth" value="" onclick="return false;" />
+            </div><!-- clearfix --><div class="clear"></div><!-- /clearfix -->
+
+            <div id="ninth_step">
+                <div class="form-horizontal" id="sectionsep">
                     <div class="control-group">
                         <%= label_tag :postgrade_person, '¿Ha estudiado algún posgrado?', :class => 'control-label' %>
                         <div class="span6">
@@ -352,21 +373,39 @@
                             <% end %>
                         </div>
                     </div>
-
-                    <div class="control-group">
-                        <%= label_tag :semester, 'Ingrese su ciclo de estudio actual', :class => 'control-label' %>
-                        <div class="controls">
-                            <%= text_field_tag :semester %>
-                        </div>
-                    </div>
-
-
                 </div>      <!-- clearfix --><div class="clear"></div><!-- /clearfix --> 
                 <input class="submit" type="submit" name="submit_ninth" id="submit_ninth" value="" onclick="return false;" />
-            </div><!-- clearfix --><div class="clear"></div><!-- /clearfix --> 
-<!-- REVISAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAR -->
-            <!-- #tenth_step -->
+            </div><!-- clearfix --><div class="clear"></div><!-- /clearfix -->
+
+
             <div id="tenth_step">
+                <div class="form-horizontal" id="sectionsep">                    
+                    <div class="control-group">
+                        <%= label_tag :unica_person, '¿Es usted un estudiante de la Unica', :class => 'control-label' %>
+                        <div class="span6">
+                            <% @is_unica.each do |i| %>
+                                <div class="control-group">
+                                    <%= label_tag 'unica_person_'+i[0].to_s, i[1],  :class => 'control-label' %>
+                                    <div class="controls">
+                                        <%= radio_button_tag :unica_person, i[0] %>
+                                    </div>
+                                </div>
+                            <% end %>
+                        </div>
+                    </div>
+                </div>      <!-- clearfix --><div class="clear"></div><!-- /clearfix --> 
+                <input class="submit" type="submit" name="submit_tenth" id="submit_tenth" value="" onclick="return false;" />
+            </div><!-- clearfix --><div class="clear"></div><!-- /clearfix --> 
+
+
+
+        <!-- AQUI ACABA!!!! -->
+        <!-- AQUI ACABA!!!! -->
+        <!-- AQUI ACABA!!!! -->
+        <!-- AQUI ACABA!!!! -->
+
+            <!-- #eleventh_step -->
+            <div id="eleventh_step">
                 <div class="form-horizontal">
                     <div class="control-group">
                         <%= label_tag :marital_status, 'Estado Civil', :class => 'control-label' %>
@@ -382,7 +421,7 @@
                         <% end %>
                     </div>
                 </div><!-- clearfix --><div class="clear"></div><!-- /clearfix --> 
-                <input class="send submit" type="submit" name="submit_ninth" id="submit_ninth" value="" />
+                <input class="send submit" type="submit" name="submit_eleventh" id="submit_eleventh" value="" />
                 
             </div>
 	</div>

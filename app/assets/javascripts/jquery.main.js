@@ -132,7 +132,7 @@ var ready = function() {
 
     $('#submit_eighth').click(function(){
         //update progress bar
-        $('#progress_text').html('90% Complete');
+        $('#progress_text').html('87% Complete');
         $('#progress').css('width','269px');
                 //slide steps
                 $('#eighth_step').slideUp();
@@ -143,7 +143,7 @@ var ready = function() {
 
     $('#submit_ninth').click(function(){
                 //update progress bar
-        $('#progress_text').html('100% Complete');
+        $('#progress_text').html('93% Complete');
         $('#progress').css('width','339px');
                 //slide steps
                 $('#ninth_step').slideUp();
@@ -152,6 +152,19 @@ var ready = function() {
 
     });
 
+    $('#submit_tenth').click(function(){
+                //update progress bar
+        $('#progress_text').html('100% Complete');
+        $('#progress').css('width','339px');
+                //slide steps
+                $('#tenth_step').slideUp();
+                $('#eleventh_step').slideDown();     
+        
+
+    });
+
+
+eleventh_step 
 
       
 
