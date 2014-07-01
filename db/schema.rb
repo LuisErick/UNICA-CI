@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140618065606) do
+ActiveRecord::Schema.define(version: 20140701215930) do
 
   create_table "administrators", force: true do |t|
     t.integer  "person_id"
@@ -289,6 +289,7 @@ ActiveRecord::Schema.define(version: 20140618065606) do
   create_table "teachers", force: true do |t|
     t.integer  "person_id"
     t.date     "start_date"
+    t.integer  "language_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

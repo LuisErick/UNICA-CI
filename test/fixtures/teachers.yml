@@ -2,8 +2,10 @@
 
 one:
   person_id: 1
-  start_date: 2014-05-12
+  start_date: 2014-07-01
+  language_id: 1
 
 two:
   person_id: 1
-  start_date: 2014-05-12
+  start_date: 2014-07-01
+  language_id: 1
