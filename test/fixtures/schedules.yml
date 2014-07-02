@@ -1,15 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  days: MyString
-  start_time: 2014-05-12 11:24:24
-  end_time: 2014-05-12 11:24:24
-  week_days: 1
-  number_of_sessions: 1
+  day: 1
+  start_time: 2014-07-01 20:49:12
+  end_time: 2014-07-01 20:49:12
 
 two:
-  days: MyString
-  start_time: 2014-05-12 11:24:24
-  end_time: 2014-05-12 11:24:24
-  week_days: 1
-  number_of_sessions: 1
+  day: 1
+  start_time: 2014-07-01 20:49:12
+  end_time: 2014-07-01 20:49:12

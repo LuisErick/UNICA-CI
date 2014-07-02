@@ -4,8 +4,22 @@ class TasksController < ApplicationController
   end
 
   def new_schedule
-    @languages = Language.all
-    @teachers = Teacher.all
+    @languages = Hash.new
+    @languages['Todos los idiomas'] = '0'
+    Language.all.each do |m|
+      @languages[m.name] = m.id
+    end
+    @days = get_days.invert
+    if params[:language].nil?
+      @teachers = Teacher.all
+    else      
+      if params[:language] == '0'
+        @teachers = Teacher.all
+      else
+        @teachers = Teacher.where(language_id: params[:language])
+      end
+    end
+    
   end
 
   def activate_matriculation
@@ -50,6 +64,9 @@ class TasksController < ApplicationController
     else
       redirect_to new_teacher_path, message: 'Error al registrar el usuario, el nombre ya existe', error: '1'
     end
+  end
+  def create_schedule
+    
   end
 
 private

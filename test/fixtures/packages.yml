@@ -2,10 +2,10 @@
 
 one:
   teacher_id: 1
-  schedule_id: 1
   room_id: 1
+  number_of_sessions: 1
 
 two:
   teacher_id: 1
-  schedule_id: 1
   room_id: 1
+  number_of_sessions: 1

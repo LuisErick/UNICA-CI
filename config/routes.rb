@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   get 'tasks/new_schedule'
   get "/nuevo_horario" => "tasks#new_schedule", as: :new_schedule
+  post 'tasks/create_schedule'
+  post "/horario_creado" => "tasks#create_schedule", as: :create_schedule
   get 'tasks/new_teacher'
   get "/registro_maestro" => "tasks#new_teacher", as: :new_teacher
   post 'tasks/create_teacher'

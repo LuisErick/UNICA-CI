@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class PackageTest < ActiveSupport::TestCase
+class GroupScheduleTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
