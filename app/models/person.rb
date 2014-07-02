@@ -1,4 +1,7 @@
 class Person < ActiveRecord::Base
+
+validates :dni, numericality:  { only_integer: true }, length: { is: 8 }
+	
 	belongs_to :user
 	belongs_to :marital_status
 

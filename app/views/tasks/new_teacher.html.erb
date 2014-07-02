@@ -8,6 +8,21 @@
 		        </div>
 </section>
 
+<!-- Por si hay error al registrar -->
+<% if @is_error %>
+<div class="error">
+Revisa el code, soy un mensaje de error
+	<%= @message %>
+</div>
+<% end %>
+<% if @is_notification %>
+<div class="notification">
+	Revisa el code, soy una notificación
+	<%= @message %>
+</div>
+<% end %>
+<!-- |||||||||||||||||||||||||||||||||||| -->
+
 <div id="sectionsep" class="container form-horizontal">
 <%= form_tag(create_teacher_path, method: 'post') do %>
 	
@@ -22,13 +37,13 @@
 			<div class="control-group">
 				<%= label_tag :password, 'Contraseña', :class => 'control-label' %>
 				<div class="controls">
-				<%= text_field_tag :password %>
+				<%= password_field_tag :password %>
 				</div>
 			</div>
 			<div class="control-group">
 				<%= label_tag :confirm_password, 'Confirme contraseña', :class => 'control-label' %>
 				<div class="controls">
-				<%= text_field_tag :confirm_password %>
+				<%= password_field_tag :confirm_password %>
 				</div>
 			</div>
 			<br>		
@@ -141,14 +156,12 @@
 		<div class="control-group">
 		<%= label_tag :marital_status, 'Estado civil' %>
 		</div>
-		<% @marital_status.each do |m| %>
-				<div class="control-group">
-	                <%= label_tag 'marital_status_'+m.id.to_s, m.name,  :class => 'control-label'   %>
-	                <div class="controls">
-	                	<%= radio_button_tag :marital_status, m.id  %>
-	                </div>
-                </div>
-        <% end %>
+		<div class="control-group">
+			<%= select_tag :marital_status, options_for_select(@marital_status) %>
+		</div>
+
+		
+		
 	</div>
 	</fieldset>
 
@@ -163,6 +176,14 @@
 				<%= date_field_tag :start_date %>
 			</div>
 		</div>
+	
+		<div class="control-group">
+		<%= label_tag :language, 'Idioma', :class => 'control-label' %>	
+			<div class="controls">
+				<%= select_tag :language, options_for_select(@languages) %>
+			</div>
+		</div>
+		
 	</fieldset>
 
 	<hr>

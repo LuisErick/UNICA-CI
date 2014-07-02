@@ -6,6 +6,11 @@ module ApplicationHelper
 			false
 		end
 	end
+
+	def complet_name(user)
+		user.person.name+" "+user.person.paternal_lastname+user.person.maternal_lastname
+	end
+
 	def to_security
 		if is_loged
 			{controller: 'security', action: 'logout'}

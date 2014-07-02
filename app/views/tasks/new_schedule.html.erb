@@ -1,0 +1,46 @@
+<%= form_tag(new_schedule_path, method: 'get') do %>
+	<%= label_tag :language, '¿Quisiera escoger docentes de un idioma en espécífico?' %>
+	<%= select_tag :language, options_for_select(@languages) %>
+
+	<%= submit_tag 'Escoger' %>
+<% end %>
+
+<%= form_tag(create_schedule_path, method: 'post') do %>
+<table>
+	<tr>
+		<td>Nombre de usuario</td>
+		<td>Nombre completo</td>
+		<td>Idioma</td>
+		<td>DNI</td>
+		<td>Radiobutton</td>
+	</tr>
+	<% if !@teachers.blank? %>
+	  <% @teachers.each do |t| %>
+	    <tr>
+	    	<td><%=t.person.user.username %></td>
+	    	<td><%=complet_name(t.person.user)%></td>
+	    	<td><%=t.language.name%></td>
+	    	<td><%=t.person.dni%></td>
+	    	<td>
+	    		<div class="control-group">
+                    <div class="controls">
+                        <%= radio_button_tag :language, t.id  %>
+                    </div>
+                </div>
+	    	</td>
+	    </tr>
+	  <% end %>
+	<% else %>
+	  
+	<% end %>
+</table>
+	<%= label_tag :days, 'Ahora escoja el día que se dicatrá la asignatura' %>
+	<%= select_tag :days, options_for_select(@days) %>
+
+	<%= label_tag :start_time, 'Hora de inicio' %>
+	<%= time_field_tag :start_time %>
+
+	<%= label_tag :end_time, 'Hora de salida' %>
+	<%= time_field_tag :end_time %>
+	<%= submit_tag 'Asignar Horario' %>
+<% end %>

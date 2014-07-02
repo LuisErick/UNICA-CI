@@ -13,5 +13,8 @@ class ApplicationController < ActionController::Base
   	if !is_loged?
   	 redirect_to security_path
   	end
-  end  
+  end 
+  def get_days    
+    return {1 => "Lunes", 2 => "Martes",3 => "Miércoles",4 => "Jueves",5 => "Viernes",6 => "Sábado", 7 => "Domingo"}
+  end 
 end

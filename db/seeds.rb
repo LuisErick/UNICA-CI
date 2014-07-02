@@ -16,7 +16,6 @@ MaritalStatus.create(name: 'Soltero(a)', description: 'Está soltero')
 MaritalStatus.create(name: 'Divorciado(a)', description: 'Está divorciado')
 MaritalStatus.create(name: 'Separado(a)', description: 'Está separado')
 MaritalStatus.create(name: 'Conviviente', description: 'Es conviviente')
-MaritalStatus.create(name: 'Tijero', description: 'No tiene remedio')
 
 User.create(username: 'admin1', password: '81848133', permission_id: 1 )
 User.create(username: 'admin2', password: '123456', permission_id: 1 )
@@ -70,6 +69,10 @@ Faculty.create(name: 'Odontología', description: 'Facultad de Odontología')
 Faculty.create(name: 'Psicología', description: 'Facultad de Psicología')
 Faculty.create(name: 'Arquitectura', description: 'Facultad de Arquitectura')
 Faculty.create(name: 'Obstetricia', description: 'Facultad de Obstetricia')
+
+Faculty.all.each do |f|
+	College.create(name: f.name)
+end
 
 PostgradeType.create(name: 'Master', description: 'Grado de Magister')
 PostgradeType.create(name: 'Doctor', description: 'Grado de Doctorado')

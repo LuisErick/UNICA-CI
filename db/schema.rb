@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140701215930) do
+ActiveRecord::Schema.define(version: 20140702015022) do
 
   create_table "administrators", force: true do |t|
     t.integer  "person_id"
@@ -86,6 +86,13 @@ ActiveRecord::Schema.define(version: 20140701215930) do
     t.datetime "updated_at"
   end
 
+  create_table "group_schedules", force: true do |t|
+    t.integer  "schedule_id"
+    t.integer  "package_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "languages", force: true do |t|
     t.string   "name"
     t.text     "description"
@@ -155,8 +162,8 @@ ActiveRecord::Schema.define(version: 20140701215930) do
 
   create_table "packages", force: true do |t|
     t.integer  "teacher_id"
-    t.integer  "schedule_id"
     t.integer  "room_id"
+    t.integer  "number_of_sessions"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -251,11 +258,9 @@ ActiveRecord::Schema.define(version: 20140701215930) do
   end
 
   create_table "schedules", force: true do |t|
-    t.string   "days"
+    t.integer  "day"
     t.time     "start_time"
     t.time     "end_time"
-    t.integer  "week_days"
-    t.integer  "number_of_sessions"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
