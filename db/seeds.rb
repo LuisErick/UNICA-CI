@@ -70,5 +70,9 @@ Faculty.create(name: 'Psicología', description: 'Facultad de Psicología')
 Faculty.create(name: 'Arquitectura', description: 'Facultad de Arquitectura')
 Faculty.create(name: 'Obstetricia', description: 'Facultad de Obstetricia')
 
+Faculty.all.each do |f|
+	College.create(name: f.name)
+end
+
 PostgradeType.create(name: 'Master', description: 'Grado de Magister')
 PostgradeType.create(name: 'Doctor', description: 'Grado de Doctorado')

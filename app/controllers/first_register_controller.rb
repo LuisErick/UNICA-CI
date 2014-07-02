@@ -6,7 +6,7 @@ class FirstRegisterController < ApplicationController
 		#Esto no debería ser all, debería cambiar con ajax
 		@packages = Package.all
 		@marital_statuses = MaritalStatus.all
-		@colleges = College.all
+		@colleges = to_hash(College)
 		@postgrade_types = PostgradeType.all
 		@sex = {'1' => 'Masculino', '0' => "Femenino"}
 		@student_types = {'1' => 'Si, ya he cursado', '0' => 'No, es la primera vez'}
@@ -14,6 +14,15 @@ class FirstRegisterController < ApplicationController
 		@is_unica = {'1' => 'Si, soy un alumno de la UNICA', '0' => 'No, no pertenezco a la UNICA'}
 		@is_postgrade = {'0' => 'No tengo un posgrado', '1' => 'Magister', '2' => 'Doctorado'}
 	end
+
+	def to_hash(model)
+		hash = Hash.new
+		model.all.each do |m|
+			hash[m.name] = m.id
+		end
+		return hash
+	end
+
 	def create
 =begin
 		username = params[:username]

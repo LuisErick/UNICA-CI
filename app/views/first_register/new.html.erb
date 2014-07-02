@@ -343,16 +343,10 @@
                 <div class="form-horizontal" id="sectionsep">
                     <div class="control-group">
                         <%= label_tag :college, '¿Cual es su escuela?', :class => 'control-label' %>
-                        <div class="span6">
-                            <% @colleges.each do |c| %>
-                                <div class="control-group">
-                                    <%= label_tag 'college_'+c.id.to_s, c.name,  :class => 'control-label' %>
-                                    <div class="controls">
-                                        <%= radio_button_tag :college, c.id %>
-                                    </div>
+                                            
+                                <div class="controls">
+                                    <%= select_tag :college, options_for_select(@colleges) %>
                                 </div>
-                            <% end %>
-                        </div>
                     </div>
                 </div>      <!-- clearfix --><div class="clear"></div><!-- /clearfix --> 
                 <input class="submit" type="submit" name="submit_ninth" id="submit_ninth" value="" onclick="return false;" />
