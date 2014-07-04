@@ -16,7 +16,7 @@ MaritalStatus.create(name: 'Soltero(a)', description: 'Está soltero')
 MaritalStatus.create(name: 'Divorciado(a)', description: 'Está divorciado')
 MaritalStatus.create(name: 'Separado(a)', description: 'Está separado')
 MaritalStatus.create(name: 'Conviviente', description: 'Es conviviente')
-MaritalStatus.create(name: 'Tijero', description: 'No tiene remedio')
+
 
 User.create(username: 'admin1', password: '81848133', permission_id: 1 )
 User.create(username: 'admin2', password: '123456', permission_id: 1 )

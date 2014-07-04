@@ -63,14 +63,273 @@
                         </div>
                     </div>
                 </div>      <!-- clearfix --><div class="clear"></div><!-- /clearfix -->
+                <input class="back" type="submit" name="back2one" id="back2one" value="" onclick="return false;" /> 
                 <input class="submit" type="submit" name="submit_second" id="submit_second" value="" onclick="return false;" />
             </div>      <!-- clearfix --><div class="clear"></div><!-- /clearfix -->
 
-
-
-            <!-- #third_step -->
+<!-- #studies_step -->
             <div id="third_step">
-                <div class="row-fluid">
+                <div class="form-horizontal">
+                        <div class="span6">
+                            <h2>¿Has estudiado el idioma anteriormente?</h2>
+                                                   
+                        </div>
+                        <div class="span6">
+                             <input class="" type="submit" name="submit_third_yes" id="submit_third_yes" value="Sí." onclick="return false;" />
+                             </br>
+
+                             <input class="" type="submit" name="submit_third_no" id="submit_third_no" value="No." onclick="return false;" /> 
+
+                        </div>
+                </div>      <!-- clearfix --><div class="clear"></div><!-- /clearfix -->
+                <input class="back" type="submit" name="back2second" id="back2second" value="" onclick="return false;" /> 
+            </div><!-- clearfix --><div class="clear"></div><!-- /clearfix -->  
+            
+
+
+            <div id="fourth_step_yes">
+                
+                    <div class="span6 container">
+                        <div class="form-horizontal">  
+                            <% #Escoger tipo de curso %>
+                            <div class="">
+                                <h2>Escoge el tipo de curso:</h2>
+                            </div>
+                            <div class="span6">
+                                <% @course_types.each do |ct| %>
+                                    <div class="control-group">
+                                        <%= label_tag 'course_type_'+ct.id.to_s, ct.name, :class => 'control-label'  %>
+                                        <div class="controls">
+                                            <%= radio_button_tag :course_type, ct.id %>
+                                        </div>
+                                    </div>
+                                <% end %>
+                            </div>
+                        </div>
+                    </div>     <!-- clearfix --><div class="clear"></div><!-- /clearfix -->
+                 <input class="back" type="submit" name="back2third_yes" id="back2third_yes" value="" onclick="return false;" />    
+                <input class="submit" type="submit" name="submit_fourth_yes" id="submit_fourth_yes" value="" onclick="return false;" />
+            </div>      <!-- clearfix --><div class="clear"></div><!-- /clearfix -->
+
+            <div id="v_exam_pago_step1">
+                <div class="form-horizontal">
+                    <div class="span6">
+                        <h2>Validación de curso.</h2>
+                    </div>
+                    <% #Escoger paquete %>
+                    <div class="span6">
+                        
+                    <div class="control-group">
+                        <%= label_tag :validation_type, 'Escoja el método de validación a adquirir', :class => 'control-label' %>
+                        <div class="span6">
+                            <% @validation_type.each do |i| %>
+                                <div class="control-group">
+                                    <%= label_tag 'validation_type'+i[0].to_s, i[1],  :class => 'control-label' %>
+                                    <div class="controls">
+                                        <%= radio_button_tag :validation_type, i[0] %>
+                                    </div>
+                                </div>
+                            <% end %>
+                        </div>
+                    </div>
+                    </div>
+                </div>      <!-- clearfix --><div class="clear"></div><!-- /clearfix -->
+                <input class="back" type="submit" name="back2fourth_yes_v" id="back2fourth_yes_v" value="" onclick="return false;" /> 
+                <input class="submit" type="submit" name="submit_vea" id="submit_vea" value="" onclick="return false;" />       
+            </div> <!-- clearfix --><div class="clear"></div><!-- /clearfix -->
+
+            <!-- #dates_step -->
+            <div id="date1_step">
+                <div class="form-horizontal">
+                    <div class="span6">
+                        <h2>Escoja la fecha a rendir el examen</h2>
+                    </div>
+                    <% #Escoger paquete %>
+                    <div class="span6">
+                        
+                        <div class="control-group">
+                        <%= label_tag :fecha1, 'Fecha:',  :class => 'control-label'  %>
+                        <div class="controls">
+                            <%= text_field_tag :fecha1 %>
+                        </div>
+                    </div>
+
+                    </div>
+                </div>      <!-- clearfix --><div class="clear"></div><!-- /clearfix -->
+                <input class="back" type="submit" name="back2vea" id="back2vea" value="" onclick="return false;" /> 
+                <input class="submit" type="submit" name="submit_date1" id="submit_date1" value="" onclick="return false;" />       
+            </div> <!-- clearfix --><div class="clear"></div><!-- /clearfix -->
+
+<div id="date2_step">
+                <div class="form-horizontal">
+                    <div class="span6">
+                        <h2>Escoja la fecha a rendir el examen</h2>
+                    </div>
+                    <% #Escoger paquete %>
+                    <div class="span6">
+                        
+                        <div class="control-group">
+                        <%= label_tag :fecha1, 'Fecha:',  :class => 'control-label'  %>
+                        <div class="controls">
+                            <%= text_field_tag :fecha1 %>
+                        </div>
+                    </div>
+
+                    </div>
+                </div>      <!-- clearfix --><div class="clear"></div><!-- /clearfix -->
+                <input class="back" type="submit" name="back2vea2" id="back2vea2" value="" onclick="return false;" /> 
+                <input class="submit" type="submit" name="submit_date2" id="submit_date2" value="" onclick="return false;" />       
+            </div> <!-- clearfix --><div class="clear"></div><!-- /clearfix -->
+
+<div id="date3_step">
+                <div class="form-horizontal">
+                    <div class="span6">
+                        <h2>Escoja la fecha a rendir el examen</h2>
+                    </div>
+                    <% #Escoger paquete %>
+                    <div class="span6">
+                        
+                        <div class="control-group">
+                        <%= label_tag :fecha1, 'Fecha:',  :class => 'control-label'  %>
+                        <div class="controls">
+                            <%= text_field_tag :fecha1 %>
+                        </div>
+                    </div>
+
+                    </div>
+                </div>      <!-- clearfix --><div class="clear"></div><!-- /clearfix -->
+                <input class="back" type="submit" name="back2vea3" id="back2vea3" value="" onclick="return false;" /> 
+                <input class="submit" type="submit" name="submit_date3" id="submit_date3" value="" onclick="return false;" />       
+            </div> <!-- clearfix --><div class="clear"></div><!-- /clearfix -->
+
+
+
+
+            <div id="level_step">
+                
+                    <div class="span6 container">
+                        <div class="form-horizontal">  
+                            <% #Escoger nivel de curso %>
+                            <div class="">
+                                <h2>Escoja el nivel</h2>
+                            </div>
+                            <div class="span6">
+                                <% @levels.each do |l| %>
+                                    <div class="control-group">
+                                        <%= label_tag 'level_'+l.id.to_s, l.name, :class => 'control-label'  %>
+                                        <div class="controls">
+                                            <%= radio_button_tag :level, l.id  %>
+                                        </div>
+                                    </div>
+                                <% end %>
+                            </div>
+                        </div>
+                    </div>     <!-- clearfix --><div class="clear"></div><!-- /clearfix -->
+                 <input class="back" type="submit" name="back2fourth_yes_l" id="back2fourth_yes_l" value="" onclick="return false;" />    
+                <input class="submit" type="submit" name="submit_level" id="submit_level" value="" onclick="return false;" />
+            </div>      <!-- clearfix --><div class="clear"></div><!-- /clearfix -->
+
+<div id="v_exam_pago_step2">
+                <div class="form-horizontal">
+                    <div class="span6">
+                        <h2>Validación de curso.</h2>
+                    </div>
+                    <% #Escoger paquete %>
+                    <div class="span6">
+                        
+                    <div class="control-group">
+                        <%= label_tag :validation_type, 'Escoja el método de validación a adquirir', :class => 'control-label' %>
+                        <div class="span6">
+                            <% @validation_type.each do |i| %>
+                                <div class="control-group">
+                                    <%= label_tag 'validation_type'+i[0].to_s, i[1],  :class => 'control-label' %>
+                                    <div class="controls">
+                                        <%= radio_button_tag :validation_type, i[0] %>
+                                    </div>
+                                </div>
+                            <% end %>
+                        </div>
+                    </div>
+                    </div>
+                </div>      <!-- clearfix --><div class="clear"></div><!-- /clearfix -->
+                <input class="back" type="submit" name="back2level1" id="back2level1" value="" onclick="return false;" /> 
+                <input class="submit" type="submit" name="submit_vea1" id="submit_vea1" value="" onclick="return false;" />       
+            </div> <!-- clearfix --><div class="clear"></div><!-- /clearfix -->
+
+<div id="v_exam_pago_step3">
+                <div class="form-horizontal">
+                    <div class="span6">
+                        <h2>Validación de curso.</h2>
+                    </div>
+                    <% #Escoger paquete %>
+                    <div class="span6">
+                        
+                    <div class="control-group">
+                        <%= label_tag :validation_type, 'Escoja el método de validación a adquirir', :class => 'control-label' %>
+                        <div class="span6">
+                            <% @validation_type.each do |i| %>
+                                <div class="control-group">
+                                    <%= label_tag 'validation_type'+i[0].to_s, i[1],  :class => 'control-label' %>
+                                    <div class="controls">
+                                        <%= radio_button_tag :validation_type, i[0] %>
+                                    </div>
+                                </div>
+                            <% end %>
+                        </div>
+                    </div>
+                    </div>
+                </div>      <!-- clearfix --><div class="clear"></div><!-- /clearfix -->
+                <input class="back" type="submit" name="back2level2" id="back2level2" value="" onclick="return false;" /> 
+                <input class="submit" type="submit" name="submit_vea2" id="submit_vea2" value="" onclick="return false;" />       
+            </div> <!-- clearfix --><div class="clear"></div><!-- /clearfix -->
+
+
+<div id="horario1_step">
+                <div class="form-horizontal">
+                    <div class="span6">
+                        <h2>Escoge el Horario:</h2>
+                    </div>
+                    <% #Escoger paquete %>
+                    <div class="span6">
+                        <% @packages.each do |l| %>
+                        <div class="control-group">
+                            <%= label_tag 'package_'+l.id.to_s, l.name,  :class => 'control-label' %>
+                            <div class="controls">
+                                <%= radio_button_tag :package, l.id  %>
+                            </div>
+                        </div>
+                        <% end %>
+                    </div>
+                </div>      <!-- clearfix --><div class="clear"></div><!-- /clearfix -->
+                <input class="back" type="submit" name="back2date2" id="back2date2" value="" onclick="return false;" /> 
+                <input class="submit" type="submit" name="submit_horario1" id="submit_horario1" value="" onclick="return false;" />       
+            </div> <!-- clearfix --><div class="clear"></div><!-- /clearfix -->
+
+<div id="horario2_step">
+                <div class="form-horizontal">
+                    <div class="span6">
+                        <h2>Escoge el Horario:</h2>
+                    </div>
+                    <% #Escoger paquete %>
+                    <div class="span6">
+                        <% @packages.each do |l| %>
+                        <div class="control-group">
+                            <%= label_tag 'package_'+l.id.to_s, l.name,  :class => 'control-label' %>
+                            <div class="controls">
+                                <%= radio_button_tag :package, l.id  %>
+                            </div>
+                        </div>
+                        <% end %>
+                    </div>
+                </div>      <!-- clearfix --><div class="clear"></div><!-- /clearfix -->
+                <input class="back" type="submit" name="back2vea2" id="back2vea2" value="" onclick="return false;" /> 
+                <input class="submit" type="submit" name="submit_horario2" id="submit_horario2" value="" onclick="return false;" />       
+            </div> <!-- clearfix --><div class="clear"></div><!-- /clearfix -->
+
+
+            <!-- #fourth_step -->
+            <div id="fourth_step_no">
+                
                     <div class="span6 container">
                         <div class="form-horizontal">  
                             <% #Escoger tipo de curso %>
@@ -88,50 +347,13 @@
                                 <% end %>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="span6">
-                        <div class="form-horizontal">  
-                            <% #Escoger nivel %>
-                            <div class="">
-                                <h2>Escoge el nivel:</h2>
-                            </div>
-                            <div class="span6 container">
-                                <% @levels.each do |l| %>
-                                    <div class="control-group">
-                                        <%= label_tag 'level_'+l.id.to_s, l.name, :class => 'control-label' %>
-                                        <div class="controls">
-                                            <%= radio_button_tag :level, l.id  %>
-                                        </div>
-                                    </div>
-                                <% end %>
-                            </div>
-                        </div>
-                    </div>
-                </div>      <!-- clearfix --><div class="clear"></div><!-- /clearfix -->
-                <input class="submit" type="submit" name="submit_third" id="submit_third" value="" onclick="return false;" />
+                    </div>     <!-- clearfix --><div class="clear"></div><!-- /clearfix -->
+                 <input class="back" type="submit" name="back2third_no" id="back2third_no" value="" onclick="return false;" />    
+                <input class="submit" type="submit" name="submit_fourth_no" id="submit_fourth_no" value="" onclick="return false;" />
             </div>      <!-- clearfix --><div class="clear"></div><!-- /clearfix -->
 
 
-            <!-- #fourth_step -->
-            <div id="fourth_step">
-                <div class="form-horizontal">
-                        <div class="span6">
-                            <h2>¿Has estudiado el idioma anteriormente?</h2>
-                        </div>
-                        <div class="span6">
-            			 <% @student_types.each do |ct| %>
-                            <div class="control-group">
-                                <%= label_tag 'student_type_'+ct[0].to_s, ct[1], :class => 'control-label'   %>
-                                <div class="controls">
-                                    <%= radio_button_tag :student_type, ct[0]  %>
-                                </div>
-                            </div>
-            			 <% end %>
-                        </div>
-                </div>      <!-- clearfix --><div class="clear"></div><!-- /clearfix -->
-                <input class="submit" type="submit" name="submit_fourth" id="submit_fourth" value="" onclick="return false;" />            
-            </div>      <!-- clearfix --><div class="clear"></div><!-- /clearfix -->
+           
             
             
             <!-- #fifth_step -->
@@ -152,6 +374,7 @@
                         <% end %>
                     </div>
                 </div>      <!-- clearfix --><div class="clear"></div><!-- /clearfix -->
+                <input class="back" type="submit" name="back2fourth" id="back2fourth" value="" onclick="return false;" /> 
                 <input class="submit" type="submit" name="submit_fifth" id="submit_fifth" value="" onclick="return false;" />       
             </div> <!-- clearfix --><div class="clear"></div><!-- /clearfix -->
 
@@ -188,6 +411,7 @@
                     </div>
                 </div>      
                 <!-- clearfix --><div class="clear"></div><!-- /clearfix -->
+                <input class="back" type="submit" name="back2fifth" id="back2fifth" value="" onclick="return false;" /> 
             <input class="submit" type="submit" name="submit_sixth" id="submit_sixth" value="" onclick="return false;" />
             </div> <!-- clearfix --><div class="clear"></div><!-- /clearfix -->
 
@@ -223,6 +447,7 @@
                         </div>
                     </div>
                 </div>      <!-- clearfix --><div class="clear"></div><!-- /clearfix -->
+                <input class="back" type="submit" name="back2sixth" id="back2sixth" value="" onclick="return false;" /> 
                 <input class="submit" type="submit" name="submit_seventh" id="submit_seventh" value="" onclick="return false;" />
             </div> <!-- clearfix --><div class="clear"></div><!-- /clearfix -->
 
@@ -257,6 +482,7 @@
                         <% end %>
                     </div>
                 </div>      <!-- clearfix --><div class="clear"></div><!-- /clearfix -->
+                <input class="back" type="submit" name="back2seventh" id="back2seventh" value="" onclick="return false;" /> 
             <input class="submit" type="submit" name="submit_eighth" id="submit_eighth" value="" onclick="return false;" />
             </div> <!-- clearfix --><div class="clear"></div><!-- /clearfix -->
 
@@ -278,80 +504,15 @@
                         </div>
                     </div>
                 </div>      <!-- clearfix --><div class="clear"></div><!-- /clearfix --> 
+                <input class="back" type="submit" name="back2eighth" id="back2eighth" value="" onclick="return false;" /> 
                 <input class="submit" type="submit" name="submit_ninth" id="submit_ninth" value="" onclick="return false;" />
             </div><!-- clearfix --><div class="clear"></div><!-- /clearfix --> 
 <!-- REVISAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAR -->
             <!-- Este esta para agregar -->           
             <!-- #ninth_step -->
             <div id="ninth_step">
-                <div class="form-horizontal" id="sectionsep">
-                    <div class="control-group">
-                        <%= label_tag :validation_type, '¿Que método d validación desea adquirir?', :class => 'control-label' %>
-                        <div class="span6">
-                            <% @is_unica.each do |i| %>
-                                <div class="control-group">
-                                    <%= label_tag 'validation_type'+i[0].to_s, i[1],  :class => 'control-label' %>
-                                    <div class="controls">
-                                        <%= radio_button_tag :validation_type, i[0] %>
-                                    </div>
-                                </div>
-                            <% end %>
-                        </div>
-                    </div>
-                    <div class="control-group">
-                        <%= label_tag :unica_person, '¿Es usted un estudiante de la Unica', :class => 'control-label' %>
-                        <div class="span6">
-                            <% @is_unica.each do |i| %>
-                                <div class="control-group">
-                                    <%= label_tag 'unica_person_'+i[0].to_s, i[1],  :class => 'control-label' %>
-                                    <div class="controls">
-                                        <%= radio_button_tag :unica_person, i[0] %>
-                                    </div>
-                                </div>
-                            <% end %>
-                        </div>
-                    </div>
-
-                    <div class="control-group">
-                        <%= label_tag :postgrade_type, 'Escoja su tipo de Posgrado', :class => 'control-label' %>
-                        <div class="span6">
-                            <% @postgrade_types.each do |i| %>
-                                <div class="control-group">
-                                    <%= label_tag 'postgrade_type_'+i.id.to_s, i.name,  :class => 'control-label' %>
-                                    <div class="controls">
-                                        <%= radio_button_tag :postgrade_type, i.id %>
-                                    </div>
-                                </div>
-                            <% end %>
-                        </div>
-                    </div>
-
-                    <div class="control-group">
-                        <%= label_tag :college, '¿Cual es su escuela?', :class => 'control-label' %>
-                        <div class="span6">
-                            <% @colleges.each do |c| %>
-                                <div class="control-group">
-                                    <%= label_tag 'college_'+c.id.to_s, c.name,  :class => 'control-label' %>
-                                    <div class="controls">
-                                        <%= radio_button_tag :college, c.id %>
-                                    </div>
-                                </div>
-                            <% end %>
-                        </div>
-                    </div>
-                    <div class="control-group">
-                        <%= label_tag :postgrade_person, '¿Ha estudiado algún posgrado?', :class => 'control-label' %>
-                        <div class="span6">
-                            <% @is_postgrade.each do |i| %>
-                                <div class="control-group">
-                                    <%= label_tag 'postgrade_person'+i[0].to_s, i[1],  :class => 'control-label' %>
-                                    <div class="controls">
-                                        <%= radio_button_tag :postgrade_person, i[0] %>
-                                    </div>
-                                </div>
-                            <% end %>
-                        </div>
-                    </div>
+                <div class="form-horizontal" id="sectionsep">                  
+                    
 
                     <div class="control-group">
                         <%= label_tag :semester, 'Ingrese su ciclo de estudio actual', :class => 'control-label' %>
@@ -382,10 +543,165 @@
                         <% end %>
                     </div>
                 </div><!-- clearfix --><div class="clear"></div><!-- /clearfix --> 
-                <input class="send submit" type="submit" name="submit_ninth" id="submit_ninth" value="" />
+                <input class="back" type="submit" name="back2ninth" id="back2ninth" value="" onclick="return false;" /> 
+                <input class="submit" type="submit" name="submit_tenth" id="submit_tenth" value="" onclick="return false;" />
                 
             </div>
-	</div>
+
+            <div id="eleventh_step">
+                <div class="span6">
+                    <div class="form-horizontal">  
+                        <div class="span6">
+                            <div class="control-group">
+                        <%= label_tag :unica_person, '¿Es usted un estudiante de la Unica', :class => 'control-label' %>
+                        <div class="span6">
+                            <% @is_unica.each do |i| %>
+                                <div class="control-group">
+                                    <%= label_tag 'unica_person_'+i[0].to_s, i[1],  :class => 'control-label' %>
+                                    <div class="controls">
+                                        <%= radio_button_tag :unica_person, i[0] %>
+                                    </div>
+                                </div>
+                            <% end %>
+                        </div>
+                    </div>
+                        </div>
+                        
+                    </div>
+                    
+            
+                </div><!-- clearfix --><div class="clear"></div><!-- /clearfix --> 
+                <input class="back" type="submit" name="back2tenth" id="back2tenth" value="" onclick="return false;" /> 
+                <input class="submit" type="submit" name="submit_eleventh" id="submit_eleventh" value="" onclick="return false;" />
+                
+            </div>
+
+            <div id="escuela_step">
+                <div class="span6">
+                    <div class="control-group">
+                        <%= label_tag :college, '¿Cual es su escuela?', :class => 'control-label' %>
+                        <div class="span6">
+                            <% @colleges.each do |c| %>
+                                <div class="control-group">
+                                    <%= label_tag 'college_'+c.id.to_s, c.name,  :class => 'control-label' %>
+                                    <div class="controls">
+                                        <%= radio_button_tag :college, c.id %>
+                                    </div>
+                                </div>
+                            <% end %>
+                        </div>
+                    </div>
+            
+                </div><!-- clearfix --><div class="clear"></div><!-- /clearfix --> 
+                <input class="back" type="submit" name="back2eleventh" id="back2eleventh" value="" onclick="return false;" /> 
+                <input class="submit" type="submit" name="submit_escuela" id="submit_escuela" value="" onclick="return false;" />
+                
+            </div>
+
+            <div id="postgrado_step1">
+                <div class="span6">
+                    <div class="control-group">
+                        <%= label_tag :postgrade_person, '¿Ha estudiado algún posgrado?', :class => 'control-label' %>
+                        <div class="span6">
+                            <% @is_postgrade.each do |i| %>
+                                <div class="control-group">
+                                    <%= label_tag 'postgrade_person'+i[0].to_s, i[1],  :class => 'control-label' %>
+                                    <div class="controls">
+                                        <%= radio_button_tag :postgrade_person, i[0] %>
+                                    </div>
+                                </div>
+                            <% end %>
+                        </div>
+                    </div>
+            
+                </div><!-- clearfix --><div class="clear"></div><!-- /clearfix --> 
+                <input class="back" type="submit" name="back2escuela" id="back2escuela" value="" onclick="return false;" /> 
+                <input class="submit" type="submit" name="submit_postgrado1" id="submit_postgrado1" value="" onclick="return false;" />
+                
+            </div>
+
+            <div id="postgrado_step2">
+                <div class="span6">
+                    <div class="control-group">
+                        <%= label_tag :postgrade_person, '¿Ha estudiado algún posgrado?', :class => 'control-label' %>
+                        <div class="span6">
+                            <% @is_postgrade.each do |i| %>
+                                <div class="control-group">
+                                    <%= label_tag 'postgrade_person'+i[0].to_s, i[1],  :class => 'control-label' %>
+                                    <div class="controls">
+                                        <%= radio_button_tag :postgrade_person, i[0] %>
+                                    </div>
+                                </div>
+                            <% end %>
+                        </div>
+                    </div>
+            
+                </div><!-- clearfix --><div class="clear"></div><!-- /clearfix --> 
+                <input class="back" type="submit" name="back2unica" id="back2unica" value="" onclick="return false;" /> 
+                <input class="submit" type="submit" name="submit_postgrado2" id="submit_postgrado2" value="" onclick="return false;" />
+                
+            </div><!-- clearfix --><div class="clear"></div><!-- /clearfix -->
+
+
+
+            <div id="twelfth_step">
+                <div class="span6">
+                    <div class="form-horizontal">  
+                        
+                        <div class="span6">
+                            <h2>Información:</h2>
+                        </div>
+                    </div>
+                    <div class="span6">
+                       adsasd
+                    </div>
+            
+                </div><!-- clearfix --><div class="clear"></div><!-- /clearfix --> 
+                <input class="back" type="submit" name="back2postgrado" id="back2postgrado" value="" onclick="return false;" /> 
+                <input class="submit" type="submit" name="submit_twelfth" id="submit_twelfth" value="" onclick="return false;" />
+                
+            </div><!-- clearfix --><div class="clear"></div><!-- /clearfix -->
+
+            <div id="thirteenth_step">
+                <div class="span6">
+                    <div class="form-horizontal">  
+                        
+                        <div class="span6">
+                            <h2>Información:</h2>
+                        </div>
+                    </div>
+                    <div class="span6">
+                       <table>
+                        <tr><td>Usuario</td><td></td></tr>
+                        <tr><td>Contraseña</td><td></td></tr>
+                        <tr><td>Idioma</td><td></td></tr>
+                        <tr><td>Curso</td><td></td></tr>
+                        <tr><td>Nivel</td><td>Básico</td></tr>
+                        <tr><td>Nombre</td><td></td></tr>
+                        <tr><td>Apellidos</td><td></td></tr>
+                        <tr><td>DNI</td><td></td></tr>
+                        <tr><td>Estudiante de la UNICA</td><td></td></tr>
+                        <tr><td>Escuela</td><td></td></tr>
+                        <tr><td>Postgrado</td><td></td></tr>
+                        
+                    </table>
+                    </div>
+            
+                </div><!-- clearfix --><div class="clear"></div><!-- /clearfix --> 
+                <input class="back" type="submit" name="back2twelfth" id="back2twelfth" value="" onclick="return false;" /> 
+                <input class="send submit" type="submit" name="submit_thirteenth" id="submit_thirteenth" value="" />
+                
+            </div>
+
+
+
+
+
+
+	   </div>
+
+
+
     <div id="progress_bar">
             <div id="progress"></div>
             <div id="progress_text">0% Complete</div>

@@ -37,7 +37,7 @@ body #register{
     overflow: hidden;
     position: relative;
 }
-    #container #first_step, #second_step, #third_step, #fourth_step, #fifth_step, #sixth_step, #seventh_step, #eighth_step, #ninth_step, #tenth_step { display: none; }
+    #container #first_step, #second_step, #third_step, #fourth_step_no, #fourth_step_yes, #v_exam_pago_step1, #date1_step, #date2_step, #date3_step, #horario1_step, #horario2_step, #level_step, #v_exam_pago_step2, #v_exam_pago_step3, #fifth_step, #sixth_step, #seventh_step, #eighth_step, #ninth_step, #tenth_step, #eleventh_step, #twelfth_step, #thirteenth_step, #escuela_step, #postgrado_step1, #postgrado_step2, #postgrado_yes_step { display: none; }
     #container #first_step { display: block; }
 
     #register #container .form { margin: 30px 72px 0 72px; }
@@ -91,10 +91,22 @@ body #register{
             height: 38px;
             position: relative;
             bottom: 2px;
-            left: 655px;
+            left: 550px;
         }
         #register #container input.submit:focus { border: none; }
         
+        #register #container input.back {
+            background: url('button3.png') no-repeat;
+            border: none;
+            cursor: pointer;
+            width: 85px;
+            height: 38px;
+            position: relative;
+            bottom: 1px;
+            left: 55px;
+        }
+
+
         
         #register #container input.send{ background: url('send2.png') no-repeat; }
             
