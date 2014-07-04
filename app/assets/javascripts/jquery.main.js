@@ -13,7 +13,7 @@ var ready = function() {
             'maternal_lastname' : 'maternal_lastname',
             'dni' : 'dni',
             'unica' : 'unica',
-            'escuela': 'escuela',
+            //'escuela': 'escuela',
             'postgrado': 'postgrado'
             
     };
@@ -319,7 +319,6 @@ var ready = function() {
     });
 
     $('#submit_eighth').click(function(){
-<<<<<<< HEAD
 
         $('#eighth_step input').removeClass('error').removeClass('valid');
         var fields = $('#eighth_step input[type=text]');
@@ -354,10 +353,6 @@ var ready = function() {
         if(!error) {
                 //update progress bar
         $('#progress_text').html('90% Complete');
-=======
-        //update progress bar
-        $('#progress_text').html('87% Complete');
->>>>>>> f647a07d5ad0775c117abf31589aa14aefe0192b
         $('#progress').css('width','269px');
                 //slide steps
                 $('#eighth_step').slideUp();
@@ -395,7 +390,7 @@ var ready = function() {
     //    if(!error) {
                 
                 //update progress bar
-        $('#progress_text').html('93% Complete');
+        $('#progress_text').html('100% Complete');
         $('#progress').css('width','339px');
                 //slide steps
                 $('#ninth_step').slideUp();
@@ -407,7 +402,6 @@ var ready = function() {
     });
 
     $('#submit_tenth').click(function(){
-<<<<<<< HEAD
 
         $('#tenth_step input').removeClass('error').removeClass('valid');
 
@@ -463,13 +457,10 @@ var ready = function() {
     });
 
     $('#submit_postgrado2').click(function(){
-=======
->>>>>>> f647a07d5ad0775c117abf31589aa14aefe0192b
                 //update progress bar
         $('#progress_text').html('100% Complete');
         $('#progress').css('width','339px');
                 //slide steps
-<<<<<<< HEAD
                 $('#postgrado_step2').slideUp();
                
                 $('#twelfth_step').slideDown();     
@@ -1101,14 +1092,6 @@ jQuery("input[type='radio'][name='postgrade_person']").each(function(index, butt
 
 
 
-=======
-                $('#tenth_step').slideUp();
-                $('#eleventh_step').slideDown();     
-        
-
-    });
-     
->>>>>>> f647a07d5ad0775c117abf31589aa14aefe0192b
 
 };
 
