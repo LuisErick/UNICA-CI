@@ -7,3 +7,5 @@ Chicos , IMPORTANTE!
 -Antes de terminar un trabajo , hacer commit y y push
  Para que la pròxima vez que hagan git pull, no les 
  de error :)
+
+ [ ![Codeship Status](https://www.codeship.io/projects/0f322ca0-e3bc-0131-5edd-5663d1421f35/status)](https://www.codeship.io/projects/25495)

@@ -13,8 +13,6 @@ class User < ActiveRecord::Base
 	validates :username, presence: true, uniqueness: true
 	validates :password, presence: true, length: { minimum: 6, too_short: "La contraseña debe tener 6 carácteres como mínimo" }
 
-    after_validation :set_state, on: :create
-
    	
 	def self.register(username,password,language,course_type,level,package,validation_type,name,paternal_lastname,maternal_lastname,address,dni,district,province,department,home_phone,mobile_phone,sex,birthday,birthplace,unica_person,college,postgrade_person,marital_status,student_type,postgrade_type,semester)
 
@@ -49,30 +47,27 @@ class User < ActiveRecord::Base
 	end
 
 	def self.create_teacher(params)
-		user = self.new(username: params[:username],password: params[:password], permission: Permission.find(3))
+		user = self.new(username: params[:username],password: params[:password], permission: Permission.find(3), state: true)
 		if user.save
-			person = Person.new(user: user, paternal_lastname: params[:paternal_lastname], maternal_lastname: params[:maternal_lastname], name: params[:name], dni: params[:dni], address: params[:address], district: params[:district], province: params[:province],  department: params[:department], home_phone: params[:home_phone], mobile_phone: params[:mobile_phone], sex: params[:sex], birthday: params[:birthday], birthplace: params[:birthplace], marital_status: params[:marital_status])
+			person = Person.new(user: user, paternal_lastname: params[:paternal_lastname], maternal_lastname: params[:maternal_lastname], name: params[:name], dni: params[:dni], address: params[:address], district: params[:district], province: params[:province],  department: params[:department], home_phone: params[:home_phone], mobile_phone: params[:mobile_phone], sex: params[:sex], birthday: params[:birthday], birthplace: params[:birthplace], marital_status_id: params[:marital_status])
 			if person.save
-				teacher = Teacher.new(person: person,start_date: params[:start_date])			
+				teacher = Teacher.new(person: person,start_date: params[:start_date], language_id: params[:language])			
 				if teacher.save
-					return teacher
-				else
-					return {user: user, person: person, teacher: teacher}
+					return true
+				else					
 					user.destroy
 					person.destroy
 					teacher.destroy
+					return user
 				end
-			else
-				return {user: user, person: person, teacher: teacher}
+			else				
 				user.destroy
 				person.destroy
-				teacher.destroy
+				return user
 			end
-		else
-			return {user: user, person: person, teacher: teacher}
+		else			
 			user.destroy
-			person.destroy
-			teacher.destroy
+			return user
 		end
 	end
 

@@ -3,6 +3,7 @@ class CreateTeachers < ActiveRecord::Migration
     create_table :teachers do |t|
       t.integer :person_id
       t.date :start_date
+      t.integer :language_id
 
       t.timestamps
     end

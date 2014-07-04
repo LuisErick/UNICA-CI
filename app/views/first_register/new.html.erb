@@ -507,14 +507,20 @@
                 <input class="back" type="submit" name="back2eighth" id="back2eighth" value="" onclick="return false;" /> 
                 <input class="submit" type="submit" name="submit_ninth" id="submit_ninth" value="" onclick="return false;" />
             </div><!-- clearfix --><div class="clear"></div><!-- /clearfix --> 
-<!-- REVISAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAR -->
-            <!-- Este esta para agregar -->           
-            <!-- #ninth_step -->
+
+      <!-- AQUI LA CHAMBA DE IRIS VALIDAR ESTOS FORMS SEGUN CORREPONDA -->
+      <!-- AQUI LA CHAMBA DE IRIS VALIDAR ESTOS FORMS SEGUN CORREPONDA -->
+      <!-- AQUI LA CHAMBA DE IRIS VALIDAR ESTOS FORMS SEGUN CORREPONDA -->
+      <!-- AQUI EMPIEZA!!!! -->
+      <!-- AQUI EMPIEZA!!!! -->
+            <!-- #tenth_step -->
+
             <div id="ninth_step">
                 <div class="form-horizontal" id="sectionsep">                  
                     
 
                     <div class="control-group">
+<<<<<<< HEAD
                         <%= label_tag :semester, 'Ingrese su ciclo de estudio actual', :class => 'control-label' %>
                         <div class="controls">
                             <%= text_field_tag :semester %>
@@ -578,6 +584,39 @@
 
             <div id="escuela_step">
                 <div class="span6">
+=======
+                        <%= label_tag :validation_type, '¿Que método d validación desea adquirir?' %>
+                        <div class="span6">
+                            <% @is_unica.each do |i| %>
+                                <div class="control-group">
+                                    <%= label_tag 'validation_type'+i[0].to_s, i[1],  :class => 'control-label' %>
+                                    <div class="controls">
+                                        <%= radio_button_tag :validation_type, i[0] %>
+                                    </div>
+                                </div>
+                            <% end %>
+                        </div>
+                    </div>
+                </div>      <!-- clearfix --><div class="clear"></div><!-- /clearfix --> 
+                <input class="submit" type="submit" name="submit_ninth" id="submit_ninth" value="" onclick="return false;" />
+            </div><!-- clearfix --><div class="clear"></div><!-- /clearfix --> 
+
+
+            <div id="ninth_step">
+                <div class="form-horizontal" id="sectionsep">
+                    <div class="control-group">
+                        <%= label_tag :semester, 'Ingrese su ciclo de estudio actual', :class => 'control-label' %>
+                        <div class="controls">
+                            <%= text_field_tag :semester %>
+                        </div>
+                    </div>
+                </div>      <!-- clearfix --><div class="clear"></div><!-- /clearfix --> 
+                <input class="submit" type="submit" name="submit_ninth" id="submit_ninth" value="" onclick="return false;" />
+            </div><!-- clearfix --><div class="clear"></div><!-- /clearfix -->
+
+            <div id="ninth_step">
+                <div class="form-horizontal" id="sectionsep">
+>>>>>>> f647a07d5ad0775c117abf31589aa14aefe0192b
                     <div class="control-group">
                         <%= label_tag :college, '¿Cual es su escuela?', :class => 'control-label' %>
                         <div class="span6">
@@ -591,6 +630,7 @@
                             <% end %>
                         </div>
                     </div>
+<<<<<<< HEAD
             
                 </div><!-- clearfix --><div class="clear"></div><!-- /clearfix --> 
                 <input class="back" type="submit" name="back2eleventh" id="back2eleventh" value="" onclick="return false;" /> 
@@ -609,10 +649,22 @@
                                     <div class="controls">
                                         <%= radio_button_tag :postgrade_person, i[0] %>
                                     </div>
+=======
+                </div>      <!-- clearfix --><div class="clear"></div><!-- /clearfix --> 
+                <input class="submit" type="submit" name="submit_ninth" id="submit_ninth" value="" onclick="return false;" />
+            </div><!-- clearfix --><div class="clear"></div><!-- /clearfix -->
+
+            <div id="ninth_step">
+                <div class="form-horizontal" id="sectionsep">
+                    <div class="control-group">
+                        <%= label_tag :college, '¿Cual es su escuela?', :class => 'control-label' %>
+                                            
+                                <div class="controls">
+                                    <%= select_tag :college, options_for_select(@colleges) %>
+>>>>>>> f647a07d5ad0775c117abf31589aa14aefe0192b
                                 </div>
-                            <% end %>
-                        </div>
                     </div>
+<<<<<<< HEAD
             
                 </div><!-- clearfix --><div class="clear"></div><!-- /clearfix --> 
                 <input class="back" type="submit" name="back2escuela" id="back2escuela" value="" onclick="return false;" /> 
@@ -622,6 +674,14 @@
 
             <div id="postgrado_step2">
                 <div class="span6">
+=======
+                </div>      <!-- clearfix --><div class="clear"></div><!-- /clearfix --> 
+                <input class="submit" type="submit" name="submit_ninth" id="submit_ninth" value="" onclick="return false;" />
+            </div><!-- clearfix --><div class="clear"></div><!-- /clearfix -->
+
+            <div id="ninth_step">
+                <div class="form-horizontal" id="sectionsep">
+>>>>>>> f647a07d5ad0775c117abf31589aa14aefe0192b
                     <div class="control-group">
                         <%= label_tag :postgrade_person, '¿Ha estudiado algún posgrado?', :class => 'control-label' %>
                         <div class="span6">
@@ -635,6 +695,7 @@
                             <% end %>
                         </div>
                     </div>
+<<<<<<< HEAD
             
                 </div><!-- clearfix --><div class="clear"></div><!-- /clearfix --> 
                 <input class="back" type="submit" name="back2unica" id="back2unica" value="" onclick="return false;" /> 
@@ -651,6 +712,44 @@
                         <div class="span6">
                             <h2>Información:</h2>
                         </div>
+=======
+                </div>      <!-- clearfix --><div class="clear"></div><!-- /clearfix --> 
+                <input class="submit" type="submit" name="submit_ninth" id="submit_ninth" value="" onclick="return false;" />
+            </div><!-- clearfix --><div class="clear"></div><!-- /clearfix -->
+
+
+            <div id="tenth_step">
+                <div class="form-horizontal">                    
+                        <div class="span6">
+                            <h2>¿Es usted un estudiante de la Unica?</h2>
+                        </div>
+                        <div class="span6">
+                            <% @is_unica.each do |i| %>
+                                <div class="control-group">
+                                    <%= label_tag 'unica_person_'+i[0].to_s, i[1],  :class => 'control-label' %>
+                                    <div class="controls">
+                                        <%= radio_button_tag :unica_person, i[0] %>
+                                    </div>
+                                </div>
+                            <% end %>
+                        </div>
+                </div>      <!-- clearfix --><div class="clear"></div><!-- /clearfix --> 
+                <input class="submit" type="submit" name="submit_tenth" id="submit_tenth" value="" onclick="return false;" />
+            </div><!-- clearfix --><div class="clear"></div><!-- /clearfix --> 
+
+
+
+        <!-- AQUI ACABA!!!! -->
+        <!-- AQUI ACABA!!!! -->
+        <!-- AQUI ACABA!!!! -->
+        <!-- AQUI ACABA!!!! -->
+
+            <!-- #eleventh_step -->
+            <div id="eleventh_step">
+                <div class="form-horizontal">
+                    <div class="span6">
+                        <h2>Estado Civil:</h2>
+>>>>>>> f647a07d5ad0775c117abf31589aa14aefe0192b
                     </div>
                     <div class="span6">
                        adsasd
@@ -688,8 +787,12 @@
                     </div>
             
                 </div><!-- clearfix --><div class="clear"></div><!-- /clearfix --> 
+<<<<<<< HEAD
                 <input class="back" type="submit" name="back2twelfth" id="back2twelfth" value="" onclick="return false;" /> 
                 <input class="send submit" type="submit" name="submit_thirteenth" id="submit_thirteenth" value="" />
+=======
+                <input class="send submit" type="submit" name="submit_eleventh" id="submit_eleventh" value="" />
+>>>>>>> f647a07d5ad0775c117abf31589aa14aefe0192b
                 
             </div>
 

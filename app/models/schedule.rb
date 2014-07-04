@@ -1,3 +1,3 @@
 class Schedule < ActiveRecord::Base
-	has_many :packages
+	has_many :group_schedule
 end
