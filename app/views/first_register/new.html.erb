@@ -373,8 +373,7 @@
 
 
             <div id="tenth_step">
-                <div class="form-horizontal" id="sectionsep">                    
-                    <div class="control-group">
+                <div class="form-horizontal">                    
                         <div class="span6">
                             <h2>¿Es usted un estudiante de la Unica?</h2>
                         </div>
@@ -388,7 +387,6 @@
                                 </div>
                             <% end %>
                         </div>
-                    </div>
                 </div>      <!-- clearfix --><div class="clear"></div><!-- /clearfix --> 
                 <input class="submit" type="submit" name="submit_tenth" id="submit_tenth" value="" onclick="return false;" />
             </div><!-- clearfix --><div class="clear"></div><!-- /clearfix --> 
@@ -403,8 +401,8 @@
             <!-- #eleventh_step -->
             <div id="eleventh_step">
                 <div class="form-horizontal">
-                    <div class="control-group">
-                        <%= label_tag :marital_status, 'Estado Civil', :class => 'control-label' %>
+                    <div class="span6">
+                        <h2>Estado Civil:</h2>
                     </div>
                     <div class="span6">
                         <% @marital_statuses.each do |ms| %>

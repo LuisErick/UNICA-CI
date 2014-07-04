@@ -27,33 +27,40 @@ Revisa el code, soy un mensaje de error
 <%= form_tag(create_teacher_path, method: 'post') do %>
 	
 	<!-- parte User -->
-		<fieldset>
-			<div class="control-group">
-				<%= label_tag :username, 'Nombre de usuario', :class => 'control-label' %>
-				<div class="controls">
-				<%= text_field_tag :username %>
+
+		<h3 class="center box">Datos de usuario</h3>
+		<div class="row-fluid">
+		<div class="span6">
+			<fieldset class="box" id="sectionsep">
+				<div class="control-group">
+					<%= label_tag :username, 'Nombre de usuario', :class => 'control-label' %>
+					<div class="controls">
+					<%= text_field_tag :username %>
+					</div>
 				</div>
-			</div>
-			<div class="control-group">
-				<%= label_tag :password, 'Contraseña', :class => 'control-label' %>
-				<div class="controls">
-				<%= password_field_tag :password %>
+				<div class="control-group">
+					<%= label_tag :password, 'Contraseña', :class => 'control-label' %>
+					<div class="controls">
+					<%= password_field_tag :password %>
+					</div>
 				</div>
-			</div>
-			<div class="control-group">
-				<%= label_tag :confirm_password, 'Confirme contraseña', :class => 'control-label' %>
-				<div class="controls">
-				<%= password_field_tag :confirm_password %>
-				</div>
-			</div>
-			<br>		
-		</fieldset>
+				<div class="control-group">
+					<%= label_tag :confirm_password, 'Confirme contraseña', :class => 'control-label' %>
+					<div class="controls">
+					<%= password_field_tag :confirm_password %>
+					</div>
+				</div>		
+			</fieldset>
+		</div>
+		</div>
+	
 
 	<hr>
-	<br>
 	<!-- parte Person -->
+	<div class="">
+	<h3 class="center box">Datos personales</h3>
 	<fieldset class="row-fluid">
-	<div class="span6">
+	<div class="span6 box" id="sectionsep">
 		<div class="control-group">
 			<%= label_tag :name, 'Nombres', :class => 'control-label' %>
 			<div class="controls">
@@ -109,6 +116,9 @@ Revisa el code, soy un mensaje de error
 				<%= text_field_tag :department %>
 			</div>
 		</div>
+	</div>
+		
+	<div class="span6 box" id="sectionsep">
 
 		<div class="control-group">
         	<%= label_tag :birthday, 'Fecha de nacimiento', :class => 'control-label' %>
@@ -137,57 +147,59 @@ Revisa el code, soy un mensaje de error
 				<%= text_field_tag :mobile_phone %>
 			</div>
 		</div>
-	</div>
-		
-	<div class="span6">
+
 		<div class="control-group">
-			<%= label_tag :sex, 'Sexo:'%>  
-		</div>
-		<% @sex.each do |s| %> 
-				<div class="control-group">                          
-	                <%= label_tag 'sex_'+s[0].to_s, s[1],  :class => 'control-label'%>
-	                <div class="controls">
-	                	<%= radio_button_tag :sex, s[0]  %>
-	                </div>  
-                </div>  
-        <% end %>
+			<%= label_tag :sex, 'Sexo:', :class => 'control-label'%> 
+			<div class="controls">
+				<br>
+				<% @sex.each do |s| %> 
+						<div class="control-group">                          
+			                <%= label_tag 'sex_'+s[0].to_s, s[1],  :class => 'control-label'%>
+			                <div class="controls">
+			                	<%= radio_button_tag :sex, s[0]  %>
+			                </div>  
+		                </div>  
+		        <% end %>
+	        </div>
+        </div>
 
 
 		<div class="control-group">
-		<%= label_tag :marital_status, 'Estado civil' %>
-		</div>
-		<div class="control-group">
+		<%= label_tag :marital_status, 'Estado civil', :class => 'control-label' %>
+			<div class="controls">
 			<%= select_tag :marital_status, options_for_select(@marital_status) %>
+			</div>
 		</div>
-
-		
 		
 	</div>
 	</fieldset>
+	</div>
 
 	<hr>
-	<br>
 
 	<!-- parte Teacher -->
-	<fieldset>
-		<div class="control-group">
-			<%= label_tag :start_date, 'Fecha de inicio',  :class => 'control-label' %>
-			<div class="controls">
-				<%= date_field_tag :start_date %>
-			</div>
-		</div>
-	
-		<div class="control-group">
-		<%= label_tag :language, 'Idioma', :class => 'control-label' %>	
-			<div class="controls">
-				<%= select_tag :language, options_for_select(@languages) %>
-			</div>
-		</div>
-		
-	</fieldset>
+	<h3 class="center box">Detalles</h3>
+	<div class="row-fluid">
+		<fieldset class=" box span6" id="sectionsep">
+				<div class="control-group">
+					<%= label_tag :start_date, 'Fecha de inicio',  :class => 'control-label' %>
+					<div class="controls">
+						<%= date_field_tag :start_date %>
+					</div>
+				</div>
+			
+				<div class="control-group">
+				<%= label_tag :language, 'Idioma', :class => 'control-label' %>	
+					<div class="controls">
+						<%= select_tag :language, options_for_select(@languages) %>
+					</div>
+				</div>
+		</fieldset>
+	</div>
 
 	<hr>
 	<br>
+
 
 	<div class="center">
 	<%= submit_tag 'Registrar profesor', :class => 'btn btn-primary' %>
