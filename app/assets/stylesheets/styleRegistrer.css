@@ -27,6 +27,12 @@ body #register{
     position: relative;
 }
 
+#register .formreg .span6 {
+    padding-top: 40px;
+    width: 570px;
+    height: 250px;
+}
+
 #login{
     background: url('container.png') no-repeat;
     width: 754px;
