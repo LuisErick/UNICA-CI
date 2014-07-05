@@ -2,37 +2,40 @@
 <div id="register">
   <div id="container">
         
-	<section class="subtitle">
-        <div class="container">
-            <div class="row-fluid">
-                <div class="span6">
-                    <h1>Crear Usuario</h1>
-                </div>
-            </div>
-        </div>
-    </section>
+	
             <!-- #first_step -->
             <div id="first_step">
-                <div class="span6" id="sectionsep">
-                    <div class="form-horizontal">
-                        <div class="control-group"> 
-                            <%= label_tag :usuario, 'Nombre de Usuario', :class => 'control-label'%>
-                            <div class="controls">
-                            <%= text_field_tag 'usuario' %>
+                <section class="subtitle">
+                    <div class="container">
+                        <div class="row-fluid">
+                            <div class="span6">
+                                <h1>Crear Usuario</h1>
                             </div>
                         </div>
-                        
-                        <div class="control-group">
-                            <%= label_tag :pass, 'Contraseña de al menos 4 caracteres', :class => 'control-label' %> 
-                            <div class="controls">                  
-                            <%= password_field_tag 'pass' %> 
+                    </div>
+                </section>
+                <div class="formreg">
+                    <div class="span6">
+                        <div class="form-horizontal">
+                            <div class="control-group"> 
+                                <%= label_tag :usuario, 'Nombre de Usuario', :class => 'control-label'%>
+                                <div class="controls">
+                                <%= text_field_tag 'usuario' %>
+                                </div>
                             </div>
-                        </div>
+                            
+                            <div class="control-group">
+                                <%= label_tag :pass, 'Contraseña de al menos 4 caracteres', :class => 'control-label' %> 
+                                <div class="controls">                  
+                                <%= password_field_tag 'pass' %> 
+                                </div>
+                            </div>
 
-                        <div class="control-group">
-                            <%= label_tag :cpassword, 'Confirme contraseña.', :class => 'control-label' %>
-                            <div class="controls">
-                            <%= password_field_tag :cpassword %>
+                            <div class="control-group">
+                                <%= label_tag :cpassword, 'Confirme contraseña.', :class => 'control-label' %>
+                                <div class="controls">
+                                <%= password_field_tag :cpassword %>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -45,41 +48,56 @@
 
             <!-- #second_step -->
             <div id="second_step">
-                <div class="span6">
-                    <div class="form-horizontal">  
-                        <% #Escoger idioma %>
-                        <div class="span6">
-                            <h2>Escoge Idioma:</h2>
-                        </div>
-                        <div class="span6">
-                        	<% @languages.each do |la| %>
-                                <div class="control-group">
-                                    <%= label_tag 'language_'+la.id.to_s, la.name, :class => 'control-label'  %>
-                                    <div class="controls">
-                                        <%= radio_button_tag :language, la.id  %>
-                                    </div>
-                                </div>
-                        	<% end %>
+                <section class="subtitle">
+                    <div class="container">
+                        <div class="row-fluid">
+                            <div class="span6">
+                                <h1>Escoge Idioma</h1>
+                            </div>
                         </div>
                     </div>
-                </div>      <!-- clearfix --><div class="clear"></div><!-- /clearfix -->
+                </section>
+                <div class="formreg">
+                    <div class="span6">
+                        <div class="form-horizontal">  
+                            <% #Escoger idioma %>
+                            	<% @languages.each do |la| %>
+                                    <div class="control-group">
+                                        <%= label_tag 'language_'+la.id.to_s, la.name, :class => 'control-label'  %>
+                                        <div class="controls">
+                                            <%= radio_button_tag :language, la.id  %>
+                                        </div>
+                                    </div>
+                            	<% end %>
+                        </div>
+                    </div> 
+                </div>     <!-- clearfix --><div class="clear"></div><!-- /clearfix -->
                 <input class="back" type="submit" name="back2one" id="back2one" value="" onclick="return false;" /> 
                 <input class="submit" type="submit" name="submit_second" id="submit_second" value="" onclick="return false;" />
             </div>      <!-- clearfix --><div class="clear"></div><!-- /clearfix -->
 
 <!-- #studies_step -->
             <div id="third_step">
-                <div class="form-horizontal">
-                        <div class="span6">
-                            <h2>¿Has estudiado el idioma anteriormente?</h2>
-                                                   
+                <section class="subtitle">
+                    <div class="container">
+                        <div class="row-fluid">
+                            <div class="span6">
+                                <h1>¿Has estudiado el idioma anteriormente?</h1>
+                            </div>
                         </div>
+                    </div>
+                </section>
+                <div class="formreg">
                         <div class="span6">
-                             <input class="" type="submit" name="submit_third_yes" id="submit_third_yes" value="Sí." onclick="return false;" />
-                             </br>
-
-                             <input class="" type="submit" name="submit_third_no" id="submit_third_no" value="No." onclick="return false;" /> 
-
+                            <div class="row-fluid">
+                                <div class="span4"></div>
+                                <div class="span4">
+                                    <input class="btn btn-mini" type="submit" name="submit_third_yes" id="submit_third_yes" value="Sí." onclick="return false;"/>
+                                </div>
+                                <div class="span4">
+                                    <input class="btn btn-mini" type="submit" name="submit_third_no" id="submit_third_no" value="No." onclick="return false;"/> 
+                                </div>
+                            </div>
                         </div>
                 </div>      <!-- clearfix --><div class="clear"></div><!-- /clearfix -->
                 <input class="back" type="submit" name="back2second" id="back2second" value="" onclick="return false;" /> 
@@ -88,22 +106,29 @@
 
 
             <div id="fourth_step_yes">
-                
-                    <div class="span6 container">
-                        <div class="form-horizontal">  
-                            <% #Escoger tipo de curso %>
-                            <div class="">
-                                <h2>Escoge el tipo de curso:</h2>
+                    <section class="subtitle">
+                        <div class="container">
+                            <div class="row-fluid">
+                                <div class="span6">
+                                    <h1>Escoge el tipo de curso</h1>
+                                </div>
                             </div>
-                            <div class="span6">
-                                <% @course_types.each do |ct| %>
-                                    <div class="control-group">
-                                        <%= label_tag 'course_type_'+ct.id.to_s, ct.name, :class => 'control-label'  %>
-                                        <div class="controls">
-                                            <%= radio_button_tag :course_type, ct.id %>
+                        </div>
+                    </section>
+                    <div class="formreg">
+                        <div class="span6">
+                            <div class="form-horizontal">  
+                                <% #Escoger tipo de curso %>
+                                <div class="span7">
+                                    <% @course_types.each do |ct| %>
+                                        <div class="control-group">
+                                            <%= label_tag 'course_type_'+ct.id.to_s, ct.name, :class => 'control-label'  %>
+                                            <div class="controls">
+                                                <%= radio_button_tag :course_type, ct.id %>
+                                            </div>
                                         </div>
-                                    </div>
-                                <% end %>
+                                    <% end %>
+                                </div>
                             </div>
                         </div>
                     </div>     <!-- clearfix --><div class="clear"></div><!-- /clearfix -->
@@ -112,26 +137,28 @@
             </div>      <!-- clearfix --><div class="clear"></div><!-- /clearfix -->
 
             <div id="v_exam_pago_step1">
-                <div class="form-horizontal">
-                    <div class="span6">
-                        <h2>Validación de curso.</h2>
-                    </div>
-                    <% #Escoger paquete %>
-                    <div class="span6">
-                        
-                    <div class="control-group">
-                        <%= label_tag :validation_type, 'Escoja el método de validación a adquirir', :class => 'control-label' %>
-                        <div class="span6">
-                            <% @validation_type.each do |i| %>
-                                <div class="control-group">
-                                    <%= label_tag 'validation_type'+i[0].to_s, i[1],  :class => 'control-label' %>
-                                    <div class="controls">
-                                        <%= radio_button_tag :validation_type, i[0] %>
-                                    </div>
+                    <section class="subtitle">
+                        <div class="container">
+                            <div class="row-fluid">
+                                <div class="span6">
+                                    <h1>Escoja el método de validación a adquirir</h1>
                                 </div>
-                            <% end %>
+                            </div>
                         </div>
-                    </div>
+                    </section>
+                <div class="form-horizontal">
+                    <% #Escoger paquete %>
+                    <div class="formreg">
+                        <div class="span6">
+                                <% @validation_type.each do |i| %>
+                                    <div class="control-group">
+                                        <%= label_tag 'validation_type'+i[0].to_s, i[1],  :class => 'control-label' %>
+                                        <div class="controls">
+                                            <%= radio_button_tag :validation_type, i[0] %>
+                                        </div>
+                                    </div>
+                                <% end %>
+                        </div>
                     </div>
                 </div>      <!-- clearfix --><div class="clear"></div><!-- /clearfix -->
                 <input class="back" type="submit" name="back2fourth_yes_v" id="back2fourth_yes_v" value="" onclick="return false;" /> 
@@ -140,13 +167,18 @@
 
             <!-- #dates_step -->
             <div id="date1_step">
-                <div class="form-horizontal">
-                    <div class="span6">
-                        <h2>Escoja la fecha a rendir el examen</h2>
+                <section class="subtitle">
+                    <div class="container">
+                        <div class="row-fluid">
+                            <div class="span6">
+                                <h1>Escoja la fecha a rendir el examen</h1>
+                            </div>
+                        </div>
                     </div>
+                </section>
+                <div class="form-horizontal formreg">
                     <% #Escoger paquete %>
                     <div class="span6">
-                        
                         <div class="control-group">
                         <%= label_tag :fecha1, 'Fecha:',  :class => 'control-label'  %>
                         <div class="controls">
@@ -160,35 +192,44 @@
                 <input class="submit" type="submit" name="submit_date1" id="submit_date1" value="" onclick="return false;" />       
             </div> <!-- clearfix --><div class="clear"></div><!-- /clearfix -->
 
-<div id="date2_step">
-                <div class="form-horizontal">
-                    <div class="span6">
-                        <h2>Escoja la fecha a rendir el examen</h2>
-                    </div>
-                    <% #Escoger paquete %>
-                    <div class="span6">
-                        
-                        <div class="control-group">
-                        <%= label_tag :fecha1, 'Fecha:',  :class => 'control-label'  %>
-                        <div class="controls">
-                            <%= text_field_tag :fecha1 %>
+            <div id="date2_step">
+                <section class="subtitle">
+                    <div class="container">
+                        <div class="row-fluid">
+                            <div class="span6">
+                                <h1>Escoja la fecha a rendir el examen</h1>
+                            </div>
                         </div>
                     </div>
-
+                </section>
+                <div class="form-horizontal formreg">
+                    <% #Escoger paquete %>
+                        <div class="span6">
+                            <div class="control-group">
+                            <%= label_tag :fecha1, 'Fecha:',  :class => 'control-label'  %>
+                            <div class="controls">
+                                <%= text_field_tag :fecha1 %>
+                            </div>
+                        </div>
                     </div>
                 </div>      <!-- clearfix --><div class="clear"></div><!-- /clearfix -->
                 <input class="back" type="submit" name="back2vea2" id="back2vea2" value="" onclick="return false;" /> 
                 <input class="submit" type="submit" name="submit_date2" id="submit_date2" value="" onclick="return false;" />       
             </div> <!-- clearfix --><div class="clear"></div><!-- /clearfix -->
 
-<div id="date3_step">
-                <div class="form-horizontal">
-                    <div class="span6">
-                        <h2>Escoja la fecha a rendir el examen</h2>
+            <div id="date3_step">
+                <section class="subtitle">
+                    <div class="container">
+                        <div class="row-fluid">
+                            <div class="span6">
+                                <h1>Escoja la fecha a rendir el examen</h1>
+                            </div>
+                        </div>
                     </div>
+                </section>
+                <div class="form-horizontal formreg">
                     <% #Escoger paquete %>
                     <div class="span6">
-                        
                         <div class="control-group">
                         <%= label_tag :fecha1, 'Fecha:',  :class => 'control-label'  %>
                         <div class="controls">
@@ -206,14 +247,19 @@
 
 
             <div id="level_step">
-                
-                    <div class="span6 container">
-                        <div class="form-horizontal">  
-                            <% #Escoger nivel de curso %>
-                            <div class="">
-                                <h2>Escoja el nivel</h2>
-                            </div>
+                <section class="subtitle">
+                    <div class="container">
+                        <div class="row-fluid">
                             <div class="span6">
+                                <h1>Escoja el nivel</h1>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                    <div class="formreg">
+                        <div class="span6">  
+                            <% #Escoger nivel de curso %>
+                            <div class="form-horizontal">
                                 <% @levels.each do |l| %>
                                     <div class="control-group">
                                         <%= label_tag 'level_'+l.id.to_s, l.name, :class => 'control-label'  %>
@@ -229,17 +275,19 @@
                 <input class="submit" type="submit" name="submit_level" id="submit_level" value="" onclick="return false;" />
             </div>      <!-- clearfix --><div class="clear"></div><!-- /clearfix -->
 
-<div id="v_exam_pago_step2">
-                <div class="form-horizontal">
-                    <div class="span6">
-                        <h2>Validación de curso.</h2>
+            <div id="v_exam_pago_step2">
+                <section class="subtitle">
+                    <div class="container">
+                        <div class="row-fluid">
+                            <div class="span6">
+                                <h1>Escoja el método de validación a adquirir</h1>
+                            </div>
+                        </div>
                     </div>
+                </section>
+                <div class="form-horizontal formreg">
                     <% #Escoger paquete %>
-                    <div class="span6">
-                        
-                    <div class="control-group">
-                        <%= label_tag :validation_type, 'Escoja el método de validación a adquirir', :class => 'control-label' %>
-                        <div class="span6">
+                    <div class="span6">    
                             <% @validation_type.each do |i| %>
                                 <div class="control-group">
                                     <%= label_tag 'validation_type'+i[0].to_s, i[1],  :class => 'control-label' %>
@@ -248,24 +296,25 @@
                                     </div>
                                 </div>
                             <% end %>
-                        </div>
-                    </div>
+
                     </div>
                 </div>      <!-- clearfix --><div class="clear"></div><!-- /clearfix -->
                 <input class="back" type="submit" name="back2level1" id="back2level1" value="" onclick="return false;" /> 
                 <input class="submit" type="submit" name="submit_vea1" id="submit_vea1" value="" onclick="return false;" />       
             </div> <!-- clearfix --><div class="clear"></div><!-- /clearfix -->
 
-<div id="v_exam_pago_step3">
-                <div class="form-horizontal">
-                    <div class="span6">
-                        <h2>Validación de curso.</h2>
+            <div id="v_exam_pago_step3">
+                <section class="subtitle">
+                    <div class="container">
+                        <div class="row-fluid">
+                            <div class="span6">
+                                <h1>Escoja el método de validación a adquirir</h1>
+                            </div>
+                        </div>
                     </div>
+                </section>
+                <div class="form-horizontal formreg">
                     <% #Escoger paquete %>
-                    <div class="span6">
-                        
-                    <div class="control-group">
-                        <%= label_tag :validation_type, 'Escoja el método de validación a adquirir', :class => 'control-label' %>
                         <div class="span6">
                             <% @validation_type.each do |i| %>
                                 <div class="control-group">
@@ -276,19 +325,23 @@
                                 </div>
                             <% end %>
                         </div>
-                    </div>
-                    </div>
                 </div>      <!-- clearfix --><div class="clear"></div><!-- /clearfix -->
                 <input class="back" type="submit" name="back2level2" id="back2level2" value="" onclick="return false;" /> 
                 <input class="submit" type="submit" name="submit_vea2" id="submit_vea2" value="" onclick="return false;" />       
             </div> <!-- clearfix --><div class="clear"></div><!-- /clearfix -->
 
 
-<div id="horario1_step">
-                <div class="form-horizontal">
-                    <div class="span6">
-                        <h2>Escoge el Horario:</h2>
+            <div id="horario1_step">
+                <section class="subtitle">
+                    <div class="container">
+                        <div class="row-fluid">
+                            <div class="span6">
+                                <h1>Escoge el Horario</h1>
+                            </div>
+                        </div>
                     </div>
+                </section>
+                <div class="form-horizontal formreg">
                     <% #Escoger paquete %>
                     <div class="span6">
                         <% @packages.each do |l| %>
@@ -305,11 +358,17 @@
                 <input class="submit" type="submit" name="submit_horario1" id="submit_horario1" value="" onclick="return false;" />       
             </div> <!-- clearfix --><div class="clear"></div><!-- /clearfix -->
 
-<div id="horario2_step">
-                <div class="form-horizontal">
-                    <div class="span6">
-                        <h2>Escoge el Horario:</h2>
+            <div id="horario2_step">
+                <section class="subtitle">
+                    <div class="container">
+                        <div class="row-fluid">
+                            <div class="span6">
+                                <h1>Escoge el Horario</h1>
+                            </div>
+                        </div>
                     </div>
+                </section>
+                <div class="form-horizontal formreg">
                     <% #Escoger paquete %>
                     <div class="span6">
                         <% @packages.each do |l| %>
@@ -329,13 +388,17 @@
 
             <!-- #fourth_step -->
             <div id="fourth_step_no">
-                
-                    <div class="span6 container">
-                        <div class="form-horizontal">  
-                            <% #Escoger tipo de curso %>
-                            <div class="">
-                                <h2>Escoge el tipo de curso:</h2>
+                <section class="subtitle">
+                    <div class="container">
+                        <div class="row-fluid">
+                            <div class="span6">
+                                <h1>Escoge el tipo de curso</h1>
                             </div>
+                        </div>
+                    </div>
+                </section>
+                        <div class="form-horizontal formreg">  
+                            <% #Escoger tipo de curso %>
                             <div class="span6">
                                 <% @course_types.each do |ct| %>
                                     <div class="control-group">
@@ -346,8 +409,7 @@
                                     </div>
                                 <% end %>
                             </div>
-                        </div>
-                    </div>     <!-- clearfix --><div class="clear"></div><!-- /clearfix -->
+                        </div>  <!-- clearfix --><div class="clear"></div><!-- /clearfix -->
                  <input class="back" type="submit" name="back2third_no" id="back2third_no" value="" onclick="return false;" />    
                 <input class="submit" type="submit" name="submit_fourth_no" id="submit_fourth_no" value="" onclick="return false;" />
             </div>      <!-- clearfix --><div class="clear"></div><!-- /clearfix -->
@@ -358,10 +420,16 @@
             
             <!-- #fifth_step -->
             <div id="fifth_step">
-                <div class="form-horizontal">
-                    <div class="span6">
-                        <h2>Escoge el Horario:</h2>
+                <section class="subtitle">
+                    <div class="container">
+                        <div class="row-fluid">
+                            <div class="span6">
+                                <h1>Escoge el Horario</h1>
+                            </div>
+                        </div>
                     </div>
+                </section>
+                <div class="form-horizontal formreg">
                     <% #Escoger paquete %>
                     <div class="span6">
                         <% @packages.each do |l| %>
@@ -380,33 +448,41 @@
 
 
             <!-- #sixth_step -->
-             <div id="sixth_step">
-                <div class="span6">
-                    <h2>Datos personales:</h2>
-                </div>
-                <div class="form-horizontal">
-                    <div class="control-group">
-                        <%= label_tag :paternal_lastname, 'Apellido Paterno', :class => 'control-label' %>
-                        <div class="controls"> 
-                            <%= text_field_tag :paternal_lastname %>
+             <div id="sixth_step">  
+                <section class="subtitle">
+                    <div class="container">
+                        <div class="row-fluid">
+                            <div class="span6">
+                                <h1>Datos personales</h1>
+                            </div>
                         </div>
                     </div>
-                    <div class="control-group">
-                        <%= label_tag :maternal_lastname, 'Apellido Materno', :class => 'control-label' %>
-                        <div class="controls">
-                            <%= text_field_tag :maternal_lastname %>
+                </section>
+                <div class="form-horizontal formreg">
+                    <div class="span6">
+                        <div class="control-group">
+                            <%= label_tag :paternal_lastname, 'Apellido Paterno', :class => 'control-label' %>
+                            <div class="controls"> 
+                                <%= text_field_tag :paternal_lastname %>
+                            </div>
                         </div>
-                    </div>
-                    <div class="control-group">
-                        <%= label_tag :name, 'Nombres',  :class => 'control-label' %>
-                        <div class="controls">
-                            <%= text_field_tag :name %>
+                        <div class="control-group">
+                            <%= label_tag :maternal_lastname, 'Apellido Materno', :class => 'control-label' %>
+                            <div class="controls">
+                                <%= text_field_tag :maternal_lastname %>
+                            </div>
                         </div>
-                    </div>
-                    <div class="control-group">
-                        <%= label_tag :dni, 'DNI',  :class => 'control-label'  %>
-                        <div class="controls">
-                            <%= text_field_tag :dni %>
+                        <div class="control-group">
+                            <%= label_tag :name, 'Nombres',  :class => 'control-label' %>
+                            <div class="controls">
+                                <%= text_field_tag :name %>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <%= label_tag :dni, 'DNI',  :class => 'control-label'  %>
+                            <div class="controls">
+                                <%= text_field_tag :dni %>
+                            </div>
                         </div>
                     </div>
                 </div>      
@@ -421,29 +497,40 @@
 
             <!-- #seventh_step -->
             <div id="seventh_step">
-                <div class="form-horizontal" id="sectionsep">
-                    <div class="control-group">
-                        <%= label_tag :address, 'Dirección',  :class => 'control-label'  %>
-                        <div class="controls">
-                            <%= text_field_tag :address %>
+                <section class="subtitle">
+                    <div class="container">
+                        <div class="row-fluid">
+                            <div class="span6">
+                                <h1>Datos personales</h1>
+                            </div>
                         </div>
                     </div>
-                    <div class="control-group">
-                        <%= label_tag :district, 'Distrito',  :class => 'control-label'  %>
-                        <div class="controls">
-                            <%= text_field_tag :district %>
+                </section>
+                <div class="form-horizontal formreg">
+                    <div class="span6">
+                        <div class="control-group">
+                            <%= label_tag :address, 'Dirección',  :class => 'control-label'  %>
+                            <div class="controls">
+                                <%= text_field_tag :address %>
+                            </div>
                         </div>
-                    </div>
-                    <div class="control-group">
-                        <%= label_tag :province, 'Provincia',  :class => 'control-label'  %>
-                        <div class="controls">
-                            <%= text_field_tag :province %>
+                        <div class="control-group">
+                            <%= label_tag :district, 'Distrito',  :class => 'control-label'  %>
+                            <div class="controls">
+                                <%= text_field_tag :district %>
+                            </div>
                         </div>
-                    </div>
-                    <div class="control-group">
-                         <%= label_tag :department, 'Departamento',  :class => 'control-label'  %>
-                        <div class="controls">
-                            <%= text_field_tag :department %>
+                        <div class="control-group">
+                            <%= label_tag :province, 'Provincia',  :class => 'control-label'  %>
+                            <div class="controls">
+                                <%= text_field_tag :province %>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                             <%= label_tag :department, 'Departamento',  :class => 'control-label'  %>
+                            <div class="controls">
+                                <%= text_field_tag :department %>
+                            </div>
                         </div>
                     </div>
                 </div>      <!-- clearfix --><div class="clear"></div><!-- /clearfix -->
@@ -455,31 +542,42 @@
 
             <!-- #eighth_step -->
             <div id="eighth_step">
-                <div class="form-horizontal" id="sectionsep"> 
-                    <div class="control-group">
-                        <%= label_tag :home_phone, 'Teléfono Fijo',  :class => 'control-label'  %>
-                        <div class="controls">
-                            <%= text_field_tag :home_phone %>
-                        </div>
-                    </div>
-                    <div class="control-group">
-                        <%= label_tag :mobile_phone, 'Teléfono Móvil',  :class => 'control-label'  %>
-                        <div class="controls">
-                            <%= text_field_tag :mobile_phone %>
-                        </div>
-                    </div>
-                    <div class="control-group">
-                        <%= label_tag :sex, 'Sexo:', :class => 'control-label' %>
-                    </div>
-                    <div class="span6">
-                        <% @sex.each do |s| %>
-                            <div class="control-group">
-                                <%= label_tag 'sex_'+s[0].to_s, s[1],  :class => 'control-label'   %>
-                                <div class="controls">
-                                    <%= radio_button_tag :sex, s[0]  %>
-                                </div>
+                <section class="subtitle">
+                    <div class="container">
+                        <div class="row-fluid">
+                            <div class="span6">
+                                <h1>Datos personales</h1>
                             </div>
-                        <% end %>
+                        </div>
+                    </div>
+                </section>
+                <div class="form-horizontal formreg"> 
+                    <div class="span6">
+                        <div class="control-group">
+                            <%= label_tag :home_phone, 'Teléfono Fijo',  :class => 'control-label'  %>
+                            <div class="controls">
+                                <%= text_field_tag :home_phone %>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <%= label_tag :mobile_phone, 'Teléfono Móvil',  :class => 'control-label'  %>
+                            <div class="controls">
+                                <%= text_field_tag :mobile_phone %>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <%= label_tag :sex, 'Sexo:', :class => 'control-label' %>
+                        </div>
+                        <div class="span6">
+                            <% @sex.each do |s| %>
+                                <div class="control-group">
+                                    <%= label_tag 'sex_'+s[0].to_s, s[1],  :class => 'control-label'   %>
+                                    <div class="controls">
+                                        <%= radio_button_tag :sex, s[0]  %>
+                                    </div>
+                                </div>
+                            <% end %>
+                        </div>
                     </div>
                 </div>      <!-- clearfix --><div class="clear"></div><!-- /clearfix -->
                 <input class="back" type="submit" name="back2seventh" id="back2seventh" value="" onclick="return false;" /> 
@@ -490,48 +588,48 @@
 
             <!-- #ninth_step -->
             <div id="ninth_step">
-                <div class="form-horizontal" id="sectionsep">
-                    <div class="control-group">
-                        <%= label_tag :birthday, 'Fecha de nacimiento', :class => 'control-label' %>
-                        <div class="controls">
-                            <%= date_field_tag :birthday %> 
+                <section class="subtitle">
+                    <div class="container">
+                        <div class="row-fluid">
+                            <div class="span6">
+                                <h1>Datos personales</h1>
+                            </div>
                         </div>
                     </div>
-                    <div class="control-group">
-                        <%= label_tag :birthplace, 'Lugar de nacimiento', :class => 'control-label' %>
-                        <div class="controls">
-                            <%= text_field_tag :birthplace %>
+                </section>
+                <div class="form-horizontal formreg">
+                    <div class="span6">
+                        <div class="control-group">
+                            <%= label_tag :birthday, 'Fecha de nacimiento', :class => 'control-label' %>
+                            <div class="controls">
+                                <%= date_field_tag :birthday %> 
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <%= label_tag :birthplace, 'Lugar de nacimiento', :class => 'control-label' %>
+                            <div class="controls">
+                                <%= text_field_tag :birthplace %>
+                            </div>
                         </div>
                     </div>
                 </div>      <!-- clearfix --><div class="clear"></div><!-- /clearfix --> 
                 <input class="back" type="submit" name="back2eighth" id="back2eighth" value="" onclick="return false;" /> 
                 <input class="submit" type="submit" name="submit_ninth" id="submit_ninth" value="" onclick="return false;" />
             </div><!-- clearfix --><div class="clear"></div><!-- /clearfix --> 
-<!-- REVISAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAR -->
-            <!-- Este esta para agregar -->           
-            <!-- #ninth_step -->
-             <div id="ninth_step">
-                <div class="form-horizontal" id="sectionsep">                  
-                    
-
-                    <div class="control-group">
-                        <%= label_tag :semester, 'Ingrese su ciclo de estudio actual', :class => 'control-label' %>
-                        <div class="controls">
-                            <%= text_field_tag :semester %>
-                        </div>
-                    </div>
 
 
-                </div>      <!-- clearfix --><div class="clear"></div><!-- /clearfix --> 
-                <input class="submit" type="submit" name="submit_ninth" id="submit_ninth" value="" onclick="return false;" />
-            </div><!-- clearfix --><div class="clear"></div><!-- /clearfix --> 
-<!-- REVISAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAR -->
             <!-- #tenth_step -->
             <div id="tenth_step">
-                <div class="form-horizontal">
-                    <div class="control-group">
-                        <%= label_tag :marital_status, 'Estado Civil', :class => 'control-label' %>
+                <section class="subtitle">
+                    <div class="container">
+                        <div class="row-fluid">
+                            <div class="span6">
+                                <h1>Estado Civil</h1>
+                            </div>
+                        </div>
                     </div>
+                </section>                
+                <div class="form-horizontal formreg">
                     <div class="span6">
                         <% @marital_statuses.each do |ms| %>
                         <div class="control-group">
@@ -549,11 +647,16 @@
             </div>
 
             <div id="eleventh_step">
-                <div class="span6">
-                    <div class="form-horizontal">  
-                        <div class="span6">
-                            <div class="control-group">
-                        <%= label_tag :unica_person, '¿Es usted un estudiante de la Unica', :class => 'control-label' %>
+                <section class="subtitle">
+                    <div class="container">
+                        <div class="row-fluid">
+                            <div class="span6">
+                                <h1>¿Es usted un estudiante de la Unica?</h1>
+                            </div>
+                        </div>
+                    </div>
+                </section> 
+                    <div class="form-horizontal formreg">  
                         <div class="span6">
                             <% @is_unica.each do |i| %>
                                 <div class="control-group">
@@ -564,25 +667,28 @@
                                 </div>
                             <% end %>
                         </div>
-                    </div>
-                        </div>
-                        
-                    </div>
-                    
-            
-                </div><!-- clearfix --><div class="clear"></div><!-- /clearfix --> 
+                    </div><!-- clearfix --><div class="clear"></div><!-- /clearfix --> 
                 <input class="back" type="submit" name="back2tenth" id="back2tenth" value="" onclick="return false;" /> 
                 <input class="submit" type="submit" name="submit_eleventh" id="submit_eleventh" value="" onclick="return false;" />
-                
             </div>
 
             <div id="escuela_step">
-                <div class="span6">
-                    <div class="control-group">
-                        
-                        
+                <section class="subtitle">
+                    <div class="container">
+                        <div class="row-fluid">
+                            <div class="span6">
+                                <h1>Escoja su escuela</h1>
+                            </div>
+                        </div>
                     </div>
-            
+                </section> 
+                <div class="form-horizontal formreg">
+                    <div class="span6">
+                        <div class="control-group">
+                            
+                            
+                        </div>
+                    </div>
                 </div><!-- clearfix --><div class="clear"></div><!-- /clearfix --> 
                 <input class="back" type="submit" name="back2eleventh" id="back2eleventh" value="" onclick="return false;" /> 
                 <input class="submit" type="submit" name="submit_escuela" id="submit_escuela" value="" onclick="return false;" />
@@ -590,10 +696,17 @@
             </div>
 
             <div id="postgrado_step1">
-                <div class="span6">
-                    <div class="control-group">
-                        <%= label_tag :postgrade_person, '¿Ha estudiado algún posgrado?', :class => 'control-label' %>
-                        <div class="span6">
+                <section class="subtitle">
+                    <div class="container">
+                        <div class="row-fluid">
+                            <div class="span6">
+                                <h1>¿Ha estudiado algún posgrado?</h1>
+                            </div>
+                        </div>
+                    </div>
+                </section> 
+                <div class="form-horizontal formreg">
+                    <div class="span6">
                             <% @is_postgrade.each do |i| %>
                                 <div class="control-group">
                                     <%= label_tag 'postgrade_person'+i[0].to_s, i[1],  :class => 'control-label' %>
@@ -602,7 +715,6 @@
                                     </div>
                                 </div>
                             <% end %>
-                        </div>
                     </div>
             
                 </div><!-- clearfix --><div class="clear"></div><!-- /clearfix --> 
@@ -612,9 +724,16 @@
             </div>
 
             <div id="postgrado_step2">
-                <div class="span6">
-                    <div class="control-group">
-                        <%= label_tag :postgrade_person, '¿Ha estudiado algún posgrado?', :class => 'control-label' %>
+                <section class="subtitle">
+                    <div class="container">
+                        <div class="row-fluid">
+                            <div class="span6">
+                                <h1>¿Ha estudiado algún postgrado?</h1>
+                            </div>
+                        </div>
+                    </div>
+                </section> 
+                <div class="form-horizontal formreg">
                         <div class="span6">
                             <% @is_postgrade.each do |i| %>
                                 <div class="control-group">
@@ -624,9 +743,7 @@
                                     </div>
                                 </div>
                             <% end %>
-                        </div>
-                    </div>
-            
+                        </div>            
                 </div><!-- clearfix --><div class="clear"></div><!-- /clearfix --> 
                 <input class="back" type="submit" name="back2unica" id="back2unica" value="" onclick="return false;" /> 
                 <input class="submit" type="submit" name="submit_postgrado2" id="submit_postgrado2" value="" onclick="return false;" />
@@ -636,13 +753,16 @@
 
 
             <div id="twelfth_step">
-                <div class="span6">
-                    <div class="form-horizontal">  
-                        
-                        <div class="span6">
-                            <h2>Información:</h2>
+                <section class="subtitle">
+                    <div class="container">
+                        <div class="row-fluid">
+                            <div class="span6">
+                                <h1>Información:</h1>
+                            </div>
                         </div>
                     </div>
+                </section> 
+                <div class="formreg">
                     <div class="span6">
                        adsasd
                     </div>
@@ -654,13 +774,7 @@
             </div><!-- clearfix --><div class="clear"></div><!-- /clearfix -->
 
             <div id="thirteenth_step">
-                <div class="span6">
-                    <div class="form-horizontal">  
-                        
-                        <div class="span6">
-                            <h2>Información:</h2>
-                        </div>
-                    </div>
+                <div class="">
                     <div class="span6">
                        <table>
                         <tr><td>Usuario</td><td></td></tr>
