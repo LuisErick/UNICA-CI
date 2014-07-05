@@ -33,21 +33,21 @@ Revisa el code, soy un mensaje de error
 		<div class="span6">
 			<fieldset class="box" id="sectionsep">
 				<div class="control-group">
-					<%= label_tag :username, 'Nombre de usuario', :class => 'control-label' %>
+					<%= label :user, :username, 'Nombre de usuario', :class => 'control-label' %>
 					<div class="controls">
-					<%= text_field_tag :username %>
+					<%= text_field :user, :username %>
 					</div>
 				</div>
 				<div class="control-group">
-					<%= label_tag :password, 'Contraseña', :class => 'control-label' %>
+					<%= label :user, :password, 'Contraseña', :class => 'control-label' %>
 					<div class="controls">
-					<%= password_field_tag :password %>
+					<%= password_field :user, :password %>
 					</div>
 				</div>
 				<div class="control-group">
-					<%= label_tag :confirm_password, 'Confirme contraseña', :class => 'control-label' %>
+					<%= label :user, :confirm_password, 'Confirme contraseña', :class => 'control-label' %>
 					<div class="controls">
-					<%= password_field_tag :confirm_password %>
+					<%= password_field :user, :confirm_password %>
 					</div>
 				</div>		
 			</fieldset>
@@ -62,58 +62,58 @@ Revisa el code, soy un mensaje de error
 	<fieldset class="row-fluid">
 	<div class="span6 box" id="sectionsep">
 		<div class="control-group">
-			<%= label_tag :name, 'Nombres', :class => 'control-label' %>
+			<%= label :person, :name, 'Nombres', :class => 'control-label' %>
 			<div class="controls">
-				<%= text_field_tag :name %>
+				<%= text_field :person, :name %>
 			</div>
 		</div>
 
 		<div class="control-group">
-			<%= label_tag :paternal_lastname, 'Apellido paterno', :class => 'control-label' %>
+			<%= label :person, :paternal_lastname, 'Apellido paterno', :class => 'control-label' %>
 			<div class="controls">
-				<%= text_field_tag :paternal_lastname %>
+				<%= text_field :person, :paternal_lastname %>
 			</div>
 		</div>
 
 		<div class="control-group">
-			<%= label_tag :maternal_lastname, 'Apellido materno', :class => 'control-label' %>
+			<%= label :person, :maternal_lastname, 'Apellido materno', :class => 'control-label' %>
 			<div class="controls">
-				<%= text_field_tag :maternal_lastname %>
+				<%= text_field :person, :maternal_lastname %>
 			</div>
 		</div>
 
 		<div class="control-group">
-			<%= label_tag :dni, 'DNI', :class => 'control-label' %>
+			<%= label :person, :dni, 'DNI', :class => 'control-label' %>
 			<div class="controls">
-				<%= text_field_tag :dni %>	
+				<%= text_field :person, :dni %>	
 			</div>
 		</div>
 
 		<div class="control-group">
-			<%= label_tag :address, 'Dirección', :class => 'control-label' %>
+			<%= label :person, :address, 'Dirección', :class => 'control-label' %>
 			<div class="controls">
-				<%= text_field_tag :address %>
+				<%= text_field :person, :address %>
 			</div>
 		</div>
 
 		<div class="control-group">
-			<%= label_tag :district, 'Distrito', :class => 'control-label' %>
+			<%= label :person, :district, 'Distrito', :class => 'control-label' %>
 			<div class="controls">
-				<%= text_field_tag :district %>
+				<%= text_field :person, :district %>
 			</div>
 		</div>
 
 		<div class="control-group">
-			<%= label_tag :province, 'Provincia', :class => 'control-label' %>
+			<%= label :person, :province, 'Provincia', :class => 'control-label' %>
 			<div class="controls">
-				<%= text_field_tag :province %>
+				<%= text_field :person, :province %>
 			</div>
 		</div>
 
 		<div class="control-group">
-			<%= label_tag :department, 'Departamento', :class => 'control-label' %>
+			<%= label :person, :department, 'Departamento', :class => 'control-label' %>
 			<div class="controls">
-				<%= text_field_tag :department %>
+				<%= text_field :person, :department %>
 			</div>
 		</div>
 	</div>
@@ -121,42 +121,42 @@ Revisa el code, soy un mensaje de error
 	<div class="span6 box" id="sectionsep">
 
 		<div class="control-group">
-        	<%= label_tag :birthday, 'Fecha de nacimiento', :class => 'control-label' %>
+        	<%= label :person, :birthday, 'Fecha de nacimiento', :class => 'control-label' %>
 			<div class="controls">
-				<%= date_field_tag :birthday %>
+				<%= date_field :person, :birthday %>
 			</div>
 		</div>
 
 		<div class="control-group">
-			<%= label_tag :birthplace, 'Lugar de nacimiento',  :class => 'control-label' %>
+			<%= label :person, :birthplace, 'Lugar de nacimiento',  :class => 'control-label' %>
 			<div class="controls">
-				<%= text_field_tag :birthplace %>
+				<%= text_field :person, :birthplace %>
 			</div>
 		</div>
 
 		<div class="control-group">
-			<%= label_tag :home_phone, 'Teléfono fijo', :class => 'control-label' %>
+			<%= label :person, :home_phone, 'Teléfono fijo', :class => 'control-label' %>
 			<div class="controls">
-				<%= text_field_tag :home_phone %>
+				<%= text_field :person, :home_phone %>
 			</div>
 		</div>
 
 		<div class="control-group">
-			<%= label_tag :mobile_phone, 'Teléfono móvil', :class => 'control-label' %>
+			<%= label :person, :mobile_phone, 'Teléfono móvil', :class => 'control-label' %>
 			<div class="controls">
-				<%= text_field_tag :mobile_phone %>
+				<%= text_field :person, :mobile_phone %>
 			</div>
 		</div>
 
 		<div class="control-group">
-			<%= label_tag :sex, 'Sexo:', :class => 'control-label'%> 
+			<%= label :person, :sex, 'Sexo:', :class => 'control-label'%> 
 			<div class="controls">
 				<br>
 				<% @sex.each do |s| %> 
 						<div class="control-group">                          
-			                <%= label_tag 'sex_'+s[0].to_s, s[1],  :class => 'control-label'%>
+			                <%= label :person, 'sex_'+s[0].to_s, s[1],  :class => 'control-label'%>
 			                <div class="controls">
-			                	<%= radio_button_tag :sex, s[0]  %>
+			                	<%= radio_button :person, :sex, s[0]  %>
 			                </div>  
 		                </div>  
 		        <% end %>
@@ -165,9 +165,9 @@ Revisa el code, soy un mensaje de error
 
 
 		<div class="control-group">
-		<%= label_tag :marital_status, 'Estado civil', :class => 'control-label' %>
+		<%= label :person, :marital_status, 'Estado civil', :class => 'control-label' %>
 			<div class="controls">
-			<%= select_tag :marital_status, options_for_select(@marital_status) %>
+			<%= select :person, :marital_status, options_for_select(@marital_status) %>
 			</div>
 		</div>
 		
@@ -182,16 +182,16 @@ Revisa el code, soy un mensaje de error
 	<div class="row-fluid">
 		<fieldset class=" box span6" id="sectionsep">
 				<div class="control-group">
-					<%= label_tag :start_date, 'Fecha de inicio',  :class => 'control-label' %>
+					<%= label :teacher, :start_date, 'Fecha de inicio',  :class => 'control-label' %>
 					<div class="controls">
-						<%= date_field_tag :start_date %>
+						<%= date_field :teacher, :start_date %>
 					</div>
 				</div>
 			
 				<div class="control-group">
-				<%= label_tag :language, 'Idioma', :class => 'control-label' %>	
+				<%= label :teacher, :language, 'Idioma', :class => 'control-label' %>	
 					<div class="controls">
-						<%= select_tag :language, options_for_select(@languages) %>
+						<%= select :teacher, :language, options_for_select(@languages) %>
 					</div>
 				</div>
 		</fieldset>

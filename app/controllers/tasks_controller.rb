@@ -57,7 +57,7 @@ class TasksController < ApplicationController
     end
   end
 
-  def create_teacher
+  def create_teacher    
     rest = User.create_teacher(params)    
   	if rest
       redirect_to new_teacher_path, message: 'Docente agregado con éxito, ¿Desea agregar más?', error: '0'
@@ -65,6 +65,8 @@ class TasksController < ApplicationController
       redirect_to new_teacher_path, message: 'Error al registrar el usuario, el nombre ya existe', error: '1'
     end
   end
+
+
   def create_schedule
     
   end

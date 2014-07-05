@@ -47,11 +47,17 @@ class User < ActiveRecord::Base
 	end
 
 	def self.create_teacher(params)
-		user = self.new(username: params[:username],password: params[:password], permission: Permission.find(3), state: true)
+		params[:user] = params[:user].dup.except(:confirm_password)
+		params[:user][:permission] = Permission.find(3)
+		params[:user][:state] = true
+		user = self.new(user_params(params))
 		if user.save
-			person = Person.new(user: user, paternal_lastname: params[:paternal_lastname], maternal_lastname: params[:maternal_lastname], name: params[:name], dni: params[:dni], address: params[:address], district: params[:district], province: params[:province],  department: params[:department], home_phone: params[:home_phone], mobile_phone: params[:mobile_phone], sex: params[:sex], birthday: params[:birthday], birthplace: params[:birthplace], marital_status_id: params[:marital_status])
+			params[:person][:user] = user
+			params[:person][:marital_status] = MaritalStatus.find(params[:person][:marital_status])
+			person = Person.new(person_params)
 			if person.save
-				teacher = Teacher.new(person: person,start_date: params[:start_date], language_id: params[:language])			
+				params[:teacher][:person] = person
+				teacher = Teacher.new(teacher_params)			
 				if teacher.save
 					return true
 				else					
@@ -81,5 +87,17 @@ class User < ActiveRecord::Base
     	else
     		true
     	end
+    end
+private
+    def self.user_params(params)
+      params.require(:user).permit(:username, :password, :state, :permission)
+    end
+
+    def self.person_params(params)
+      params.require(:user).permit(:user, :paternal_lastname, :maternal_lastname, :name, :dni, :address, :district, :province,  :department, :home_phone, :mobile_phone, :sex, :birthday, :birthplace, :marital_status) 
+    end
+
+    def self.teacher_params(params)
+      params.require(:user).permit(:person,:start_date , :language_id)
     end
 end
