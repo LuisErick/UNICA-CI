@@ -21,7 +21,7 @@ var ready = function() {
             'sexo' : 'sexo',
             'birthday' : 'birthday',
             'birthplace' : 'birthplace',
-            'estado_civil' : 'estado_civil'
+            'estado_civil' : 'estado_civil',
             'unica' : 'unica',
             'escuela': 'escuela',
             'postgrado': 'postgrado'
