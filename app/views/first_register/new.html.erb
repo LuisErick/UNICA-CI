@@ -510,7 +510,7 @@
 <!-- REVISAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAR -->
             <!-- Este esta para agregar -->           
             <!-- #ninth_step -->
-            <div id="ninth_step">
+             <div id="ninth_step">
                 <div class="form-horizontal" id="sectionsep">                  
                     
 
@@ -579,17 +579,8 @@
             <div id="escuela_step">
                 <div class="span6">
                     <div class="control-group">
-                        <%= label_tag :college, '¿Cual es su escuela?', :class => 'control-label' %>
-                        <div class="span6">
-                            <% @colleges.each do |c| %>
-                                <div class="control-group">
-                                    <%= label_tag 'college_'+c.id.to_s, c.name,  :class => 'control-label' %>
-                                    <div class="controls">
-                                        <%= radio_button_tag :college, c.id %>
-                                    </div>
-                                </div>
-                            <% end %>
-                        </div>
+                        
+                        
                     </div>
             
                 </div><!-- clearfix --><div class="clear"></div><!-- /clearfix --> 
@@ -680,6 +671,11 @@
                         <tr><td>Nombre</td><td></td></tr>
                         <tr><td>Apellidos</td><td></td></tr>
                         <tr><td>DNI</td><td></td></tr>
+                        <tr><td>Dirección</td><td></td></tr>
+                        <tr><td>Distrito</td><td></td></tr>
+                        <tr><td>Provincia</td><td></td></tr>
+                        <tr><td>Departamento</td><td></td></tr>
+                        <tr><td>Sexo</td><td></td></tr>
                         <tr><td>Estudiante de la UNICA</td><td></td></tr>
                         <tr><td>Escuela</td><td></td></tr>
                         <tr><td>Postgrado</td><td></td></tr>

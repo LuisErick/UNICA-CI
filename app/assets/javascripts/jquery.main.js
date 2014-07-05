@@ -12,8 +12,18 @@ var ready = function() {
             'paternal_lastname' : 'paternal_lastname',
             'maternal_lastname' : 'maternal_lastname',
             'dni' : 'dni',
+            'address' : 'address',
+            'district' : 'district',
+            'province' : 'province',
+            'department' : 'department',
+            'home_phone' : 'home_phone',
+            'mobile_phone' : 'mobile_phone',
+            'sexo' : 'sexo',
+            'birthday' : 'birthday',
+            'birthplace' : 'birthplace',
+            'estado_civil' : 'estado_civil'
             'unica' : 'unica',
-            //'escuela': 'escuela',
+            'escuela': 'escuela',
             'postgrado': 'postgrado'
             
     };
@@ -58,7 +68,7 @@ var ready = function() {
                     return false;
             } else {   
                 //update progress bar
-                $('#progress_text').html('10% Complete');
+                $('#progress_text').html('5% Complete');
                 $('#progress').css('width','37px');
 
                 //slide steps
@@ -90,7 +100,7 @@ var ready = function() {
         
         if(!error) {
                 //update progress bar
-                $('#progress_text').html('20% Complete');
+                $('#progress_text').html('10% Complete');
                 $('#progress').css('width','80px');
 
                 //slide steps
@@ -132,7 +142,7 @@ var ready = function() {
     $('#submit_third_yes').click(function(){
                 
                 //update progress bar
-                $('#progress_text').html('30% Complete');
+                $('#progress_text').html('15% Complete');
                 $('#progress').css('width','80px');
 
                 //slide steps
@@ -145,7 +155,7 @@ var ready = function() {
     $('#submit_date1').click(function(){
                 
                 //update progress bar
-                $('#progress_text').html('30% Complete');
+                $('#progress_text').html('40% Complete');
                 $('#progress').css('width','80px');
 
                 //slide steps
@@ -158,7 +168,7 @@ var ready = function() {
     $('#submit_date2').click(function(){
                 
                 //update progress bar
-                $('#progress_text').html('30% Complete');
+                $('#progress_text').html('40% Complete');
                 $('#progress').css('width','80px');
 
                 //slide steps
@@ -171,7 +181,7 @@ var ready = function() {
     $('#submit_date3').click(function(){
                 
                 //update progress bar
-                $('#progress_text').html('30% Complete');
+                $('#progress_text').html('40% Complete');
                 $('#progress').css('width','80px');
 
                 //slide steps
@@ -184,7 +194,7 @@ var ready = function() {
     $('#submit_horario1').click(function(){
                 
                 //update progress bar
-                $('#progress_text').html('30% Complete');
+                $('#progress_text').html('50% Complete');
                 $('#progress').css('width','80px');
 
                 //slide steps
@@ -197,7 +207,7 @@ var ready = function() {
     $('#submit_horario2').click(function(){
                 
                 //update progress bar
-                $('#progress_text').html('30% Complete');
+                $('#progress_text').html('50% Complete');
                 $('#progress').css('width','80px');
 
                 //slide steps
@@ -211,7 +221,7 @@ var ready = function() {
     $('#submit_third_no').click(function(){
                 
                 //update progress bar
-                $('#progress_text').html('30% Complete');
+                $('#progress_text').html('15% Complete');
                 $('#progress').css('width','80px');
 
                 //slide steps
@@ -272,7 +282,7 @@ var ready = function() {
         });        
         
         if(!error) {
-                $('#progress_text').html('70% Complete');
+                $('#progress_text').html('55% Complete');
                 $('#progress').css('width','222px');
                 //slide steps
                 $('#sixth_step').slideUp();
@@ -307,7 +317,7 @@ var ready = function() {
         if(!error) {
                 
                 //update progress bar
-        $('#progress_text').html('80% Complete');
+        $('#progress_text').html('60% Complete');
         $('#progress').css('width','259px');
                 //slide steps
                 $('#seventh_step').slideUp();
@@ -352,7 +362,7 @@ var ready = function() {
         
         if(!error) {
                 //update progress bar
-        $('#progress_text').html('90% Complete');
+        $('#progress_text').html('65% Complete');
         $('#progress').css('width','269px');
                 //slide steps
                 $('#eighth_step').slideUp();
@@ -364,6 +374,22 @@ var ready = function() {
             
         
 
+    });
+
+
+    jQuery("input[type='radio'][name='sex']").each(function(index, button){
+        
+        
+            if ( jQuery( 'input[name=sex]:checked' ).val() == '1' )
+            {
+                sexo = 'Masculino'
+            }
+
+            if ( jQuery( 'input[name=sex]:checked' ).val() == '2' )
+            {
+                sexo = 'Femenino'
+            }
+        
     });
 
     $('#submit_ninth').click(function(){
@@ -390,7 +416,7 @@ var ready = function() {
     //    if(!error) {
                 
                 //update progress bar
-        $('#progress_text').html('100% Complete');
+        $('#progress_text').html('70% Complete');
         $('#progress').css('width','339px');
                 //slide steps
                 $('#ninth_step').slideUp();
@@ -422,7 +448,7 @@ var ready = function() {
         
         if(!error) {
                 //update progress bar
-        $('#progress_text').html('100% Complete');
+        $('#progress_text').html('85% Complete');
         $('#progress').css('width','339px');
 
         //slide steps
@@ -433,9 +459,39 @@ var ready = function() {
 
     });
 
+    jQuery("input[type='radio'][name='marital_status']").each(function(index, button){
+        
+        
+            if ( jQuery( 'input[name=marital_status]:checked' ).val() == '1' )
+            {
+                estado_civil = Casado(a)
+            }
+
+            if ( jQuery( 'input[name=marital_status]:checked' ).val() == '2' )
+            {
+                estado_civil = Soltero(a)
+            }
+
+            if ( jQuery( 'input[name=marital_status]:checked' ).val() == '3' )
+            {
+                estado_civil = Divorciado(a)
+            }
+
+            if ( jQuery( 'input[name=marital_status]:checked' ).val() == '4' )
+            {
+                estado_civil = Separado(a)
+            }
+
+            if ( jQuery( 'input[name=marital_status]:checked' ).val() == '5' )
+            {
+                estado_civil = Conviviente(a)
+            }
+        
+    });
+
     $('#submit_escuela').click(function(){
                 //update progress bar
-        $('#progress_text').html('100% Complete');
+        $('#progress_text').html('95% Complete');
         $('#progress').css('width','339px');
                 //slide steps
                 $('#escuela_step').slideUp();
@@ -445,26 +501,67 @@ var ready = function() {
     });
 
     $('#submit_postgrado1').click(function(){
-                //update progress bar
-        $('#progress_text').html('100% Complete');
-        $('#progress').css('width','339px');
-                //slide steps
-                $('#postgrado_step1').slideUp();
+
+        $('#postgrado_step1 input').removeClass('error').removeClass('valid');
+
+        var error = 0;
+
+        jQuery("input[type='radio'][name='postgrade_person']").each(function(index, button){
+
+        if ( jQuery( 'input[name=postgrade_person]:checked' ).val() == null ) {
+                $(this).addClass('error');
+                $(this).effect("shake", { times:3 }, 50);
                 
-                $('#twelfth_step').slideDown();     
+                error++;
+            } else {
+                $(this).addClass('valid');
+            }
+
+        });        
+        
+        if(!error) {
+        //update progress bar
+        $('#progress_text').html('90% Complete');
+        $('#progress').css('width','339px');
+        //slide steps
+        $('#postgrado_step1').slideUp();
+                
+        $('#twelfth_step').slideDown();          
+                       
+        }    
         
 
     });
 
     $('#submit_postgrado2').click(function(){
-                //update progress bar
-        $('#progress_text').html('100% Complete');
-        $('#progress').css('width','339px');
-                //slide steps
-                $('#postgrado_step2').slideUp();
-               
-                $('#twelfth_step').slideDown();     
+
+        $('#postgrado_step2 input').removeClass('error').removeClass('valid');
+
+        var error = 0;
+
+        jQuery("input[type='radio'][name='postgrade_person']").each(function(index, button){
+
+        if ( jQuery( 'input[name=postgrade_person]:checked' ).val() == null ) {
+                $(this).addClass('error');
+                $(this).effect("shake", { times:3 }, 50);
+                
+                error++;
+            } else {
+                $(this).addClass('valid');
+            }
+
+        });        
         
+        if(!error) {
+        //update progress bar
+        $('#progress_text').html('90% Complete');
+        $('#progress').css('width','339px');
+        //slide steps
+        $('#postgrado_step2').slideUp();
+               
+        $('#twelfth_step').slideDown();         
+                       
+        }  
 
     });
 
@@ -483,6 +580,16 @@ var ready = function() {
             $('#name').val(),
             $('#paternal_lastname').val() + ' ' + $('#maternal_lastname').val(),
             $('#dni').val(),
+            $('#address').val(),
+            $('#district').val(),
+            $('#province').val(),
+            $('#department').val(),
+            //$('#home_phone').val(),
+            //$('#mobile_phone').val(),
+            sexo,
+            //$('#birthday').val(),
+            //$('#birthplace').val(),
+            //estado_civil,
             unica
         );
         var tr = $('#thirteenth_step tr');
@@ -512,7 +619,7 @@ var ready = function() {
 
     $('#back2second').click(function(){
         //update progress bar
-        $('#progress_text').html('20% Complete');
+        $('#progress_text').html('15% Complete');
         $('#progress').css('width','148px');
      
                 //slide steps
@@ -549,7 +656,7 @@ var ready = function() {
 
     $('#back2fourth_yes_v').click(function(){
         //update progress bar
-        $('#progress_text').html('20% Complete');
+        $('#progress_text').html('25% Complete');
         $('#progress').css('width','148px');
      
                 //slide steps
@@ -561,7 +668,7 @@ var ready = function() {
 
     $('#back2fourth_yes_l').click(function(){
         //update progress bar
-        $('#progress_text').html('20% Complete');
+        $('#progress_text').html('25% Complete');
         $('#progress').css('width','148px');
      
                 //slide steps
@@ -573,7 +680,7 @@ var ready = function() {
 
     $('#back2vea').click(function(){
         //update progress bar
-        $('#progress_text').html('20% Complete');
+        $('#progress_text').html('30% Complete');
         $('#progress').css('width','148px');
      
                 //slide steps
@@ -585,7 +692,7 @@ var ready = function() {
 
     $('#back2vea2').click(function(){
         //update progress bar
-        $('#progress_text').html('20% Complete');
+        $('#progress_text').html('30% Complete');
         $('#progress').css('width','148px');
      
                 //slide steps
@@ -598,7 +705,7 @@ var ready = function() {
 
     $('#back2date2').click(function(){
         //update progress bar
-        $('#progress_text').html('20% Complete');
+        $('#progress_text').html('40% Complete');
         $('#progress').css('width','148px');
      
                 //slide steps
@@ -610,7 +717,7 @@ var ready = function() {
 
     $('#back2vea3').click(function(){
         //update progress bar
-        $('#progress_text').html('20% Complete');
+        $('#progress_text').html('40% Complete');
         $('#progress').css('width','148px');
      
                 //slide steps
@@ -622,7 +729,7 @@ var ready = function() {
 
     $('#back2level').click(function(){
         //update progress bar
-        $('#progress_text').html('20% Complete');
+        $('#progress_text').html('35% Complete');
         $('#progress').css('width','148px');
      
                 //slide steps
@@ -634,7 +741,7 @@ var ready = function() {
 
     $('#back2level1').click(function(){
         //update progress bar
-        $('#progress_text').html('20% Complete');
+        $('#progress_text').html('35% Complete');
         $('#progress').css('width','148px');
      
                 //slide steps
@@ -646,7 +753,7 @@ var ready = function() {
 
     $('#back2level2').click(function(){
         //update progress bar
-        $('#progress_text').html('20% Complete');
+        $('#progress_text').html('35% Complete');
         $('#progress').css('width','148px');
      
                 //slide steps
@@ -666,24 +773,22 @@ $('#back2fourth').click(function(){
                 $('#fifth_step').slideUp();
                 $('#fourth_step_no').slideDown();     
         
-
     });
 
 $('#back2fifth').click(function(){
         //update progress bar
-        $('#progress_text').html('20% Complete');
+        $('#progress_text').html('40% Complete');
         $('#progress').css('width','148px');
      
                 //slide steps
                 $('#sixth_step').slideUp();
-                $('#fifth_step').slideDown();     
-        
+                $('#fifth_step').slideDown();        
 
     });
 
 $('#back2sixth').click(function(){
         //update progress bar
-        $('#progress_text').html('20% Complete');
+        $('#progress_text').html('50% Complete');
         $('#progress').css('width','148px');
      
                 //slide steps
@@ -695,7 +800,7 @@ $('#back2sixth').click(function(){
 
 $('#back2seventh').click(function(){
         //update progress bar
-        $('#progress_text').html('20% Complete');
+        $('#progress_text').html('55% Complete');
         $('#progress').css('width','148px');
      
                 //slide steps
@@ -707,7 +812,7 @@ $('#back2seventh').click(function(){
 
 $('#back2eighth').click(function(){
         //update progress bar
-        $('#progress_text').html('20% Complete');
+        $('#progress_text').html('60% Complete');
         $('#progress').css('width','148px');
      
                 //slide steps
@@ -719,7 +824,7 @@ $('#back2eighth').click(function(){
 
 $('#back2ninth').click(function(){
         //update progress bar
-        $('#progress_text').html('20% Complete');
+        $('#progress_text').html('65% Complete');
         $('#progress').css('width','148px');
      
                 //slide steps
@@ -731,19 +836,18 @@ $('#back2ninth').click(function(){
 
 $('#back2tenth').click(function(){
         //update progress bar
-        $('#progress_text').html('20% Complete');
+        $('#progress_text').html('70% Complete');
         $('#progress').css('width','148px');
      
                 //slide steps
                 $('#eleventh_step').slideUp();
-                $('#tenth_step').slideDown();     
-        
+                $('#tenth_step').slideDown();       
 
     });
 
 $('#back2eleventh').click(function(){
         //update progress bar
-        $('#progress_text').html('20% Complete');
+        $('#progress_text').html('75% Complete');
         $('#progress').css('width','148px');
      
                 //slide steps
@@ -755,7 +859,7 @@ $('#back2eleventh').click(function(){
 
 $('#back2escuela').click(function(){
         //update progress bar
-        $('#progress_text').html('20% Complete');
+        $('#progress_text').html('85% Complete');
         $('#progress').css('width','148px');
      
                 //slide steps
@@ -767,7 +871,7 @@ $('#back2escuela').click(function(){
 
 $('#back2unica').click(function(){
         //update progress bar
-        $('#progress_text').html('20% Complete');
+        $('#progress_text').html('80% Complete');
         $('#progress').css('width','148px');
      
                 //slide steps
@@ -779,7 +883,7 @@ $('#back2unica').click(function(){
 
 $('#back2postgrado').click(function(){
         //update progress bar
-        $('#progress_text').html('20% Complete');
+        $('#progress_text').html('90% Complete');
         $('#progress').css('width','148px');
      
                 //slide steps
@@ -791,7 +895,7 @@ $('#back2postgrado').click(function(){
 
 $('#back2twelfth').click(function(){
         //update progress bar
-        $('#progress_text').html('20% Complete');
+        $('#progress_text').html('100% Complete');
         $('#progress').css('width','148px');
      
         //slide steps
@@ -822,7 +926,7 @@ $('#back2twelfth').click(function(){
 
                 $('#submit_fourth_yes').click(function(){
                 //update progress bar
-                $('#progress_text').html('40% Complete');
+                $('#progress_text').html('20% Complete');
                 $('#progress').css('width','148px');
      
                 //slide steps
@@ -840,7 +944,7 @@ $('#back2twelfth').click(function(){
 
                 $('#submit_fourth_yes').click(function(){
                 //update progress bar
-                $('#progress_text').html('40% Complete');
+                $('#progress_text').html('20% Complete');
                 $('#progress').css('width','148px');
      
                 //slide steps
@@ -865,7 +969,7 @@ jQuery("input[type='radio'][name='validation_type']").each(function(index, butto
 
                 $('#submit_vea').click(function(){
                 //update progress bar
-                $('#progress_text').html('40% Complete');
+                $('#progress_text').html('30% Complete');
                 $('#progress').css('width','148px');
      
                 //slide steps
@@ -879,7 +983,7 @@ jQuery("input[type='radio'][name='validation_type']").each(function(index, butto
 
                 $('#submit_vea1').click(function(){
                 //update progress bar
-                $('#progress_text').html('40% Complete');
+                $('#progress_text').html('30% Complete');
                 $('#progress').css('width','148px');
      
                 //slide steps
@@ -893,7 +997,7 @@ jQuery("input[type='radio'][name='validation_type']").each(function(index, butto
 
                 $('#submit_vea2').click(function(){
                 //update progress bar
-                $('#progress_text').html('40% Complete');
+                $('#progress_text').html('30% Complete');
                 $('#progress').css('width','148px');
      
                 //slide steps
@@ -912,7 +1016,7 @@ jQuery("input[type='radio'][name='validation_type']").each(function(index, butto
 
                 $('#submit_vea').click(function(){
                 //update progress bar
-                $('#progress_text').html('40% Complete');
+                $('#progress_text').html('30% Complete');
                 $('#progress').css('width','148px');
      
                 //slide steps
@@ -926,7 +1030,7 @@ jQuery("input[type='radio'][name='validation_type']").each(function(index, butto
 
                 $('#submit_vea2').click(function(){
                 //update progress bar
-                $('#progress_text').html('40% Complete');
+                $('#progress_text').html('30% Complete');
                 $('#progress').css('width','148px');
      
                 //slide steps
@@ -965,24 +1069,25 @@ jQuery("input[type='radio'][name='validation_type']").each(function(index, butto
 
                 $('#submit_level').click(function(){
                 //update progress bar
-                $('#progress_text').html('40% Complete');
+                $('#progress_text').html('25% Complete');
                 $('#progress').css('width','148px');
      
                 //slide steps
                 
                 $('#level_step').slideUp();
+                $('#v_exam_pago_step2').slideUp();
                 $('#v_exam_pago_step3').slideDown();     
         
 
                 });
             }
 
-            if ( jQuery( 'input[name=level]:checked' ).val() == '2' )
+            if ( jQuery( 'input[name=level]:checked' ).val() == '2' || jQuery( 'input[name=level]:checked' ).val() == '3' )
             {
 
                 $('#submit_level').click(function(){
                 //update progress bar
-                $('#progress_text').html('40% Complete');
+                $('#progress_text').html('25% Complete');
                 $('#progress').css('width','148px');
      
                 //slide steps
@@ -993,26 +1098,7 @@ jQuery("input[type='radio'][name='validation_type']").each(function(index, butto
         
 
                 });
-            }
-
-            if ( jQuery( 'input[name=level]:checked' ).val() == '3' )
-            {
-
-                $('#submit_level').click(function(){
-                //update progress bar
-                $('#progress_text').html('40% Complete');
-                $('#progress').css('width','148px');
-     
-                //slide steps
-                
-                $('#level_step').slideUp();
-                $('#v_exam_pago_step3').slideUp();
-                $('#v_exam_pago_step2').slideDown();     
-        
-
-                });
-            }
-        
+            }        
 
         });
     });
