@@ -1,21 +1,24 @@
 Rails.application.routes.draw do
 
   get 'teachers/index'
-
+  get "/lista_docentes" => "teachers#index", as: :teacher_index
   get 'teachers/schedules'
-
+  get "/mis_horarios" => "teachers#schedules", as: :teacher_schedules
   get 'teachers/salaries'
-
+  get "/mis_sueldos" => "teachers#salaries", as: :teacher_salaries
   get 'teachers/comments'
+  get "/comentarios_sobre_mi" => "teachers#comments", as: :teacher_comments
+
 
   get 'students/index'
-
+  get "/lista_estudiantes" => "students#index", as: :student_index
   get 'students/schedules'
-
+  get "/mi_horario" => "students#schedules", as: :student_schedules
   get 'students/notes'
-
+  get "/mis_notas" => "students#notes", as: :student_notes   
   get 'students/certificates'
-
+  get "/mis_certificados" => "students#certificates", as: :student_certificates   
+ 
   get 'tasks/new_schedule'
   get "/nuevo_horario" => "tasks#new_schedule", as: :new_schedule
   post 'tasks/create_schedule'

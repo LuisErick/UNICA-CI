@@ -65,14 +65,7 @@
                             <ul class="dropdown-menu">
                                 <li><%= link_to "Matrículas pendientes", pending_matriculations_path  %></li> 
                                 <li><%= link_to "Registrar profesor", new_teacher_path  %></li>
-                                <li><%= link_to "Asignar Horario", new_schedule_path  %></li>
-                                <li><a href='#'>Pricing</a></li>
-                                <li><a href='#'>404</a></li>
-                                <li><a href='#'>Typography</a></li>
-                                <li><a href='#'>Registration</a></li>
-                                <li class="divider"></li>
-                                <li><a href='#'>Privacy Policy</a></li>
-                                <li><a href='#'>Terms of Use</a></li>
+                                <li><%= link_to "Asignar Horario", new_schedule_path  %></li>                               
                             </ul>
                         </li>  
 
@@ -87,8 +80,24 @@
                         </ul>
                         </li>
                         <% if is_loged %>
-                        <li <%=paint_active('teachers')%>><%= link_to "Docentes", teachers_path  %></li>
-                        <li <%=paint_active('students')%>><%= link_to "Estudiantes", students_path  %></li>
+                        <li <%=paint_active('teachers')%>  class="dropdown" ><%= link_to '#', class: 'dropdown-toggle', 'data-toggle' => 'dropdown' do %>Docentes<i class="icon-angle-down"></i>
+                            <% end %>
+                            <ul class="dropdown-menu">
+                                <li><%= link_to "Listar docentes", teacher_index_path  %></li> 
+                                <li><%= link_to "Mis horarios", teacher_schedules_path  %></li>
+                                <li><%= link_to "Mis sueldos", teacher_salaries_path  %></li>
+                                <li><%= link_to "Comentarios sobre mí", teacher_comments_path  %></li>                              
+                        </ul>
+                        </li>
+                        <li <%=paint_active('students')%>  class="dropdown" ><%= link_to '#', class: 'dropdown-toggle', 'data-toggle' => 'dropdown' do %>Estudiantes<i class="icon-angle-down"></i>
+                            <% end %>
+                            <ul class="dropdown-menu">
+                                <li><%= link_to "Listado de Alumnos", student_index_path  %></li> 
+                                <li><%= link_to "Mis horarios", student_schedules_path  %></li>
+                                <li><%= link_to "Mis notas", student_notes_path  %></li>
+                                <li><%= link_to "Mis certificados", student_certificates_path  %></li>                              
+                        </ul>
+                        </li>
                         <% end %>                        
                         <li <%=paint_active('faq')%>><%= link_to 'FAQ' , faq_path %></li> 
                         <li <%=paint_active('contact')%>><%= link_to 'Contacto' , contact_path %></li>
