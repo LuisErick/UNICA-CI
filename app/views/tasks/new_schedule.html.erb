@@ -29,7 +29,7 @@
 				<th>Nombre completo</th>
 				<th>Idioma</th>
 				<th>DNI</th>
-				<th>Radiobutton</th>
+				<th>Elección</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -41,11 +41,7 @@
 		    	<td><%=t.language.name%></td>
 		    	<td><%=t.person.dni%></td>
 		    	<td>
-		    		<div class="control-group">
-	                    <div class="controls">
-	                        <%= radio_button_tag :language, t.id  %>
-	                    </div>
-	                </div>
+	                <%= radio_button_tag :language, t.id  %>
 		    	</td>
 		    </tr>
 		  <% end %>

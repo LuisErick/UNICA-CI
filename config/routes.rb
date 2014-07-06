@@ -20,6 +20,11 @@ Rails.application.routes.draw do
   post 'enviando' => "contact#email", as: :f_contact
   resources :certifications
 
+  get 'first_register/suggest_schedule'
+  get 'sugerir_horario' => "first_register#suggest_schedule", as: :suggest_schedule
+  post 'first_register/insert_schedule'
+  post 'insertar_horario' => "first_register#insert_schedule", as: :insert_schedule
+  get 'first_register/new'
   get 'first_register/new'
   post 'first_register/create'
   get "/registro" => "first_register#new", as: :new_register

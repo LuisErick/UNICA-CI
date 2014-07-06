@@ -74,8 +74,18 @@
                                 <li><a href='#'>Privacy Policy</a></li>
                                 <li><a href='#'>Terms of Use</a></li>
                             </ul>
-                        </li>                       
-                        <li <%=paint_active('first_register')%>><%= link_to "Matriculas", new_register_path  %></li>
+                        </li>  
+
+
+
+                        <li <%=paint_active('first_register') %> class="dropdown" ><%= link_to '#', class: 'dropdown-toggle', 'data-toggle' => 'dropdown' do %>Matrículas<i class="icon-angle-down"></i>
+                            <% end %>
+                        <ul class="dropdown-menu">
+                                <li><%= link_to "Sugerir Horario", suggest_schedule_path  %></li> 
+                                <li><%= link_to "Primera matrícula", new_register_path  %></li>
+                                <li><%= link_to "Matricularme en otros cursos", '#'  %></li>                              
+                        </ul>
+                        </li>
                         <% if is_loged %>
                         <li <%=paint_active('teachers')%>><%= link_to "Docentes", teachers_path  %></li>
                         <li <%=paint_active('students')%>><%= link_to "Estudiantes", students_path  %></li>

@@ -8,7 +8,7 @@ module ApplicationHelper
 	end
 
 	def complet_name(user)
-		user.person.name+" "+user.person.paternal_lastname+user.person.maternal_lastname
+		user.person.name+" "+user.person.paternal_lastname+" "+user.person.maternal_lastname
 	end
 
 	def to_security

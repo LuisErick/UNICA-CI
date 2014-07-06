@@ -1,0 +1,34 @@
+
+		
+			<%= form_tag(insert_schedule_path, method: 'post') do %>
+			<div class="control-group">
+				<%= label_tag :day, 'Escoja el día', :class => 'control-label'  %>
+				<div class="controls">
+					<%= select_tag :day, options_for_select(@days) %>
+				</div>
+			</div>
+			<div class="control-group">
+				<%= label_tag :start_time, 'Hora de inicio', :class => 'control-label'  %>
+				<div class="controls">
+					<%= time_field_tag :start_time %>
+				</div>
+			</div>
+			<div class="control-group">
+				<%= label_tag :end_time, 'Hora de salida', :class => 'control-label'  %>
+				<div class="controls">
+					<%= time_field_tag :end_time %>
+				</div>
+			</div>
+			<div class="control-group">
+				<%= label_tag :language, 'El idioma a escoger', :class => 'control-label'  %>
+				<div class="controls">
+					<%= select_tag :language, options_for_select(@languages) %>
+				</div>
+			</div>
+			<br>
+			<div class="controls">
+				<%= submit_tag 'Sugerir Horario',:class => 'btn btn-primary' %>
+			</div>
+			<% end %>
+	
+	
