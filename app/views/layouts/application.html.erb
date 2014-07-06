@@ -98,7 +98,6 @@
                         <% end %>  
                         <li <%=paint_active('about')%>><%= link_to 'Nosotros' , about_path %></li>                       
                         <li <%=paint_active('faq')%>><%= link_to 'FAQ' , faq_path %></li> 
-                        <li <%=paint_active('contact')%>><%= link_to 'Contacto' , contact_path %></li>
                         <li <%=paint_active('security')%> class="login">
                             <%= link_to to_security, 'data-toggle' => 'modal', data: security_confirm do %>
                             <i class="icon-lock"></i> <%=security_message%>
