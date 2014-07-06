@@ -59,7 +59,7 @@
                 <p>Además, contamos con otros idiomas (francés, portugués e italiano) para maestristas, doctorandos y público en general que lo requieran.
                 Te deseamos muchos éxitos en tus estudios.</p>
             </div>
-            <div class="span4">
+            <div class="span4 box">
                 <%=link_to( image_tag("galeria/1.jpg"), image_path( "galeria/1.jpg"), rel:'shadowbox', title: 'Central' )%>
             </div>
         </div>
@@ -73,14 +73,80 @@
         <hr>
 
             <div class="row-fluid">
-                <div class="span3"></div>
-                <div class="span7">
-                    <h4>Idiomas más hablados en el mundo:</h4>
-                    <div class="progress"><div class="bar" style="width: 80%; text-align:left; padding-left:10px;">Inglés</div></div>
-                    <div class="progress progress-warning"><div class="bar" style="width: 70%; text-align:left; padding-left:10px;">Español</div></div>
-                    <div class="progress progress-info"><div class="bar" style="width: 60%; text-align:left; padding-left:10px;">Italiano</div></div>
-                    <div class="progress progress-danger"><div class="bar" style="width: 40%; text-align:left; padding-left:10px;">Francés</div></div>
+                <div class="span2"></div>
+                <div class="span8">
+                    <div class="accordion" id="accordion2">
+                        <div class="accordion-group">
+                            <div class="accordion-heading">
+                                <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion2" href="#idiomafrances">
+                                <div class="progress progress-warning"><div class="bar" style="width: 15%; text-align:left; padding-left:10px;">Francés</div></div>
+                                </a>
+                            </div>
+                              <div id="idiomafrances" class="accordion-body collapse">
+                                <div class="accordion-inner">
+                                  <p>
+                                    <strong>BIENVENUE!</strong><br><br>
+
+                                    A través del menú de la izquierda puede acceder a toda la información disponible acerca de los cursos de francés ofertados en el Instituto de Idiomas.<br><br>
+
+                                    Todo lo relacionado con horarios, tutorías, programas, niveles, etc. se puede consultar en el apartado Docencia.<br><br>
+
+                                    Si necesita información sobre cualquier asunto relacionado con la matrícula, certificados u otro trámite administrativo, deberá consultar la página de Secretaría y en caso de duda llamar allí. Este tipo de información no es competencia de las profesoras de Francés.<br><br>
+                                  </p>
+                                </div>
+                              </div>
+                        </div>
+                        <div class="accordion-group">
+                            <div class="accordion-heading">
+                            <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion2" href="#idiomaingles">
+                              <div class="progress"><div class="bar" style="width: 45%; text-align:left; padding-left:10px;">Inglés</div></div>
+                            </a>
+                            </div>
+                            <div id="idiomaingles" class="accordion-body collapse">
+                                <div class="accordion-inner">
+                                <strong>Welcome!</strong><br><br>
+
+                                ¡Bienvenido al Área de Inglés!  Aquí encontrarás toda la información que necesitas sobre cualquier tema relacionado con los cursos de inglés: los horarios y contenidos de los cursos, información sobre los exámenes, las tutorías e información de contacto de los profesores, etc.<br><br>
+
+                                Si necesitas información sobre cualquier asunto relacionado con la matrícula, certificados, o cualquier trámite administrativo, deberás consultar la página de Secretaría y, en caso de cualquier duda, llamar a Secretaría.  Este tipo de información no es competencia de los profesores de inglés.<br><br>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-group">
+                            <div class="accordion-heading">
+                                <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion2" href="#idiomaitaliano">
+                                <div class="progress progress-danger"><div class="bar" style="width: 10%; text-align:left; padding-left:10px;">Italiano</div></div>
+                                </a>
+                            </div>
+                              <div id="idiomaitaliano" class="accordion-body collapse">
+                                <div class="accordion-inner">
+                                <strong>Benvenuti nel sito web dell'area d'italiano</strong><br><br>
+
+                                Los docentes del Área esperamos que, en las páginas a las que puede acceder a través del menú, pueda encontrar todas las informaciones que necesite en relación con cualquier aspecto de la enseñanza del italiano que se imparte en nuestro centro.<br><br>
+
+                                Aconsejamos a todos nuestros alumnos que visiten el apartado "FAQs".  Su lectura les resultará de gran utilidad para solventar todas las dudas referidas a la dinámica de los exámenes.<br><br>
+                                </div>
+                              </div>
+                        </div>
+                        <div class="accordion-group">
+                            <div class="accordion-heading">
+                                <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion2" href="#idiomaportugues">
+                                <div class="progress progress-info"><div class="bar" style="width: 30%; text-align:left; padding-left:10px;">Portugués</div></div>
+                                </a>
+                            </div>
+                              <div id="idiomaportugues" class="accordion-body collapse">
+                                <div class="accordion-inner">
+                                    <strong>Bem-vindo à Área de Português</strong><br><br>
+
+                                    A través del menú puede acceder a toda la información disponible acerca de los cursos de portugués ofertados en el Instituto de Idiomas.<br><br>
+
+                                    Todo lo relacionado con horarios, tutorías, programas, niveles, etc. se puede consultar en el apartado Docencia.<br><br>
+                                </div>
+                              </div>
+                        </div>
+                    </div>
                 </div>
+                <!--end span8-->
             </div>
         <!-- Boxes-Idiomas -->
         <section id="grid" class="grid clearfix">
@@ -95,6 +161,21 @@
                         </figcaption>
                     </figure>
                 </a>
+                <a href="#" data-path-hover="m 180,34.57627 -180,0 L 0,0 180,0 z">
+                    <figure>
+                        <%= image_tag "4.png"%>
+
+                        <svg viewBox="0 0 180 320" preserveAspectRatio="none"><path d="M 180,160 0,218 0,0 180,0 z"/>
+                        </svg>
+
+                        <figcaption>
+                            <h2>Portugués</h2>
+                            <p>Un idioma emergente. Figura Brasil, una potencia económica emergente y muy poderosa en América Latina.</p>
+                            
+                        </figcaption>
+                    </figure>
+
+                </a>   
                 <a href="#" data-path-hover="m 180,34.57627 -180,0 L 0,0 180,0 z">
                     <figure>
                         <%= image_tag "2.png"%>
@@ -116,22 +197,7 @@
                             
                         </figcaption>
                     </figure>
-                </a>
-                <a href="#" data-path-hover="m 180,34.57627 -180,0 L 0,0 180,0 z">
-                    <figure>
-                        <%= image_tag "4.png"%>
-
-                        <svg viewBox="0 0 180 320" preserveAspectRatio="none"><path d="M 180,160 0,218 0,0 180,0 z"/>
-                        </svg>
-
-                        <figcaption>
-                            <h2>Portugués</h2>
-                            <p>Un idioma emergente. Figura Brasil, una potencia económica emergente y muy poderosa en América Latina.</p>
-                            
-                        </figcaption>
-                    </figure>
-
-                </a>       
+                </a>    
         </section>
         <script>
                 (function() {
@@ -170,13 +236,13 @@
                 <hr>
 
 
-                <div class="span1"></div>
-                <div class="span9">
-                    <div class="accordion" id="accordion2">
+                <div class="span2"></div>
+                <div class="span8">
+                    <div class="accordion" id="accordion">
                         <div class="accordion-group">
                             <div class="accordion-heading">
-                            <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
-                              Visión y Misión
+                            <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                              <h6>Visión y Misión</h6>
                             </a>
                             </div>
                             <div id="collapseOne" class="accordion-body collapse">
@@ -193,8 +259,8 @@
                         </div>
                         <div class="accordion-group">
                             <div class="accordion-heading">
-                                <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
-                                Nuestra Metología
+                                <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                                <h6>Nuestra Metología</h6>
                                 </a>
                             </div>
                               <div id="collapseTwo" class="accordion-body collapse">
@@ -222,8 +288,8 @@
                         </div>
                             <div class="accordion-group">
                               <div class="accordion-heading">
-                                <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">
-                                  Administración
+                                <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                                  <h6>Administración</h6>
                               </a>
                              </div>
                               <div id="collapseThree" class="accordion-body collapse">
