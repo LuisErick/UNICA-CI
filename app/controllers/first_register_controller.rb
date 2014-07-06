@@ -15,13 +15,7 @@ class FirstRegisterController < ApplicationController
 		@is_postgrade = {'0' => 'No tengo un posgrado', '1' => 'Magister', '2' => 'Doctorado'}
 	end
 
-	def to_hash(model)
-		hash = Hash.new
-		model.all.each do |m|
-			hash[m.name] = m.id
-		end
-		return hash
-	end
+	
 
 	def create
 =begin
@@ -58,5 +52,15 @@ class FirstRegisterController < ApplicationController
 		#User.register(username,password,language,course_type,level,package,validation_type,name,paternal_lastname,maternal_lastname,address,dni,district,province,department,home_phone,mobile_phone,sex,birthday,birthplace,unica_person,college,postgrade_person,marital_status,student_type,postgrade_type,semester)
 
 		#render text: params
+	end
+
+	def suggest_schedule
+		@days = get_days.invert
+		@languages = to_hash(Language)
+	end
+
+	def insert_schedule
+		#Insertar horario de suggest
+		redirect_to index_path
 	end
 end

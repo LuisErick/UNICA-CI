@@ -17,4 +17,12 @@ class ApplicationController < ActionController::Base
   def get_days    
     return {1 => "Lunes", 2 => "Martes",3 => "Miércoles",4 => "Jueves",5 => "Viernes",6 => "Sábado", 7 => "Domingo"}
   end 
+
+  def to_hash(model)
+    hash = Hash.new
+    model.all.each do |m|
+      hash[m.name] = m.id
+    end
+    return hash
+  end
 end

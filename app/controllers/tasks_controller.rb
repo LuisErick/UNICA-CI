@@ -35,59 +35,39 @@ class TasksController < ApplicationController
   end
 
   def new_teacher
+    
+      
     if params[:error] == '1'
-      @is_error = true
-    end
+      render text: params[:m_error]
+    else
+      @message = params[:message]
+      @permissions = Permission.all
+      @sex = {'1' => 'Masculino', '0' => "Femenino"}
+      @marital_status = Hash.new
+      MaritalStatus.all.each do |m|
+        @marital_status[m.name] = m.id
+      end
 
-    if params[:error] == '0'
-      @is_notification = true
-    end
-  	
-    @message = params[:message]
-  	@permissions = Permission.all
-  	@sex = {'1' => 'Masculino', '0' => "Femenino"}
-  	@marital_status = Hash.new
-    MaritalStatus.all.each do |m|
-      @marital_status[m.name] = m.id
-    end
-
-    @languages = Hash.new
-    Language.all.each do |l|
-      @languages[l.name] = l.id
+      @languages = Hash.new
+      Language.all.each do |l|
+        @languages[l.name] = l.id
+      end
     end
   end
 
-  def create_teacher
+  def create_teacher    
     rest = User.create_teacher(params)    
-  	if rest
+  	if rest == true
       redirect_to new_teacher_path, message: 'Docente agregado con éxito, ¿Desea agregar más?', error: '0'
     else
-      redirect_to new_teacher_path, message: 'Error al registrar el usuario, el nombre ya existe', error: '1'
+      redirect_to new_teacher_path, message: 'Error al registrar el usuario, el nombre ya existe', error: '1', m_error: rest.errors
     end
   end
+
+
   def create_schedule
-    
+    rest = User.create_schedule(params)
   end
 
-private
-	def get_parameter_teacher(params)
-		@username = params[:username]
-		@password = params[:password]
-		@name = params[:name]
-		@paternal_lastname = params[:paternal_lastname]
-		@maternal_lastname = params[:maternal_lastname]
-		@dni = params[:dni]
-		@address = params[:address]
-		@district = params[:district]
-		@province = params[:province]
-		@department = params[:department]
-		@home_phone = params[:home_phone]
-		@mobile_phone = params[:mobile_phone]
-		@sex = params[:sex]
-		@birthday = params[:birthday]
-		@birthplace = params[:birthplace]
-		@marital_status = params[:marital_status]
-		@start_date = params[:start_date]
-	end
 
 end
