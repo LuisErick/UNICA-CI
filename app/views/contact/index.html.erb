@@ -11,22 +11,33 @@
 
 <div class="container" id="sectionsep">
 <div class="row-fluid">
-		<div class="span5">
-			<br>
-			<br>
-			<br>
-			<br>
-			<%= image_tag 'galeria/contact.png' %>
+		<div class="span5" id="sectionsep">
+			<%= image_tag 'galeria/contact.png', :id => 'sectionsep' %>
 		</div>
 		<div class="span6">
 			<hr>
 			<%= form_tag(f_contact_path, method: 'post') do %>
-				<%= label_tag :name, 'Nombre :' %>
-				<%= text_field_tag :name %><br><br>
-				<%= label_tag :title, 'Título :' %>
-				<%= text_field_tag :title %><br><br>
-				<%= label_tag :body, 'Mensaje :' %>
-				<%= text_area_tag :body,"", :size => "1x8" %><br><br>
+				<div class="row-fluid">
+					<div class="span6 box">
+						<%= label_tag :name, 'Nombre :' %>
+						<%= text_field_tag :name %>					
+					</div>
+				</div>
+				<br>
+				<div class="row-fluid">
+					<div class="span6 box">
+						<%= label_tag :title, 'Título :' %>
+						<%= text_field_tag :title %>
+					</div>
+				</div>
+				<br>
+				<div class="row-fluid">
+					<div class="span6 box">
+						<%= label_tag :body, 'Mensaje :' %>
+						<%= text_area_tag :body,"", :size => "1x8" %>
+					</div>
+				</div>
+				<br>
 				<%= submit_tag 'Enviar', :class => 'btn btn-primary' %>
 			<% end %>
 			<hr>
