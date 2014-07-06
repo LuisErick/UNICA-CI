@@ -1,5 +1,21 @@
 Rails.application.routes.draw do
 
+  get 'teachers/index'
+
+  get 'teachers/schedules'
+
+  get 'teachers/salaries'
+
+  get 'teachers/comments'
+
+  get 'students/index'
+
+  get 'students/schedules'
+
+  get 'students/notes'
+
+  get 'students/certificates'
+
   get 'tasks/new_schedule'
   get "/nuevo_horario" => "tasks#new_schedule", as: :new_schedule
   post 'tasks/create_schedule'
