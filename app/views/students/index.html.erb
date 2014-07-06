@@ -1,2 +1,19 @@
-<h1>Students#index</h1>
-<p>Find me in app/views/students/index.html.erb</p>
+
+<table>
+	<tr>
+		<th>Usuario</th>
+		<th>Nombre Completo</th>
+		<th>Fecha de inicio</th>
+		<th>Idioma actual</th>
+		<th>Número de Cursos</th>
+	</tr>
+	<% @students.each do |s| %>
+		<tr>
+			<td><%= s.person.user.username %></td>
+			<td><%= complet_name(s.person.user) %></td>
+			<td><%= s.start_date %></td>
+			<td><%= s.person.pre_matriculations.last.language.name %></td>
+			<td><%= s.person.pre_matriculations.matriculations.count %></td>
+		</tr>
+	<% end %>
+</table>
