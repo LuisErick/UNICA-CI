@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'about/index'
+  get 'nosotros' => "about#index", as: :about
   get 'teachers/index'
   get "/lista_docentes" => "teachers#index", as: :teacher_index
   get 'teachers/schedules'
