@@ -58,7 +58,6 @@
                 <div class="nav-collapse collapse pull-right">
                     <ul class="nav">
                         <li <%=paint_active(['profile','welcome'])%>><%= link_to 'Inicio' , index_path %></li>
-
                         <li <%=paint_active('tasks')%> class="dropdown">
                             <%= link_to '#', class: 'dropdown-toggle', 'data-toggle' => 'dropdown' do %>Tareas<i class="icon-angle-down"></i>
                             <% end %>
@@ -67,17 +66,15 @@
                                 <li><%= link_to "Registrar profesor", new_teacher_path  %></li>
                                 <li><%= link_to "Asignar Horario", new_schedule_path  %></li>                               
                             </ul>
-                        </li>  
-
-
-
-                        <li <%=paint_active('first_register') %> class="dropdown" ><%= link_to '#', class: 'dropdown-toggle', 'data-toggle' => 'dropdown' do %>Matrículas<i class="icon-angle-down"></i>
+                        </li>
+                        <li <%=paint_active('first_register') %> class="dropdown">
+                            <%= link_to '#', class: 'dropdown-toggle', 'data-toggle' => 'dropdown' do %>Matrículas<i class="icon-angle-down"></i>
                             <% end %>
-                        <ul class="dropdown-menu">
-                                <li><%= link_to "Sugerir Horario", suggest_schedule_path  %></li> 
-                                <li><%= link_to "Primera matrícula", new_register_path  %></li>
-                                <li><%= link_to "Matricularme en otros cursos", '#'  %></li>                              
-                        </ul>
+                            <ul class="dropdown-menu">
+                                    <li><%= link_to "Sugerir Horario", suggest_schedule_path  %></li> 
+                                    <li><%= link_to "Primera matrícula", new_register_path  %></li>
+                                    <li><%= link_to "Matricularme en otros cursos", '#'  %></li>                       
+                            </ul>
                         </li>
                         <% if is_loged %>
                         <li <%=paint_active('teachers')%>  class="dropdown" ><%= link_to '#', class: 'dropdown-toggle', 'data-toggle' => 'dropdown' do %>Docentes<i class="icon-angle-down"></i>
