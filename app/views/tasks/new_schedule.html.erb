@@ -10,6 +10,7 @@
 
 <div  class="container form-horizontal" id="sectionsep">
 	<div class="row-fluid">
+		<div class="span3"></div>
 		<div class="span6 box">
 			<%= form_tag(new_schedule_path, method: 'get') do %>
 				<h4>¿Quisiera escoger docentes de un idioma en espécífico?</h4>
@@ -84,5 +85,62 @@
 			</div>
 			<% end %>
 		</div>
+		<div class="box span6" >
+			<%= form_tag(create_schedule_path, method: 'post') do %>
+			<div class="control-group">
+				<%= label_tag :days, 'Ahora escoja el dia', :class => 'control-label'  %>
+				<div class="controls">
+					<%= select_tag :days, options_for_select(@days) %>
+				</div>
+			</div>
+			<div class="control-group">
+				<%= label_tag :start_time, 'Hora de inicio', :class => 'control-label'  %>
+				<div class="controls">
+					<%= time_field_tag :start_time %>
+				</div>
+			</div>
+			<div class="control-group">
+				<%= label_tag :end_time, 'Hora de salida', :class => 'control-label'  %>
+				<div class="controls">
+					<%= time_field_tag :end_time %>
+				</div>
+			</div>
+			<br>
+			<div class="controls">
+				<%= submit_tag 'Asignar Horario',:class => 'btn btn-primary' %>
+			</div>
+			<% end %>
+		</div>
 	</div>
+	<br>
+	<div class="row-fluid">
+			<div class="span3">
+			</div>
+			<div class="span6 box">
+				<%= form_tag(create_schedule_path, method: 'post') do %>
+				<div class="control-group">
+					<%= label_tag :days, 'Ahora escoja el dia', :class => 'control-label'  %>
+					<div class="controls">
+						<%= select_tag :days, options_for_select(@days) %>
+					</div>
+				</div>
+				<div class="control-group">
+					<%= label_tag :start_time, 'Hora de inicio', :class => 'control-label'  %>
+					<div class="controls">
+						<%= time_field_tag :start_time %>
+					</div>
+				</div>
+				<div class="control-group">
+					<%= label_tag :end_time, 'Hora de salida', :class => 'control-label'  %>
+					<div class="controls">
+						<%= time_field_tag :end_time %>
+					</div>
+				</div>
+				<br>
+				<div class="controls">
+					<%= submit_tag 'Asignar Horario',:class => 'btn btn-primary' %>
+				</div>
+				<% end %>
+			</div>
+		</div>
 </div>
