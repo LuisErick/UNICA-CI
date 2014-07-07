@@ -1,5 +1,16 @@
-
-<table>
+<section class="subtitle">
+        <div class="container">
+            <div class="row-fluid">
+                <div class="span6">
+                    <h1>Estudiantes</h1>
+                </div>
+            </div>
+        </div>
+</section>
+<div id="sectionsep">
+<div class="container box">
+<table class="table table-striped">
+	<thead>
 	<tr>
 		<th>Usuario</th>
 		<th>Nombre Completo</th>
@@ -7,6 +18,8 @@
 		<th>Idioma actual</th>
 		<th>Número de Cursos</th>
 	</tr>
+	</thead>
+	<tbody>
 	<% @students.each do |s| %>
 		<tr>
 			<td><%= s.person.user.username %></td>
@@ -16,4 +29,9 @@
 			<td><%= s.person.pre_matriculations.matriculations.count %></td>
 		</tr>
 	<% end %>
+	</tbody>
 </table>
+</div>
+</div>
+<%= image_tag "mantenimiento.png"%>
+

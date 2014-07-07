@@ -1,12 +1,25 @@
-
-<table>
-	<tr>
+<section class="subtitle">
+        <div class="container">
+            <div class="row-fluid">
+                <div class="span6">
+                    <h1>Profesores</h1>
+                </div>
+            </div>
+        </div>
+</section>
+<div id="sectionsep">
+<div class="container box">
+<table class="table table-striped">
+	<thead>
+		<tr>
 		<th>Usuario</th>
 		<th>Nombre Completo</th>
 		<th>Fecha de inicio</th>
 		<th>Idioma</th>
 		<th>Número de Cursos</th>
-	</tr>
+		</tr>
+	</thead>
+	<tbody>
 	<% @teachers.each do |t| %>
 		<tr>
 			<td><%= t.person.user.username %></td>
@@ -16,4 +29,8 @@
 			<td><%= t.packages.count %></td>
 		</tr>
 	<% end %>
+	</tbody>
 </table>
+</div>
+</div>
+<%= image_tag "mantenimiento.png"%>
