@@ -12,7 +12,6 @@
  *
  *= require_tree .
  *= require_self
- //=require bootstrap-modal
  */
 @font-face {
   font-family: 'Fjalla One';
@@ -68,8 +67,8 @@ body>section#slide-show{padding:0}
 .center{text-align:center}
 .box{background-color:#fff;border-top:1px solid #f0f0f0;-webkit-box-shadow:0 1px 2px 0 rgba(0,0,0,0.1);box-shadow:0 1px 2px 0 rgba(0,0,0,0.1);padding:10px;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px}
 #bottom .box {padding: 5px}
-.progress{margin-bottom:10px; background-color: #fff}
-.progress,.progress .bar{-webkit-border-radius:0;-moz-border-radius:0;border-radius:0;background-image:none;-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none;text-shadow:none;height:30px;line-height:30px;}
+.progress{margin-bottom:10px}
+.progress,.progress .bar{-webkit-border-radius:0;-moz-border-radius:0;border-radius:0;background-image:none;-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none;text-shadow:none;height:30px;line-height:30px}
 .label,.badge{font-weight:300;font-size:90%}
 ul.breadcrumb{margin:12px 0 0;background:transparent}
 ul.breadcrumb>li{text-shadow:none}
