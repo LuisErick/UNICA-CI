@@ -1,0 +1,27 @@
+
+			<div class="span3">
+			</div>
+			<div class="span6 box">
+				<div class="control-group">
+					<%= label :schedule2, :day, 'Ahora escoja el dia', :class => 'control-label'  %>
+					<div class="controls">
+						<%= select :schedule2, :day, options_for_select(@days) %>
+					</div>
+				</div>
+				<div class="control-group">
+					<%= label :schedule2, :start_time, 'Hora de inicio', :class => 'control-label'  %>
+					<div class="controls">
+						<%= time_field :schedule2, :start_time %>
+					</div>
+				</div>
+				<div class="control-group">
+					<%= label :schedule2, :end_time, 'Hora de salida', :class => 'control-label'  %>
+					<div class="controls">
+						<%= time_field :schedule2, :end_time %>
+					</div>
+				</div>
+				<br>
+				<div id="submit2" class="controls">
+					<%= submit_tag 'Asignar Horario',:class => 'btn btn-primary' %>
+				</div>
+	</div>

@@ -1,0 +1,30 @@
+var numero = $('#forms').val();
+if (numero == '1')
+{
+	$('#form1').html("");
+	$('#form2').html("");
+	$('#submit0').html("<%= j render('submit') %>");	
+	$('#number').val("1");
+}
+else
+{
+	if (numero == '2') {
+		var evalue = $('form1').html();
+		if (evalue != '') {
+			$('#form1').html("<%= j render('form1') %>");
+			$('#form2').html("");
+			$('#submit0').hide();
+			$('#number').val("2");
+		};		
+	}
+	else
+	{
+		if (numero == '3') {
+			$('#form1').html("<%= j render('form1') %>");
+			$('#form2').html("<%= j render('form2') %>");
+			$('#submit1').html("");
+			$('#submit0').hide();
+			$('#number').val("3");
+		};
+	};
+};

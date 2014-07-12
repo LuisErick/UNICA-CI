@@ -15,13 +15,25 @@
 			<%= form_tag(new_schedule_path, method: 'get') do %>
 				<h4>¿Quisiera escoger docentes de un idioma en espécífico?</h4>
 				<br>
-				<%= select_tag :language, options_for_select(@languages) %>
-				<%= submit_tag 'Escoger', :class => 'btn btn-mini' %>
-			<% end %>
+				<%= select_tag :language, options_for_select(@languages), id: 'teachers' %>
+				<% end %>
+				<%= link_to 'Escoger',remote: true %>
 		</div>
 	</div>
-
 	<br>
+	<div class="row-fluid">
+		<div class="span3"></div>
+		<div class="span6 box">
+			<%= form_tag(new_schedule_path, method: 'get') do %>
+				<h4>¿Cuantos días a la semana?</h4>
+				<br>
+				<%= select_tag :forms, options_for_select(@numbers), id: 'forms' %>
+			<% end %>
+			<%= link_to 'Escoger',remote: true %>
+		</div>
+	</div>
+	<br>
+	<%= form_tag(create_schedule_path, method: 'post') do %>
 	<div class="box row-fluid">
 	<table class="table table-striped">
 		<thead>
@@ -33,110 +45,50 @@
 				<th>Elección</th>
 			</tr>
 		</thead>
-		<tbody>
-		<% if !@teachers.blank? %>
-		  <% @teachers.each do |t| %>
-		    <tr>
-		    	<td><%=t.person.user.username %></td>
-		    	<td><%=complet_name(t.person.user)%></td>
-		    	<td><%=t.language.name%></td>
-		    	<td><%=t.person.dni%></td>
-		    	<td>
-	                <%= radio_button_tag :language, t.id  %>
-		    	</td>
-		    </tr>
-		  <% end %>
-		<% else %>
-		  
-		<% end %>
+		<tbody>		
+			<%= render 'new_schedule' %>
 		</tbody>
 	</table>
 	</div>
 
+
 	<br>
+	
+	<%= hidden_field_tag 'number', '1', id: 'number' %>
 	<div class="row-fluid">
 		<div class="box span6" >
-			<%= form_tag(create_schedule_path, method: 'post') do %>
+			
 			<div class="control-group">
-				<%= label_tag :days, 'Ahora escoja el dia', :class => 'control-label'  %>
+				<%= label :schedule, :day, 'Ahora escoja el dia', :class => 'control-label'  %>
 				<div class="controls">
-					<%= select_tag :days, options_for_select(@days) %>
+					<%= select :schedule, :day, options_for_select(@days) %>
 				</div>
 			</div>
 			<div class="control-group">
-				<%= label_tag :start_time, 'Hora de inicio', :class => 'control-label'  %>
+				<%= label :schedule, :start_time, 'Hora de inicio', :class => 'control-label'  %>
 				<div class="controls">
-					<%= time_field_tag :start_time %>
+					<%= time_field :schedule, :start_time %>
 				</div>
 			</div>
 			<div class="control-group">
-				<%= label_tag :end_time, 'Hora de salida', :class => 'control-label'  %>
+				<%= label :schedule, :end_time, 'Hora de salida', :class => 'control-label'  %>
 				<div class="controls">
-					<%= time_field_tag :end_time %>
+					<%= time_field :schedule, :end_time %>
 				</div>
 			</div>
 			<br>
 			<div class="controls">
-				<%= submit_tag 'Asignar Horario',:class => 'btn btn-primary' %>
+				<%= submit_tag 'Asignar Horario',:class => 'btn btn-primary', id: 'submit0' %>
 			</div>
-			<% end %>
+			
 		</div>
-		<div class="box span6" >
-			<%= form_tag(create_schedule_path, method: 'post') do %>
-			<div class="control-group">
-				<%= label_tag :days, 'Ahora escoja el dia', :class => 'control-label'  %>
-				<div class="controls">
-					<%= select_tag :days, options_for_select(@days) %>
-				</div>
-			</div>
-			<div class="control-group">
-				<%= label_tag :start_time, 'Hora de inicio', :class => 'control-label'  %>
-				<div class="controls">
-					<%= time_field_tag :start_time %>
-				</div>
-			</div>
-			<div class="control-group">
-				<%= label_tag :end_time, 'Hora de salida', :class => 'control-label'  %>
-				<div class="controls">
-					<%= time_field_tag :end_time %>
-				</div>
-			</div>
-			<br>
-			<div class="controls">
-				<%= submit_tag 'Asignar Horario',:class => 'btn btn-primary' %>
-			</div>
-			<% end %>
+		<div id="form1" class="box span6" >
+			
 		</div>
 	</div>
 	<br>
-	<div class="row-fluid">
-			<div class="span3">
-			</div>
-			<div class="span6 box">
-				<%= form_tag(create_schedule_path, method: 'post') do %>
-				<div class="control-group">
-					<%= label_tag :days, 'Ahora escoja el dia', :class => 'control-label'  %>
-					<div class="controls">
-						<%= select_tag :days, options_for_select(@days) %>
-					</div>
-				</div>
-				<div class="control-group">
-					<%= label_tag :start_time, 'Hora de inicio', :class => 'control-label'  %>
-					<div class="controls">
-						<%= time_field_tag :start_time %>
-					</div>
-				</div>
-				<div class="control-group">
-					<%= label_tag :end_time, 'Hora de salida', :class => 'control-label'  %>
-					<div class="controls">
-						<%= time_field_tag :end_time %>
-					</div>
-				</div>
-				<br>
-				<div class="controls">
-					<%= submit_tag 'Asignar Horario',:class => 'btn btn-primary' %>
-				</div>
-				<% end %>
-			</div>
-		</div>
+	<div id="form2" class="row-fluid">
+			
+	</div>
+	<% end %>
 </div>

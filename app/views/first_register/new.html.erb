@@ -344,7 +344,7 @@
                     <div class="span6">
                         <% @packages.each do |l| %>
                         <div class="control-group">
-                            <%= label_tag 'package_'+l.id.to_s, l.name,  :class => 'control-label' %>
+                            <%= label_tag 'package_'+l.id.to_s, (l.teacher.person.name.to_s+" "+l.teacher.language.name.to_s).to_s,  :class => 'control-label' %>
                             <div class="controls">
                                 <%= radio_button_tag :package, l.id  %>
                             </div>
@@ -371,7 +371,7 @@
                     <div class="span6">
                         <% @packages.each do |l| %>
                         <div class="control-group">
-                            <%= label_tag 'package_'+l.id.to_s, l.name,  :class => 'control-label' %>
+                            <%= label_tag 'package_'+l.id.to_s, (l.teacher.person.name.to_s+" "+l.teacher.language.name.to_s).to_s,  :class => 'control-label' %>
                             <div class="controls">
                                 <%= radio_button_tag :package, l.id  %>
                             </div>
@@ -432,7 +432,7 @@
                     <div class="span6">
                         <% @packages.each do |l| %>
                         <div class="control-group">
-                            <%= label_tag 'package_'+l.id.to_s, l.name,  :class => 'control-label' %>
+                            <%= label_tag 'package_'+l.id.to_s, (l.teacher.person.name.to_s+" "+l.teacher.language.name.to_s).to_s,  :class => 'control-label' %>
                             <div class="controls">
                                 <%= radio_button_tag :package, l.id  %>
                             </div>
@@ -765,7 +765,7 @@
                     </div>
                 </div><!-- clearfix --><div class="clear"></div><!-- /clearfix --> 
                 <input class="back" type="submit" name="back2postgrado" id="back2postgrado" value="" onclick="return false;" /> 
-                <input class="submit" type="submit" name="submit_twelfth" id="submit_twelfth" value="" onclick="return false;" />
+                <%= submit_tag 'Enviar', name: 'submit_twelfth' , id: 'submit_twelfth', class: "send submit" %>
                 
             </div><!-- clearfix --><div class="clear"></div><!-- /clearfix -->
 

@@ -1,0 +1,11 @@
+<% @teachers.each do |t| %>
+	<tr>
+		<td><%=t.person.user.username %></td>
+		<td><%=complet_name(t.person.user)%></td>
+		<td><%=t.language.name%></td>
+		<td><%=t.person.dni%></td>
+		<td>
+	        <%= radio_button :package, :teacher, t.id %>
+		</td>
+	</tr>
+<% end %>

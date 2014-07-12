@@ -1,37 +1,47 @@
 class TasksController < ApplicationController
+  respond_to :html, :js
   def pending_matriculations
-  	@pendings = Matriculation.where(state: false)
+    @pendings = Matriculation.where(state: false)
   end
 
+  def table_teachers_english
+    
+  end
+
+  def table_teachers_french
+    
+  end
+
+  def table_teachers_italian
+    
+  end
+
+  def table_teachers_portuguese
+    
+  end
   def new_schedule
-    @languages = Hash.new
-    @languages['Todos los idiomas'] = '0'
-    Language.all.each do |m|
-      @languages[m.name] = m.id
-    end
+    @languages = to_hash(Language.all)
     @days = get_days.invert
-    if params[:language].nil?
-      @teachers = Teacher.all
-    else      
-      if params[:language] == '0'
-        @teachers = Teacher.all
-      else
-        @teachers = Teacher.where(language_id: params[:language])
-      end
-    end
+    @numbers = {'1' => '1', '2' => '2', '3' => '3'}
+    @teachers = Teacher.all
+    @teachers_english = Teacher.where(language_id: '1')   
+    @teachers_french = Teacher.where(language_id: '2') 
+    @teachers_portuguese = Teacher.where(language_id: '3') 
+    @teachers_italian = Teacher.where(language_id: '4') 
+    
     
   end
 
   def activate_matriculation
-  	if request.post?
-  		if params[:activate] == 1 and params[:matriculation] != nil
-  			m = Matriculation.find(params[:matriculation]).state = true
-  			m.pre_matriculation.state = true
-  			redirect_to index_path
-  		end
-  	else
-  		redirect_to index_path
-  	end
+    if request.post?
+      if params[:activate] == 1 and params[:matriculation] != nil
+        m = Matriculation.find(params[:matriculation]).state = true
+        m.pre_matriculation.state = true
+        redirect_to index_path
+      end
+    else
+      redirect_to index_path
+    end
   end
 
   def new_teacher
@@ -57,7 +67,7 @@ class TasksController < ApplicationController
 
   def create_teacher    
     rest = User.create_teacher(params)    
-  	if rest == true
+    if rest == true
       redirect_to new_teacher_path, message: 'Docente agregado con éxito, ¿Desea agregar más?', error: '0'
     else
       redirect_to new_teacher_path, message: 'Error al registrar el usuario, el nombre ya existe', error: '1', m_error: rest.errors
@@ -66,7 +76,12 @@ class TasksController < ApplicationController
 
 
   def create_schedule
-    rest = User.create_schedule(params)
+    rest = Schedule.create_package(params)
+    if rest == false
+      redirect_to new_schedule_path
+    else
+      redirect_to index_path
+    end
   end
 
 
