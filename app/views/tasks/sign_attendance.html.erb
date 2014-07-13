@@ -1,13 +1,26 @@
-
+<section class="subtitle">
+        <div class="container">
+            <div class="row-fluid">
+                <div class="span6">
+                    <h1>sign_attendance</h1>
+                </div>
+            </div>
+        </div>
+</section>
+<section id="sectionsep">
+<div class="container box">
 <% @packages.each do |p| %>
 <%= form_tag(create_attendance_teacher_path, method: 'post') do %>
-	<table>
+	<table class="table table-striped">
+	<thead>
 		<tr>
 			<th>Número de sesión</th>
 			<th>Fecha de sesión</th>
 			<th>Horas realizadas</th>
 			<th>Estado</th>
 		</tr>
+	</thead>
+	<tbody>
 		<% p.number_of_sessions.times do |t| %>	
 			<tr>
 				<td>
@@ -23,8 +36,11 @@
 					<%= check_box_tag 'estado'+p.id.to_s+'_'+(t+1).to_s %>
 				</td>
 			</tr>
-			<% end %>			
+			<% end %>
+	</tbody>			
 	</table>
 	<%= submit_tag 'Listo' %>
 	<% end %>
 <% end %>
+</div>
+</section>

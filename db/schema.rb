@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140713012025) do
+ActiveRecord::Schema.define(version: 20140713165830) do
 
   create_table "administrators", force: true do |t|
     t.integer  "person_id"
@@ -287,8 +287,7 @@ ActiveRecord::Schema.define(version: 20140713012025) do
   create_table "teacher_attendances", force: true do |t|
     t.integer  "package_id"
     t.boolean  "state"
-    t.time     "arrival_time"
-    t.time     "dismissal_time"
+    t.integer  "number_of_hours"
     t.integer  "session_number"
     t.date     "day"
     t.datetime "created_at"

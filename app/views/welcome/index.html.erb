@@ -6,7 +6,7 @@
         <div id="main-slider" class="flexslider">
             <ul class="slides">
               <li>
-                <%= image_tag "slides/1.png"%>
+                <%= image_tag "slides/2.jpg"%>
                 <div class="flex-caption">
                     <h3>Aprende inglés</h3> 
                     <p>Para triunfar en el mundo de los negocios necesitas desarrollar diversas habilidades. El dominio de idiomas te brindará una gran ventaja competitiva.</p>
@@ -14,7 +14,7 @@
                 </div>
               </li>
               <li>
-                <%= image_tag "slides/2.png"%>
+                <%= image_tag "slides/1.jpg"%>
                 <div class="flex-caption">
                     <h3>Vive el mundial</h3> 
                     <p>Aprende portugués y no te pierdas ningun acontecimiento importante del mundial Brasil 2014.</p> 
@@ -22,7 +22,7 @@
                 </div>
               </li>
               <li>
-                <%= image_tag "slides/3.png"%>
+                <%= image_tag "slides/3.jpg"%>
                 <div class="flex-caption">
                     <h3>Domina al mundo</h3> 
                     <p>El dominio de idiomas sea convertido en una parte esencial en tu curriculum vitae.</p> 
@@ -60,7 +60,9 @@
                 Te deseamos muchos éxitos en tus estudios.</p>
             </div>
             <div class="span4 box">
-                <%=link_to( image_tag("galeria/1.jpg"), image_path( "galeria/1.jpg"), rel:'shadowbox', title: 'Central' )%>
+               <%= link_to ('#loginForm'), :"data-toggle" => "modal" do %>
+                  <%= image_tag "galeria/fontal.jpg"%>
+                <% end %>
             </div>
         </div>
 
@@ -329,3 +331,14 @@
                     </div>
         </div>
         </section>
+
+<div class="modal container hide fade" tabindex="-1" id="loginForm">
+    <div class="modal-header">
+        <i class="icon-remove" data-dismiss="modal" aria-hidden="true"></i>
+    </div>
+    <!--Modal Body-->
+    <div class="modal-body">
+        <%= image_tag "galeria/fontal.jpg"%>
+    </div>
+    <!--/Modal Body-->
+</div>

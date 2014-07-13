@@ -4,7 +4,7 @@ var ready = function() {
             //id        :  value
             'usuario'  : 'usuario',
             'pass'  : 'pass',
-            'cpassword' : 'password',
+            'cpassword' : 'cpassword',
             'idioma' : 'idioma',
             'curso' : 'curso',
             'nivel' : 'nivel',

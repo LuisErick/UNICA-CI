@@ -1,29 +1,29 @@
-<table>
-	<th>
-		<td>
-			Nombre completo
-		</td>
-		<td>
-			Idioma
-		</td>
-		<td>
-			Nombre de usuario
-		</td>
-		<td>
-			Escoger
-		</td>
-	</th>
+<section class="subtitle">
+        <div class="container">
+            <div class="row-fluid">
+                <div class="span6">
+                    <h1>Escoger docente asistencia</h1>
+                </div>
+            </div>
+        </div>
+</section>
+<section id="sectionsep">
+<div class="container box">
+<table class="table table-striped">
+	<thead>
+	<tr>
+		<th>Nombre completo</th>
+		<th>Idioma</th>
+		<th>Nombre de usuario</th>
+		<th>Escoger</th>
+	</tr>
+	</thead>
+	<tbody>
 	<% @teachers.each do |t| %>
 		<tr>
-			<td>
-				<%= complet_name(t.person.user) %>
-			</td>
-			<td>
-				<%= t.language.name %>
-			</td>
-			<td>
-				<%= t.person.user.username %>
-			</td>
+			<td><%= complet_name(t.person.user) %></td>
+			<td><%= t.language.name %></td>
+			<td><%= t.person.user.username %></td>
 			<td>
 				<%= form_tag( sign_attendance_path , method: 'post') do %>
 					<%= hidden_field_tag :teacher, t.id %>
@@ -32,4 +32,7 @@
 			</td>
 		</tr>
 	<% end %>
+	</tbody>
 </table>
+</div>
+</section>
