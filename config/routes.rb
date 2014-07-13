@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   get "/escoger_docente_asistencia" => "tasks#choose_teacher" , as: :choose_teacher
   post "/marcar_asistencia" => "tasks#sign_attendance", as: :sign_attendance
+  post "/crear_asistencia" => "tasks#create_attendance_teacher", as: :create_attendance_teacher
   get 'about/index'
   get 'nosotros' => "about#index", as: :about
   get 'teachers/index'

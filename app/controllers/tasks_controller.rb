@@ -84,6 +84,28 @@ class TasksController < ApplicationController
   
   def sign_attendance
     @teacher = Teacher.find(params[:teacher])
-    @packages = Package.where(teacher_id: @teacher.id)
+    @packages = Package.where(teacher_id: @teacher.id, state: true)
+    @days = Hash.new
+    @packages.each do |p|
+      p.group_schedules.each do |g|
+        @days[g.schedule.day] = to_name_days(g.schedule.day)
+      end
+    end
+
+    
+    increments = {1 => @days}
+    @dates = Hash.new 
+
+    for i in 0..@days.length-1
+        increments[i] = @days.keys[i] - @days.keys[i-1]
+    end
+
+
+    @dates = @packages.last.start_date
+    number_of_days = @packages
+  end
+
+  def create_attendance_teacher
+
   end
 end

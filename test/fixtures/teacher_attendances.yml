@@ -3,15 +3,13 @@
 one:
   package_id: 1
   state: false
-  arrival_time: 2014-05-21 01:17:05
-  dismissal_time: 2014-05-21 01:17:05
+  number_of_hours: 1
   session_number: 1
-  day: 2014-05-21
+  day: 2014-07-13
 
 two:
   package_id: 1
   state: false
-  arrival_time: 2014-05-21 01:17:05
-  dismissal_time: 2014-05-21 01:17:05
+  number_of_hours: 1
   session_number: 1
-  day: 2014-05-21
+  day: 2014-07-13
