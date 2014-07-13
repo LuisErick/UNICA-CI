@@ -16,16 +16,16 @@
                     <div class="span6">
                         <div class="form-horizontal">
                             <div class="control-group"> 
-                                <%= label_tag  :usuario, 'Nombre de Usuario', :class => 'control-label'%>
+                                <%= label :user, :username, 'Nombre de Usuario', :class => 'control-label'%>
                                 <div class="controls">
-                                <%= text_field_tag 'usuario' %>
+                                <%= text_field :user, :username %>
                                 </div>
                             </div>
                             
                             <div class="control-group">
-                                <%= label_tag  :pass, 'Contraseña de al menos 4 caracteres', :class => 'control-label' %> 
+                                <%= label :user, :password, 'Contraseña de al menos 4 caracteres', :class => 'control-label' %> 
                                 <div class="controls">                  
-                                <%= password_field_tag   :pass %> 
+                                <%= password_field :user, :password %> 
                                 </div>
                             </div>
 
