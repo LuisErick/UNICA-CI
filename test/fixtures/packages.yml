@@ -4,8 +4,12 @@ one:
   teacher_id: 1
   room_id: 1
   number_of_sessions: 1
+  start_date: 2014-07-12
+  state: false
 
 two:
   teacher_id: 1
   room_id: 1
   number_of_sessions: 1
+  start_date: 2014-07-12
+  state: false

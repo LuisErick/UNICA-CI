@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get "/escoger_docente_asistencia" => "tasks#choose_teacher" , as: :choose_teacher
+  post "/marcar_asistencia" => "tasks#sign_attendance", as: :sign_attendance
   get 'about/index'
   get 'nosotros' => "about#index", as: :about
   get 'teachers/index'

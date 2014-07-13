@@ -2,7 +2,7 @@ class Schedule < ActiveRecord::Base
 	has_many :group_schedules
 
 	def self.create_package(params)
-		@package = Package.new(teacher_id: params[:package][:teacher], room_id: 3, number_of_sessions: 15)
+		@package = Package.new(teacher_id: params[:package][:teacher], room_id: 3, number_of_sessions: 15, start_date: params[:package][:start_date], state: true)
 		nschedules = params[:number]
 		if @package.save
 			schedule = Schedule.new(day: params[:schedule][:day], start_time: params[:schedule][:start_time], end_time: params[:schedule][:end_time], state: true, language_id: Teacher.find(params[:package][:teacher]).language.id)

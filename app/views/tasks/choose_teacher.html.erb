@@ -1,0 +1,35 @@
+<table>
+	<th>
+		<td>
+			Nombre completo
+		</td>
+		<td>
+			Idioma
+		</td>
+		<td>
+			Nombre de usuario
+		</td>
+		<td>
+			Escoger
+		</td>
+	</th>
+	<% @teachers.each do |t| %>
+		<tr>
+			<td>
+				<%= complet_name(t.person.user) %>
+			</td>
+			<td>
+				<%= t.language.name %>
+			</td>
+			<td>
+				<%= t.person.user.username %>
+			</td>
+			<td>
+				<%= form_tag( sign_attendance_path , method: 'post') do %>
+					<%= hidden_field_tag :teacher, t.id %>
+					<%= submit_tag 'Escoger Asistencia' %>
+				<% end %>
+			</td>
+		</tr>
+	<% end %>
+</table>

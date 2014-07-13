@@ -1,24 +1,10 @@
 class TasksController < ApplicationController
   respond_to :html, :js
+
   def pending_matriculations
     @pendings = Matriculation.where(state: false)
   end
 
-  def table_teachers_english
-    
-  end
-
-  def table_teachers_french
-    
-  end
-
-  def table_teachers_italian
-    
-  end
-
-  def table_teachers_portuguese
-    
-  end
   def new_schedule
     @languages = to_hash(Language.all)
     @days = get_days.invert
@@ -84,5 +70,20 @@ class TasksController < ApplicationController
     end
   end
 
-
+  def choose_teacher
+    if params[:teacher]
+      @teachers = Teacher.where(teacher_id: params[:teacher])
+    else
+      if params[:language]
+        @teachers = Teacher.where(language_id: params[:language])  
+      else
+        @teachers = Teacher.all
+      end
+    end    
+  end
+  
+  def sign_attendance
+    @teacher = Teacher.find(params[:teacher])
+    @packages = Package.where(teacher_id: @teacher.id)
+  end
 end

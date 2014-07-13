@@ -16,16 +16,16 @@
                     <div class="span6">
                         <div class="form-horizontal">
                             <div class="control-group"> 
-                                <%= label_tag :usuario, 'Nombre de Usuario', :class => 'control-label'%>
+                                <%= label_tag  :usuario, 'Nombre de Usuario', :class => 'control-label'%>
                                 <div class="controls">
                                 <%= text_field_tag 'usuario' %>
                                 </div>
                             </div>
                             
                             <div class="control-group">
-                                <%= label_tag :pass, 'Contraseña de al menos 4 caracteres', :class => 'control-label' %> 
+                                <%= label_tag  :pass, 'Contraseña de al menos 4 caracteres', :class => 'control-label' %> 
                                 <div class="controls">                  
-                                <%= password_field_tag 'pass' %> 
+                                <%= password_field_tag   :pass %> 
                                 </div>
                             </div>
 
@@ -61,9 +61,9 @@
                             <% #Escoger idioma %>
                             	<% @languages.each do |la| %>
                                     <div class="control-group">
-                                        <%= label_tag 'language_'+la.id.to_s, la.name, :class => 'control-label'  %>
+                                        <%= label :pre_matriculation, 'language_'+la.id.to_s, la.name, :class => 'control-label'  %>
                                         <div class="controls">
-                                            <%= radio_button_tag :language, la.id  %>
+                                            <%= radio_button :pre_matriculation, :language, la.id  %>
                                         </div>
                                     </div>
                             	<% end %>
@@ -120,9 +120,9 @@
                                 <div class="span7">
                                     <% @course_types.each do |ct| %>
                                         <div class="control-group">
-                                            <%= label_tag 'course_type_'+ct.id.to_s, ct.name, :class => 'control-label'  %>
+                                            <%= label :pre_matriculation, 'course_type_'+ct.id.to_s, ct.name, :class => 'control-label'  %>
                                             <div class="controls">
-                                                <%= radio_button_tag :course_type, ct.id %>
+                                                <%= radio_button :pre_matriculation, :course_type, ct.id %>
                                             </div>
                                         </div>
                                     <% end %>
@@ -180,7 +180,7 @@
                         <div class="control-group">
                         <%= label_tag :fecha1, 'Fecha:',  :class => 'control-label'  %>
                         <div class="controls">
-                            <%= text_field_tag :fecha1 %>
+                            <%= date_field_tag :fecha1 %>
                         </div>
                     </div>
 
@@ -260,9 +260,9 @@
                             <div class="form-horizontal">
                                 <% @levels.each do |l| %>
                                     <div class="control-group">
-                                        <%= label_tag 'level_'+l.id.to_s, l.name, :class => 'control-label'  %>
+                                        <%= label :pre_matriculation_communicative, 'level_'+l.id.to_s, l.name, :class => 'control-label'  %>
                                         <div class="controls">
-                                            <%= radio_button_tag :level, l.id  %>
+                                            <%= radio_button :pre_matriculation_communicative, :level, l.id  %>
                                         </div>
                                     </div>
                                 <% end %>
@@ -344,9 +344,9 @@
                     <div class="span6">
                         <% @packages.each do |l| %>
                         <div class="control-group">
-                            <%= label_tag 'package_'+l.id.to_s, (l.teacher.person.name.to_s+" "+l.teacher.language.name.to_s).to_s,  :class => 'control-label' %>
+                            <%= label :matriculation_course,  'package_'+l.id.to_s, (l.teacher.person.name.to_s+" "+l.teacher.language.name.to_s).to_s,  :class => 'control-label' %>
                             <div class="controls">
-                                <%= radio_button_tag :package, l.id  %>
+                                <%= radio_button :matriculation_course,  :package, l.id  %>
                             </div>
                         </div>
                         <% end %>
@@ -371,9 +371,9 @@
                     <div class="span6">
                         <% @packages.each do |l| %>
                         <div class="control-group">
-                            <%= label_tag 'package_'+l.id.to_s, (l.teacher.person.name.to_s+" "+l.teacher.language.name.to_s).to_s,  :class => 'control-label' %>
+                            <%= label :matriculation_course, 'package_'+l.id.to_s, (l.teacher.person.name.to_s+" "+l.teacher.language.name.to_s).to_s,  :class => 'control-label' %>
                             <div class="controls">
-                                <%= radio_button_tag :package, l.id  %>
+                                <%= radio_button :matriculation_course, :package, l.id  %>
                             </div>
                         </div>
                         <% end %>
@@ -400,9 +400,9 @@
                             <div class="span6">
                                 <% @course_types.each do |ct| %>
                                     <div class="control-group">
-                                        <%= label_tag 'course_type_'+ct.id.to_s, ct.name, :class => 'control-label'  %>
+                                        <%= label :pre_matriculation, 'course_type_'+ct.id.to_s, ct.name, :class => 'control-label'  %>
                                         <div class="controls">
-                                            <%= radio_button_tag :course_type, ct.id  %>
+                                            <%= radio_button :pre_matriculation, :course_type, ct.id  %>
                                         </div>
                                     </div>
                                 <% end %>
@@ -432,9 +432,9 @@
                     <div class="span6">
                         <% @packages.each do |l| %>
                         <div class="control-group">
-                            <%= label_tag 'package_'+l.id.to_s, (l.teacher.person.name.to_s+" "+l.teacher.language.name.to_s).to_s,  :class => 'control-label' %>
+                            <%= label :pre_matriculation, 'package_'+l.id.to_s, (l.teacher.person.name.to_s+" "+l.teacher.language.name.to_s).to_s,  :class => 'control-label' %>
                             <div class="controls">
-                                <%= radio_button_tag :package, l.id  %>
+                                <%= radio_button :pre_matriculation, :package, l.id  %>
                             </div>
                         </div>
                         <% end %>
@@ -459,27 +459,27 @@
                 <div class="form-horizontal formreg">
                     <div class="span6">
                         <div class="control-group">
-                            <%= label_tag :paternal_lastname, 'Apellido Paterno', :class => 'control-label' %>
+                            <%= label :person, :paternal_lastname, 'Apellido Paterno', :class => 'control-label' %>
                             <div class="controls"> 
-                                <%= text_field_tag :paternal_lastname %>
+                                <%= text_field :person, :paternal_lastname %>
                             </div>
                         </div>
                         <div class="control-group">
-                            <%= label_tag :maternal_lastname, 'Apellido Materno', :class => 'control-label' %>
+                            <%= label :person, :maternal_lastname, 'Apellido Materno', :class => 'control-label' %>
                             <div class="controls">
-                                <%= text_field_tag :maternal_lastname %>
+                                <%= text_field :person, :maternal_lastname %>
                             </div>
                         </div>
                         <div class="control-group">
-                            <%= label_tag :name, 'Nombres',  :class => 'control-label' %>
+                            <%= label :person, :name, 'Nombres',  :class => 'control-label' %>
                             <div class="controls">
-                                <%= text_field_tag :name %>
+                                <%= text_field :person, :name %>
                             </div>
                         </div>
                         <div class="control-group">
-                            <%= label_tag :dni, 'DNI',  :class => 'control-label'  %>
+                            <%= label :person, :dni, 'DNI',  :class => 'control-label'  %>
                             <div class="controls">
-                                <%= text_field_tag :dni %>
+                                <%= text_field :person, :dni %>
                             </div>
                         </div>
                     </div>
@@ -507,27 +507,27 @@
                 <div class="form-horizontal formreg">
                     <div class="span6">
                         <div class="control-group">
-                            <%= label_tag :address, 'Dirección',  :class => 'control-label'  %>
+                            <%= label :person, :address, 'Dirección',  :class => 'control-label'  %>
                             <div class="controls">
-                                <%= text_field_tag :address %>
+                                <%= text_field :person, :address %>
                             </div>
                         </div>
                         <div class="control-group">
                             <%= label_tag :district, 'Distrito',  :class => 'control-label'  %>
                             <div class="controls">
-                                <%= text_field_tag :district %>
+                                <%= text_field :person, :district %>
                             </div>
                         </div>
                         <div class="control-group">
                             <%= label_tag :province, 'Provincia',  :class => 'control-label'  %>
                             <div class="controls">
-                                <%= text_field_tag :province %>
+                                <%= text_field :person, :province %>
                             </div>
                         </div>
                         <div class="control-group">
                              <%= label_tag :department, 'Departamento',  :class => 'control-label'  %>
                             <div class="controls">
-                                <%= text_field_tag :department %>
+                                <%= text_field :person, :department %>
                             </div>
                         </div>
                     </div>
@@ -552,26 +552,26 @@
                 <div class="form-horizontal formreg"> 
                     <div class="span6">
                         <div class="control-group">
-                            <%= label_tag :home_phone, 'Teléfono Fijo',  :class => 'control-label'  %>
+                            <%= label :person, :home_phone, 'Teléfono Fijo',  :class => 'control-label'  %>
                             <div class="controls">
-                                <%= text_field_tag :home_phone %>
+                                <%= text_field :person, :home_phone %>
                             </div>
                         </div>
                         <div class="control-group">
-                            <%= label_tag :mobile_phone, 'Teléfono Móvil',  :class => 'control-label'  %>
+                            <%= label :person, :mobile_phone, 'Teléfono Móvil',  :class => 'control-label'  %>
                             <div class="controls">
-                                <%= text_field_tag :mobile_phone %>
+                                <%= text_field :person, :mobile_phone %>
                             </div>
                         </div>
                         <div class="control-group">
-                            <%= label_tag :sex, 'Sexo:', :class => 'control-label' %>
+                            <%= label :person, :sex, 'Sexo:', :class => 'control-label' %>
                         </div>
                         <div class="span6">
                             <% @sex.each do |s| %>
                                 <div class="control-group">
-                                    <%= label_tag 'sex_'+s[0].to_s, s[1],  :class => 'control-label'   %>
+                                    <%= label :person, 'sex_'+s[0].to_s, s[1],  :class => 'control-label'   %>
                                     <div class="controls">
-                                        <%= radio_button_tag :sex, s[0]  %>
+                                        <%= radio_button :person, :sex, s[0]  %>
                                     </div>
                                 </div>
                             <% end %>
@@ -598,15 +598,15 @@
                 <div class="form-horizontal formreg">
                     <div class="span6">
                         <div class="control-group">
-                            <%= label_tag :birthday, 'Fecha de nacimiento', :class => 'control-label' %>
+                            <%= label :person, :birthday, 'Fecha de nacimiento', :class => 'control-label' %>
                             <div class="controls">
-                                <%= date_field_tag :birthday %> 
+                                <%= date_field :person, :birthday %> 
                             </div>
                         </div>
                         <div class="control-group">
-                            <%= label_tag :birthplace, 'Lugar de nacimiento', :class => 'control-label' %>
+                            <%= label :person, :birthplace, 'Lugar de nacimiento', :class => 'control-label' %>
                             <div class="controls">
-                                <%= text_field_tag :birthplace %>
+                                <%= text_field :person, :birthplace %>
                             </div>
                         </div>
                     </div>
@@ -631,9 +631,9 @@
                     <div class="span6">
                         <% @marital_statuses.each do |ms| %>
                         <div class="control-group">
-                            <%= label_tag 'marital_status_'+ms.id.to_s, ms.name, :class => 'control-label'  %>
+                            <%= label :person, 'marital_status_'+ms.id.to_s, ms.name, :class => 'control-label'  %>
                             <div class="controls">
-                                <%= radio_button_tag :marital_status, ms.id  %>
+                                <%= radio_button :person, :marital_status, ms.id  %>
                             </div>
                         </div>
                         <% end %>
@@ -657,9 +657,9 @@
                         <div class="span6">
                             <% @is_unica.each do |i| %>
                                 <div class="control-group">
-                                    <%= label_tag 'unica_person_'+i[0].to_s, i[1],  :class => 'control-label' %>
+                                    <%= label_tag 'is_unica_'+i[0].to_s, i[1],  :class => 'control-label' %>
                                     <div class="controls">
-                                        <%= radio_button_tag :unica_person, i[0] %>
+                                        <%= radio_button_tag :is_unica, i[0] %>
                                     </div>
                                 </div>
                             <% end %>
@@ -681,9 +681,11 @@
                 </section> 
                 <div class="form-horizontal formreg">
                     <div class="span6">
-                        <div class="control-group">
-                            
-                            
+                        <div class="control-group">                     
+                            <%= label :unica_person, :college,   :class => 'control-label' %>
+                            <div class="controls">
+                                <%= select :unica_person, :college, @colleges %>
+                            </div>
                         </div>
                     </div>
                 </div><!-- clearfix --><div class="clear"></div><!-- /clearfix --> 
@@ -748,6 +750,7 @@
             </div><!-- clearfix --><div class="clear"></div><!-- /clearfix -->
 
 
+            
 
             <div id="twelfth_step">
                 <section class="subtitle">

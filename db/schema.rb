@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140706002835) do
+ActiveRecord::Schema.define(version: 20140713012025) do
 
   create_table "administrators", force: true do |t|
     t.integer  "person_id"
@@ -164,6 +164,8 @@ ActiveRecord::Schema.define(version: 20140706002835) do
     t.integer  "teacher_id"
     t.integer  "room_id"
     t.integer  "number_of_sessions"
+    t.date     "start_date"
+    t.boolean  "state"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
