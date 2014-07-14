@@ -7,6 +7,10 @@ module ApplicationHelper
 		end
 	end
 
+	def current_user
+		User.find(session[:id])		
+	end
+
 	def complet_name(user)
 		user.person.name+" "+user.person.paternal_lastname+" "+user.person.maternal_lastname
 	end

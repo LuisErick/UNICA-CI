@@ -21,9 +21,14 @@ class TasksController < ApplicationController
   def activate_matriculation
     if request.post?
       if params[:activate] == 1 and params[:matriculation] != nil
-        m = Matriculation.find(params[:matriculation]).state = true
-        m.pre_matriculation.state = true
-        redirect_to index_path
+        m = Matriculation.find(params[:matriculation])
+        if params[:code] = m.pre_matriculation.code 
+          m.state = true   
+          m.pre_matriculation.state = true 
+          m.pre_matriculation.person.user.state = true   
+          student = Student.new(person_id: m.pre_matriculation.person.id, acceptance_day: Time.now.to_date)
+          redirect_to index_path
+        end        
       end
     else
       redirect_to index_path
