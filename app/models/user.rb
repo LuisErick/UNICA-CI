@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
 	validates :password, presence: true, length: { minimum: 6, too_short: "La contraseña debe tener 6 carácteres como mínimo" }
 
    	
-	def sel.create_first_user(params)
+	def self.create_first_user(params)
 		params[:user] = params[:user].dup.except(:confirm_password)
 		params[:user][:permission_id] = 4
 		params[:user][:state] = true
@@ -18,6 +18,7 @@ class User < ActiveRecord::Base
 			params[:person][:marital_status_id] = params[:person][:marital_status]
 			params[:person][:user_id] = user.id
 			params[:person][:marital_status_id] = params[:person][:marital_status]
+			person = Person.new(person_params(params))
 			if person.save
 				params[:pre_matriculation][:person_id] = person.id
 				params[:pre_matriculation][:code] = gen_code
@@ -59,8 +60,7 @@ class User < ActiveRecord::Base
 		if user.save
 			params[:person][:user_id] = user.id
 			params[:person][:marital_status_id] = params[:person][:marital_status]
-			params[:person][:user_id] = user.id
-			params[:person][:marital_status_id] = params[:person][:marital_status]
+			person = Person.new(person_params(params))
 			if person.save
 				params[:teacher][:person_id] = person.id
 				params[:teacher][:language_id] = params[:teacher][:language]

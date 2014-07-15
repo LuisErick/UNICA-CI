@@ -181,14 +181,9 @@
                     <h4>Centro de Idiomas</h4>
                     <div>
                         <ul class="arrow">
-                            <li <%=paint_active(['profile','welcome'])%>><%= link_to 'Inicio' , index_path %></li>
-                            <li <%=paint_active('first_register')%>><%= link_to "Matriculas", new_register_path  %></li>
-                            <% if is_loged %>
-                            <li <%=paint_active('teachers')%>><%= link_to "Docentes", teachers_path  %></li>
-                            <li <%=paint_active('students')%>><%= link_to "Estudiantes", students_path  %></li>
-                            <% end %>                        
-                            <li><%= link_to 'FAQ' , faq_path %></li> 
-                            <li><a href="contact-us.html">Contact</a></li>
+                        <li <%=paint_active(['profile','welcome'])%>><%= link_to 'Inicio' , index_path %></li>
+                        <li <%=paint_active('about')%>><%= link_to 'Nosotros' , about_path %></li>             
+                        <li <%=paint_active('faq')%>><%= link_to 'FAQ' , faq_path %></li> 
                         </ul>
                     </div>  
                 </div>

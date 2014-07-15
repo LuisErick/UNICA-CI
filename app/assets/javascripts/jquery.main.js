@@ -2,10 +2,10 @@ var ready = function() {
     //original field values
     var field_values = {
             //id        :  value
-            'usuario'  : 'usuario',
-            'pass'  : 'pass',
+            'user'  : 'user_username',
+            'pass'  : 'user_password',
             'cpassword' : 'cpassword',
-            'idioma' : 'idioma',
+            'idioma' : 'pre_matriculation[language]',
             'curso' : 'curso',
             'nivel' : 'nivel',
             'name' : 'name',
@@ -22,7 +22,7 @@ var ready = function() {
             'birthday' : 'birthday',
             'birthplace' : 'birthplace',
             'estado_civil' : 'estado_civil',
-            'unica' : 'unica',
+            'unica' : 'is_unica',
             'escuela': 'escuela',
             'postgrado': 'postgrado'
             
@@ -30,8 +30,8 @@ var ready = function() {
 
 
     //inputfocus
-    $('input#usuario').inputfocus({ value: field_values['usuario'] });
-    $('input#pass').inputfocus({ value: field_values['pass'] });
+    $('input#user_username').inputfocus({ value: field_values['user_password'] });
+    $('input#user_password').inputfocus({ value: field_values['pass'] });
     $('input#cpassword').inputfocus({ value: field_values['cpassword'] });     
 
     //reset progress bar
@@ -59,7 +59,7 @@ var ready = function() {
         });        
         
         if(!error) {
-            if( $('#pass').val() != $('#cpassword').val() ) {
+            if( $('#user_password').val() != $('#cpassword').val() ) {
                     $('#first_step input[type=password]').each(function(){
                         $(this).removeClass('valid').addClass('error');
                         $(this).effect("shake", { times:3 }, 50);
@@ -1105,14 +1105,14 @@ jQuery("input[type='radio'][name='validation_type']").each(function(index, butto
 
 
 
-jQuery("input[type='radio'][name='unica_person']").each(function(index, button){
+jQuery("input[type='radio'][name='is_unica']").each(function(index, button){
 
         
-        if ( jQuery( 'input[name=unica_person]:checked' ).val() == '1' )
+        if ( jQuery( 'input[name=is_unica]:checked' ).val() == '1' )
             {
                 unica = 'Sí'
             }
-        if ( jQuery( 'input[name=unica_person]:checked' ).val() == '2' )
+        if ( jQuery( 'input[name=is_unica]:checked' ).val() == '2' )
             {
                 unica = 'No'
             }
@@ -1120,7 +1120,7 @@ jQuery("input[type='radio'][name='unica_person']").each(function(index, button){
         // Give the button a certain click behaviour:
         jQuery(button).click(function(){
 
-            if ( jQuery( 'input[name=unica_person]:checked' ).val() == '1' )
+            if ( jQuery( 'input[name=is_unica]:checked' ).val() == '1' )
             {
 
                 $('#submit_eleventh').click(function(){
@@ -1136,7 +1136,7 @@ jQuery("input[type='radio'][name='unica_person']").each(function(index, button){
 
                 });
             }
-            if ( jQuery( 'input[name=unica_person]:checked' ).val() == '2' )
+            if ( jQuery( 'input[name=is_unica]:checked' ).val() == '2' )
             {
 
                 $('#submit_eleventh').click(function(){

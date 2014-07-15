@@ -17,12 +17,13 @@ class FirstRegisterController < ApplicationController
 	
 
 	def create
-		render text: params
+		rest = User.create_first_user(params)
+		redirect_to security_path
 	end
 
 	def suggest_schedule
 		@days = get_days.invert
-		@languages = to_hash(Language)
+		@languages = to_hash(Language.all)
 	end
 
 	def insert_schedule
